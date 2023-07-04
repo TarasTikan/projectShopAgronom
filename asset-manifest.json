@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/projectShopAgronom/static/css/main.7acaea2f.css",
+    "main.css": "/projectShopAgronom/static/css/main.1ba6b4dd.css",
     "main.js": "/projectShopAgronom/static/js/main.07d3183d.js",
     "index.html": "/projectShopAgronom/index.html",
-    "main.7acaea2f.css.map": "/projectShopAgronom/static/css/main.7acaea2f.css.map",
+    "main.1ba6b4dd.css.map": "/projectShopAgronom/static/css/main.1ba6b4dd.css.map",
     "main.07d3183d.js.map": "/projectShopAgronom/static/js/main.07d3183d.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
+    "static/css/main.1ba6b4dd.css",
     "static/js/main.07d3183d.js"
   ]
 }
