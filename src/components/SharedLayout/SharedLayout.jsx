@@ -1,14 +1,15 @@
 import { Outlet } from "react-router-dom";
+import { AuthList, Container, Head, Nav, NavList, StyledLink } from "./SharedLayout.styled";
 
 export const SharedLayout = () => {
   return (
     <>
-      <header>
-        <div>
-          <nav>
-            <ul>
+      <Head>
+        <Container>
+          <Nav>
+            <NavList>
               <li>
-                <p>Про нас</p>
+                <StyledLink to='/'>Про нас</StyledLink>
               </li>
               <li>
                 <p>Каталог продукції</p>
@@ -25,18 +26,18 @@ export const SharedLayout = () => {
               <li>
                 <p>Контакти</p>
               </li>
-            </ul>
-            <ul>
+            </NavList>
+            <AuthList>
               <li>
                 <p>Вхід</p>
               </li>
               <li>
                 <p>Реестрація</p>
               </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+            </AuthList>
+          </Nav>
+        </Container>
+      </Head>
       <Outlet />
     </>
   );
