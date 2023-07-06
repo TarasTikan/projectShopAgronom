@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const WrapSideBar = styled.div`
   display: flex;
@@ -104,3 +105,65 @@ export const TextMoney = styled.p`
   font-family: Montserrat;
   font-weight: 700;
 `;
+ export const ListKatalog = styled.ul`
+   display: flex;
+   list-style: none;
+   gap: 26px;
+   align-items: center;
+   margin-top: 22px;
+ `;
+
+ export const KatalogItem = styled.li`
+   display: flex;
+   gap: 14px;
+   align-items: center;
+   justify-content: center;
+   border-radius: 20px;
+   border: 1px solid #1e6140;
+   width: 200px;
+   height: 40px;
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+     stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
+     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   &:nth-child(2) {
+     gap: 9px;
+     padding-left: 15px;
+   }
+   &:nth-child(3) {
+     gap: 4px;
+   }
+   &:nth-child(4) {
+     gap: 8px;
+   }
+   &:nth-child(5) {
+     gap: 5px;
+   }
+   &:hover {
+     background-color: #e74e13;
+     stroke: #fff;
+     color: #fff;
+   }
+   a:hover {
+     color: #fff;
+   }
+ `;
+
+  export const ItemText = styled.p`
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+  `;
+
+  export const StyledLink = styled(NavLink)`
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-decoration: none;
+    color: #000;
+    text-align: left;
+  `;
