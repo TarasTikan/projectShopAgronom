@@ -1,4 +1,46 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "redux/auth/operations";
+
 export const FormLogin = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const dispatch = useDispatch();
+    const handleSubmit = e => {
+      e.preventDefault();
+      const form = e.currentTarget;
+      if (
+        email.trim() === '' ||
+        password.trim() === ''
+      ) {
+        alert('Будь ласка, заповніть всі поля.');
+        return;
+      }
+      if (!password) {
+        dispatch(
+          login({
+            email,
+            password,
+          })
+        );
+        setEmail('');
+        setPassword('');
+        form.reset();
+      }
+    };
+    const handleChange = e => {
+      const targetValue = e.target.value;
+      switch (e.target.name) {
+        case 'email':
+          setEmail(targetValue);
+          break;
+        case 'password':
+          setPassword(targetValue);
+          break;
+        default:
+          return;
+      }
+    };
   return (
     <>
       <ul>
@@ -22,10 +64,10 @@ export const FormLogin = () => {
           оформлення замовлень та зручнішої роботи з сайтом
         </p>
       </div>
-      <form>
-        <input type="email" placeholder="E-mail" />
-        <input type="password" placeholder="Пароль" />
-        <button type="submit">Війти</button>
+      <form onSubmit={handleSubmit}>
+        <input type="email" placeholder="E-mail" onChange={handleChange} />
+        <input type="password" placeholder="Пароль" onChange={handleChange} />
+        <button type="submit">Увійти</button>
       </form>
     </>
   );

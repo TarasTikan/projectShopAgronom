@@ -1,7 +1,13 @@
 import { Outlet } from "react-router-dom";
-import { AuthList, Container, Head, Nav, NavList, StyledLink } from "./SharedLayout.styled";
+import { Container, Head, Nav, NavList, StyledLink } from "./AppBar.styled";
+import { UserMenu } from "components/UserMenu/UserMenu";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "redux/auth/selectors";
+import { AuthNav } from "components/AuthNav/AuthNav";
 
-export const SharedLayout = () => {
+export const AppBar = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn)
+  console.log(isLoggedIn);
   return (
     <>
       <Head>
@@ -9,7 +15,7 @@ export const SharedLayout = () => {
           <Nav>
             <NavList>
               <li>
-                <StyledLink to='/'>Про нас</StyledLink>
+                <StyledLink to="/">Про нас</StyledLink>
               </li>
               <li>
                 <p>Каталог продукції</p>
@@ -27,14 +33,7 @@ export const SharedLayout = () => {
                 <p>Контакти</p>
               </li>
             </NavList>
-            <AuthList>
-              <li>
-                <StyledLink to='/signIn'>Вхід</StyledLink>
-              </li>
-              <li>
-                <StyledLink to='/signUp'>Реестрація</StyledLink>
-              </li>
-            </AuthList>
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}
           </Nav>
         </Container>
       </Head>
