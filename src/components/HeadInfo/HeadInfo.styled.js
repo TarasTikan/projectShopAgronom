@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const WrapSideBar = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 20px;
 `;
 
 export const WrapCall = styled.div`
@@ -111,6 +112,7 @@ export const TextMoney = styled.p`
    gap: 26px;
    align-items: center;
    margin-top: 22px;
+   margin-bottom: 46px;
  `;
 
  export const KatalogItem = styled.li`

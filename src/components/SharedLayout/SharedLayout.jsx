@@ -29,10 +29,10 @@ export const SharedLayout = () => {
             </NavList>
             <AuthList>
               <li>
-                <p>Вхід</p>
+                <StyledLink to='/signIn'>Вхід</StyledLink>
               </li>
               <li>
-                <p>Реестрація</p>
+                <StyledLink to='/signUp'>Реестрація</StyledLink>
               </li>
             </AuthList>
           </Nav>
