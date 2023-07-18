@@ -8,6 +8,7 @@ export const FormLogin = () => {
     const dispatch = useDispatch();
     const handleSubmit = e => {
       e.preventDefault();
+      console.log(email)
       const form = e.currentTarget;
       if (
         email.trim() === '' ||
@@ -16,17 +17,14 @@ export const FormLogin = () => {
         alert('Будь ласка, заповніть всі поля.');
         return;
       }
-      if (!password) {
         dispatch(
           login({
             email,
             password,
-          })
-        );
+          }))
         setEmail('');
         setPassword('');
         form.reset();
-      }
     };
     const handleChange = e => {
       const targetValue = e.target.value;
@@ -65,8 +63,8 @@ export const FormLogin = () => {
         </p>
       </div>
       <form onSubmit={handleSubmit}>
-        <input type="email" placeholder="E-mail" onChange={handleChange} />
-        <input type="password" placeholder="Пароль" onChange={handleChange} />
+        <input type="email" placeholder="E-mail" onChange={handleChange} name="email"/>
+        <input type="password" placeholder="Пароль" onChange={handleChange} name="password"/>
         <button type="submit">Увійти</button>
       </form>
     </>
