@@ -38,3 +38,13 @@ export const logout = createAsyncThunk('auth/logout', async credentials => {
     console.log(error.message);
   }
 });
+
+
+export const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
+  const state = thunkAPI.getState()
+  const token = state.auth.token
+
+  if(token === null) {
+    return
+  }
+})
