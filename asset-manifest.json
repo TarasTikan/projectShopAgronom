@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/projectShopAgronom/static/css/main.1ba6b4dd.css",
-    "main.js": "/projectShopAgronom/static/js/main.420889a2.js",
+    "main.js": "/projectShopAgronom/static/js/main.f03fa9a6.js",
     "static/media/heroBg.jpg": "/projectShopAgronom/static/media/heroBg.d22abdaa25a6894b7da4.jpg",
     "index.html": "/projectShopAgronom/index.html",
     "main.1ba6b4dd.css.map": "/projectShopAgronom/static/css/main.1ba6b4dd.css.map",
-    "main.420889a2.js.map": "/projectShopAgronom/static/js/main.420889a2.js.map"
+    "main.f03fa9a6.js.map": "/projectShopAgronom/static/js/main.f03fa9a6.js.map"
   },
   "entrypoints": [
     "static/css/main.1ba6b4dd.css",
-    "static/js/main.420889a2.js"
+    "static/js/main.f03fa9a6.js"
   ]
 }
