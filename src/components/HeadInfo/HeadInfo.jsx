@@ -1,5 +1,5 @@
 import { SearchIcon } from "assets/icon/searchIcon";
-import { BtnEmotions, CallBtn, ImgLogo, InputSearch, ItemText, KatalogItem, ListBtn, ListKatalog, SearchBtn, StyledLink, TextCall, TextInfoCall, TextMoney, WrapCall, WrapSideBar } from "./HeadInfo.styled";
+import { BtnEmotions, CallBtn, Container, ImgLogo, InputSearch, ItemText, KatalogItem, ListBtn, ListKatalog, SearchBtn, StyledLink, TextCall, TextInfoCall, TextMoney, WrapCall, WrapSideBar } from "./HeadInfo.styled";
 import { CallIcon } from "assets/icon/callIcon";
 import { LoveIcon } from "assets/icon/loveIcon";
 import { VesaIcon } from "assets/icon/vesaIcon";
@@ -12,7 +12,7 @@ import { Farmer } from "assets/icon/farmer";
 import { FeedGroup } from "assets/icon/feedGroup";
 export const HeadInfo = () => {
     return (
-      <>
+      <Container>
         <WrapSideBar>
           <ImgLogo src={logo} alt="logo" width="158" height="71" />
           <form>
@@ -73,6 +73,6 @@ export const HeadInfo = () => {
             <ItemText>Агроному в поміч</ItemText>
           </KatalogItem>
         </ListKatalog>
-      </>
+      </Container>
     );
 }

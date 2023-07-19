@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 export const PlantsSection = styled.section`
-padding-top: 20px;
 padding-bottom: 122px;
 `;
 

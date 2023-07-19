@@ -97,24 +97,28 @@ export const FormRegister = () => {
             placeholder="Ім’я"
             onChange={handleChange}
             name="name"
+            value={name}
           />
           <input
             type="text"
             placeholder="Прізвище"
             onChange={handleChange}
             name="surname"
+            value={surname}
           />
           <input
             type="tel"
             placeholder="Телефон"
             onChange={handleChange}
             name="phone"
+            value={phone}
           />
           <input
             type="email"
             placeholder="E-mail"
             onChange={handleChange}
             name="email"
+            value={email}
           />
         </div>
         <input
@@ -122,12 +126,14 @@ export const FormRegister = () => {
           placeholder="Пароль"
           onChange={handleChange}
           name="password"
+          value={password}
         />
         <input
           type="password"
           placeholder="Підтвердити пароль"
           onChange={handleChange}
           name="confirmPassword"
+          value={confirmPassword}
         />
         <div>
           <input type="checkbox" />

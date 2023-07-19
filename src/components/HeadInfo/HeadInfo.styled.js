@@ -5,7 +5,12 @@ export const WrapSideBar = styled.div`
   align-items: center;
   margin-top: 20px;
 `;
-
+export const Container = styled.div`
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+`;
 export const WrapCall = styled.div`
   display: flex;
   align-items: center;

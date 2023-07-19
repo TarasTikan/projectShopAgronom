@@ -63,8 +63,20 @@ export const FormLogin = () => {
         </p>
       </div>
       <form onSubmit={handleSubmit}>
-        <input type="email" placeholder="E-mail" onChange={handleChange} name="email"/>
-        <input type="password" placeholder="Пароль" onChange={handleChange} name="password"/>
+        <input
+          type="email"
+          placeholder="E-mail"
+          onChange={handleChange}
+          value={email}
+          name="email"
+        />
+        <input
+          type="password"
+          placeholder="Пароль"
+          onChange={handleChange}
+          value={password}
+          name="password"
+        />
         <button type="submit">Увійти</button>
       </form>
     </>

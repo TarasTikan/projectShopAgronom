@@ -7,6 +7,7 @@ import { Login } from "pages/Login/Login";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchCurrentUser } from "redux/auth/operations";
+import { FilterProducts } from "pages/FilterProducts/FilterProducts";
 
 export const App = () => {
   const dispatch = useDispatch()
@@ -18,6 +19,10 @@ export const App = () => {
         <Route path="catalog/plantsProtect" element={<PlantsProtect />} />
         <Route path="signUp" element={<Registration />} />
         <Route path="signIn" element={<Login />} />
+        <Route
+          path="filter/plantsProtect/:routesName"
+          element={<FilterProducts />}
+        />
       </Route>
     </Routes>
   );

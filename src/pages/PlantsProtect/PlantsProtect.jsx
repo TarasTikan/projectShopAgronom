@@ -1,72 +1,51 @@
-import { HeadInfo } from "components/HeadInfo/HeadInfo";
-import { CatalogItem, Container, ListCatalog, PlantsSection, RoteteImg, TitleCatalog, UrlList, WrapTextItem, WrapTitle } from "./PlantsProtect.styled";
-import treelist from "../../assets/treelist.png"
+import {
+  CatalogItem,
+  Container,
+  ListCatalog,
+  PlantsSection,
+  RoteteImg,
+  TitleCatalog,
+  UrlList,
+  WrapTextItem,
+  WrapTitle,
+} from './PlantsProtect.styled';
+import treelist from '../../assets/treelist.png';
+import { plantsProtectCatalog } from 'fakeAPI';
+import { NavLink } from 'react-router-dom';
 export const PlantsProtect = () => {
-    return (
-      <main>
-        <PlantsSection>
-          <Container>
-            <HeadInfo />
-            <UrlList>
-              <li>
-                <p>Головна</p>
-              </li>
-              <li>
-                <p>Каталог</p>
-              </li>
-              <li>
-                <p>Засоби захисту рослин</p>
-              </li>
-            </UrlList>
-            <WrapTitle>
-              <img src={treelist} alt="treelist" />
-              <TitleCatalog>Засоби захисту рослин</TitleCatalog>
-              <RoteteImg src={treelist} alt="treelist" />
-            </WrapTitle>
-            <ListCatalog>
-              <CatalogItem>
+  return (
+    <main>
+      <PlantsSection>
+        <Container>
+          <UrlList>
+            <li>
+              <p>Головна</p>
+            </li>
+            <li>
+              <p>Каталог</p>
+            </li>
+            <li>
+              <p>Засоби захисту рослин</p>
+            </li>
+          </UrlList>
+          <WrapTitle>
+            <img src={treelist} alt="treelist" />
+            <TitleCatalog>Засоби захисту рослин</TitleCatalog>
+            <RoteteImg src={treelist} alt="treelist" />
+          </WrapTitle>
+          <ListCatalog>
+            {plantsProtectCatalog.map(({ id, name, routesName }) => (
+              <CatalogItem key={id}>
                 <WrapTextItem>
-                  <p>Гербіциди</p>
+                  <NavLink to={`/filter/plantsProtect/${routesName}`}>
+                    {name}
+                  </NavLink>
                 </WrapTextItem>
               </CatalogItem>
-              <CatalogItem>
-                <WrapTextItem>
-                  <p>Фунгіциди</p>
-                </WrapTextItem>
-              </CatalogItem>
-              <CatalogItem>
-                <WrapTextItem>
-                  <p>Інсектициди</p>
-                </WrapTextItem>
-              </CatalogItem>
-              <CatalogItem>
-                <WrapTextItem>
-                  <p>Десиканти</p>
-                </WrapTextItem>
-              </CatalogItem>
-              <CatalogItem>
-                <WrapTextItem>
-                  <p>Протруювачі</p>
-                </WrapTextItem>
-              </CatalogItem>
-              <CatalogItem>
-                <WrapTextItem>
-                  <p>Родентициди</p>
-                </WrapTextItem>
-              </CatalogItem>
-              <CatalogItem>
-                <WrapTextItem>
-                  <p>Ретарданти</p>
-                </WrapTextItem>
-              </CatalogItem>
-              <CatalogItem>
-                <WrapTextItem>
-                  <p>Ад’юванти</p>
-                </WrapTextItem>
-              </CatalogItem>
-            </ListCatalog>
-          </Container>
-        </PlantsSection>
-      </main>
-    );
-}
+            ))}
+          </ListCatalog>
+        </Container>
+      </PlantsSection>
+    </main>
+  );
+};

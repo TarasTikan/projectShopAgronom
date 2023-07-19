@@ -11,6 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { productsReducer } from './products/productsSlice';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -28,6 +29,7 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
+    products: productsReducer,
     auth: persistReducer(authPersistConfig, authReducer),
   },
   middleware,
