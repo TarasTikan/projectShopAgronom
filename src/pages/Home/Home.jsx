@@ -1,3 +1,4 @@
+import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import {
   BtnCompany,
   Container,
@@ -13,6 +14,7 @@ export const Home = () => {
       <main>
         <HeroSection>
           <Container>
+            <HeadInfo />
             <WrapHeroText>
               <HeroTextTitle>
                 <TitleHeroSpan>Аграрний</TitleHeroSpan>

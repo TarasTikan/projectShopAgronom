@@ -12,11 +12,13 @@ import {
 import treelist from '../../assets/treelist.png';
 import { plantsProtectCatalog } from 'fakeAPI';
 import { NavLink } from 'react-router-dom';
+import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 export const PlantsProtect = () => {
   return (
     <main>
       <PlantsSection>
         <Container>
+          <HeadInfo />
           <UrlList>
             <li>
               <p>Головна</p>
@@ -37,9 +39,7 @@ export const PlantsProtect = () => {
             {plantsProtectCatalog.map(({ id, name, routesName }) => (
               <CatalogItem key={id}>
                 <WrapTextItem>
-                  <NavLink to={`/filter/plantsProtect/${routesName}`}>
-                    {name}
-                  </NavLink>
+                  <NavLink to={`/plantsProtect`}>{name}</NavLink>
                 </WrapTextItem>
               </CatalogItem>
             ))}

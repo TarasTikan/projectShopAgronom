@@ -4,7 +4,6 @@ import { UserMenu } from "components/UserMenu/UserMenu";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "redux/auth/selectors";
 import { AuthNav } from "components/AuthNav/AuthNav";
-import { HeadInfo } from "components/HeadInfo/HeadInfo";
 
 export const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn)
@@ -38,7 +37,6 @@ export const AppBar = () => {
           </Nav>
         </Container>
       </Head>
-          <HeadInfo/>
       <Outlet />
     </>
   );

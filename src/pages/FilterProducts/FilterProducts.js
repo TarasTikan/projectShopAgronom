@@ -1,19 +1,32 @@
 import { plantsCulture, plantsProducer, plantsProtectCatalog } from "fakeAPI";
-import { CatalogText, Container, FormProducer, LabalInput, ListCatalogName, SortButton, TitleCatalog, TitleCulture, TitleFilter, TitleNumberProducts, TitleProducer, UrlList, WrapFilter, WrapFilterALL, WrapNumberProducts, WrapTitle, WrapTitleFilter } from "./FilterProducts.styled";
+import {  Container, FormProducer, LabalInput, ListCatalogName, SortButton, StyledLink, TitleCatalog, TitleCulture, TitleFilter, TitleNumberProducts, TitleProducer, UrlList, WrapFilter, WrapFilterALL, WrapNumberProducts, WrapTitle, WrapTitleFilter } from "./FilterProducts.styled";
 import treelist from '../../assets/treelist.png';
 import { RoteteImg } from "pages/PlantsProtect/PlantsProtect.styled";
-import { useEffect, useState } from "react";
+import {useState } from "react";
+
+import { Outlet} from "react-router-dom";
+import { HeadInfo } from "components/HeadInfo/HeadInfo";
+import { useDispatch } from "react-redux";
+import { filterProducts } from "redux/products/filterSlice";
 export const FilterProducts = () => {
     const [valueInput, setValueInput] = useState([])
+    const dispatch = useDispatch()
     const handleChange = (e) => {
-        setValueInput(e.target.value)
-        console.log(e.target.name);
+        setValueInput(e.target.name);
+        if (e.target.name.includes('producer')) {
+          const filter = {
+            filterProducer: e.target.name,
+            filterCulture: [],
+            filterNumber: null,
+          };
+          dispatch(filterProducts(filter));
+        }
+          console.log(e.target.name.includes('producer'));
+          console.log(valueInput);
     }
-    useEffect(()=>{
-
-    },[])
   return (
     <Container>
+      <HeadInfo />
       <UrlList>
         <li>
           <p>Головна</p>
@@ -37,9 +50,9 @@ export const FilterProducts = () => {
       <WrapFilterALL>
         <WrapTitleFilter>
           <ListCatalogName>
-            {plantsProtectCatalog.map(({ id, name }) => (
+            {plantsProtectCatalog.map(({ id, name, routesName }) => (
               <li key={id}>
-                <CatalogText>{name}</CatalogText>
+                <StyledLink to={`filter/${routesName}`}>{name}</StyledLink>
               </li>
             ))}
           </ListCatalogName>
@@ -51,7 +64,7 @@ export const FilterProducts = () => {
                 <LabalInput key={id}>
                   <input
                     type="checkbox"
-                    name={`${name}`}
+                    name={`producer ${name}`}
                     value={valueInput}
                     onChange={handleChange}
                   />
@@ -65,7 +78,7 @@ export const FilterProducts = () => {
                 <LabalInput key={id}>
                   <input
                     type="checkbox"
-                    name={`${name}`}
+                    name={`culture ${name}`}
                     value={valueInput}
                     onChange={handleChange}
                   />
@@ -96,11 +109,7 @@ export const FilterProducts = () => {
             </FormProducer>
           </WrapFilter>
         </WrapTitleFilter>
-      <ul>
-        <li>
-          <p>hello</p>
-        </li>
-      </ul>
+        <Outlet />
       </WrapFilterALL>
     </Container>
   );

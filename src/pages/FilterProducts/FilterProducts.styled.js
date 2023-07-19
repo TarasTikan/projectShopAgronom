@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const UrlList = styled.ul`
   display: flex;
@@ -80,11 +81,13 @@ gap: 20px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
 `;
 
-export const CatalogText = styled.p`
+
+export const StyledLink = styled(NavLink)`
   color: rgba(0, 0, 0, 0.5);
   font-family: Montserrat;
   font-size: 16px;
   font-weight: 400;
+  text-decoration: none;
   &.active {
     color: #84c551;
     font-weight: 700;
@@ -112,7 +115,6 @@ export const WrapTitleFilter = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-right: auto;
 `;
 export const WrapFilter = styled.div`
 margin-top: 30px;
@@ -126,7 +128,9 @@ export const WrapFilterALL = styled.div`
   display: flex;
   align-items: start;
   justify-content: center;
+  gap: 30px;
 `;
+
 export const FormProducer = styled.form`
   display: flex;
   align-items: start;
