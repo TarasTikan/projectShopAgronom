@@ -18,9 +18,9 @@ import {
   WrapTitle,
   WrapTitleFilter,
 } from './FilterProducts.styled';
-import treelist from '../../assets/treelist.png';
+import treelist from '../../assets/images/treelist.png';
 import { RoteteImg } from 'pages/PlantsProtect/PlantsProtect.styled';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import { useDispatch } from 'react-redux';
 import {
@@ -31,8 +31,18 @@ import {
   deleteNumber,
   deleteProducer,
 } from 'redux/products/filterSlice';
+import { useEffect} from 'react';
 export const FilterProducts = () => {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    const saveRouter = localStorage.getItem('router');
+    if (saveRouter) {
+      navigate(`filter/${saveRouter}`);
+    }
+    localStorage.removeItem('router');
+  }, [navigate]);
   const handleChange = e => {
     const normalizatorFilter = e.target.name
       .slice(8, e.target.name.length)

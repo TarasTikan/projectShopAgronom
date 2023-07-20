@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const PlantsSection = styled.section`
 padding-bottom: 122px;
@@ -41,9 +42,12 @@ export const ListCatalog = styled.ul`
 export const CatalogItem = styled.li`
   width: 255px;
   height: 164px;
+  background-image: ${props => `url(${props.imgpl})`};
   background-color: #84c551;
   border-radius: 20px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+  background-position: center;
+  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 export const WrapTextItem = styled.div`
@@ -69,4 +73,17 @@ export const TitleCatalog = styled.h1`
 
 export const RoteteImg = styled.img`
   transform: rotate(80deg);
+`;
+
+export const StyledLink = styled(NavLink)`
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 600;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: #84c551;
+  }
 `;

@@ -131,6 +131,7 @@ export const TextMoney = styled.p`
    height: 40px;
    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
      stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
+     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
    &:nth-child(2) {
      gap: 9px;
@@ -149,6 +150,7 @@ export const TextMoney = styled.p`
      background-color: #e74e13;
      stroke: #fff;
      color: #fff;
+     border: none;
    }
    a:hover {
      color: #fff;

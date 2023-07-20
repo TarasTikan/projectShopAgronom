@@ -1,4 +1,4 @@
-import logo from '../../assets/Logo.png';
+import logo from '../../assets/images/Logo.png';
 import { ImgLogo } from './CompanyDetails.styled';
 export const CompanyDetails = () => {
   return (

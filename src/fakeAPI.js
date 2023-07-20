@@ -1,12 +1,60 @@
+import herbicidesImg from './assets/images/herbicides.png';
+import fungicidesImg from './assets/images/fungicides.png';
+import insecticidesImg from './assets/images/insecticides.png';
+import desiccantsImg from './assets/images/desiccants.png';
+import stainRemoversImg from './assets/images/stainremovers.png';
+import rodenticidesImg from './assets/images/rodenticides.png';
+import retardantsImg from './assets/images/retardants.png';
+import adjuvantsImg from './assets/images/adjuvants.png';
 export const plantsProtectCatalog = [
-  { id: 'p-1', name: 'Гербіциди', routesName: 'herbicides' },
-  { id: 'p-2', name: 'Фунгіциди', routesName: 'fungicides' },
-  { id: 'p-3', name: 'Інсектициди', routesName: 'insecticides' },
-  { id: 'p-4', name: 'Десиканти', routesName: 'desiccants' },
-  { id: 'p-5', name: 'Протруювачі', routesName: 'stainRemovers' },
-  { id: 'p-6', name: 'Родентициди', routesName: 'rodenticides' },
-  { id: 'p-7', name: 'Ретарданти', routesName: 'retardants' },
-  { id: 'p-8', name: 'Ад’юванти', routesName: 'adjuvants' },
+  {
+    id: 'p-1',
+    name: 'Гербіциди',
+    routesName: 'herbicides',
+    imgPL: herbicidesImg,
+  },
+  {
+    id: 'p-2',
+    name: 'Фунгіциди',
+    routesName: 'fungicides',
+    imgPL: fungicidesImg,
+  },
+  {
+    id: 'p-3',
+    name: 'Інсектициди',
+    routesName: 'insecticides',
+    imgPL: insecticidesImg,
+  },
+  {
+    id: 'p-4',
+    name: 'Десиканти',
+    routesName: 'desiccants',
+    imgPL: desiccantsImg,
+  },
+  {
+    id: 'p-5',
+    name: 'Протруювачі',
+    routesName: 'stainRemovers',
+    imgPL: stainRemoversImg,
+  },
+  {
+    id: 'p-6',
+    name: 'Родентициди',
+    routesName: 'rodenticides',
+    imgPL: rodenticidesImg,
+  },
+  {
+    id: 'p-7',
+    name: 'Ретарданти',
+    routesName: 'retardants',
+    imgPL: retardantsImg,
+  },
+  {
+    id: 'p-8',
+    name: 'Ад’юванти',
+    routesName: 'adjuvants',
+    imgPL: adjuvantsImg,
+  },
 ];
 
 export const plantsProducer = [

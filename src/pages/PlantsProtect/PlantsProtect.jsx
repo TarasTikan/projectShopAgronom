@@ -4,16 +4,20 @@ import {
   ListCatalog,
   PlantsSection,
   RoteteImg,
+  StyledLink,
   TitleCatalog,
   UrlList,
   WrapTextItem,
   WrapTitle,
 } from './PlantsProtect.styled';
-import treelist from '../../assets/treelist.png';
+import treelist from '../../assets/images/treelist.png';
 import { plantsProtectCatalog } from 'fakeAPI';
 import { NavLink } from 'react-router-dom';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 export const PlantsProtect = () => {
+  const handleSaveRouter = (e) => {
+localStorage.setItem('router', e.target.name);
+  }
   return (
     <main>
       <PlantsSection>
@@ -36,10 +40,16 @@ export const PlantsProtect = () => {
             <RoteteImg src={treelist} alt="treelist" />
           </WrapTitle>
           <ListCatalog>
-            {plantsProtectCatalog.map(({ id, name, routesName }) => (
-              <CatalogItem key={id}>
+            {plantsProtectCatalog.map(({ id, name, routesName, imgPL }) => (
+              <CatalogItem key={id} imgpl={imgPL}>
                 <WrapTextItem>
-                  <NavLink to={`/plantsProtect`}>{name}</NavLink>
+                  <StyledLink
+                    to={`/plantsProtect`}
+                    name={routesName}
+                    onClick={handleSaveRouter}
+                  >
+                    {name}
+                  </StyledLink>
                 </WrapTextItem>
               </CatalogItem>
             ))}

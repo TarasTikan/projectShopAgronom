@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundImage from '../../assets/heroBg.jpg'
+import backgroundImage from '../../assets/images/heroBg.jpg'
 export const HeroSection = styled.section`
   background-image: url(${backgroundImage});
   background-size: cover;

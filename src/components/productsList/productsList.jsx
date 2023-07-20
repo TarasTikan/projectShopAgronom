@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { fetchProducts } from 'redux/products/operations';
 import {
   selectFilteredProducts,
-  selectProducts,
 } from 'redux/products/selectors';
 import {
   IteamStock,
@@ -30,7 +29,7 @@ console.log(filter);
     <ProductList>
       {filter.map(({ name, number, price, _id }) => (
         <ProductItem key={_id} onClick={filterProd}>
-          <img width={255} />
+          {/* <img width={255} /> */}
           <ItemInfo>
             <div>
               <ItemTitle>{name}</ItemTitle>

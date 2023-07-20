@@ -4,7 +4,7 @@ import { CallIcon } from "assets/icon/callIcon";
 import { LoveIcon } from "assets/icon/loveIcon";
 import { VesaIcon } from "assets/icon/vesaIcon";
 import { ShopBascetIcon } from "assets/icon/shopBascetIcon";
-import logo from '../../assets/Logo.png';
+import logo from '../../assets/images/Logo.png';
 import { Seeds } from "assets/icon/seeds";
 import { Sapling } from "assets/icon/sapling";
 import { Fertilizer } from "assets/icon/fertilizer";
