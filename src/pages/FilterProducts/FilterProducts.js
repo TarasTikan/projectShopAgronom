@@ -1,29 +1,55 @@
-import { plantsCulture, plantsProducer, plantsProtectCatalog } from "fakeAPI";
-import {  Container, FormProducer, LabalInput, ListCatalogName, SortButton, StyledLink, TitleCatalog, TitleCulture, TitleFilter, TitleNumberProducts, TitleProducer, UrlList, WrapFilter, WrapFilterALL, WrapNumberProducts, WrapTitle, WrapTitleFilter } from "./FilterProducts.styled";
+import { plantsCulture, plantsProducer, plantsProtectCatalog } from 'fakeAPI';
+import {
+  Container,
+  FormProducer,
+  LabalInput,
+  ListCatalogName,
+  SortButton,
+  StyledLink,
+  TitleCatalog,
+  TitleCulture,
+  TitleFilter,
+  TitleNumberProducts,
+  TitleProducer,
+  UrlList,
+  WrapFilter,
+  WrapFilterALL,
+  WrapNumberProducts,
+  WrapTitle,
+  WrapTitleFilter,
+} from './FilterProducts.styled';
 import treelist from '../../assets/treelist.png';
-import { RoteteImg } from "pages/PlantsProtect/PlantsProtect.styled";
-import {useState } from "react";
-
-import { Outlet} from "react-router-dom";
-import { HeadInfo } from "components/HeadInfo/HeadInfo";
-import { useDispatch } from "react-redux";
-import { filterProducts } from "redux/products/filterSlice";
+import { RoteteImg } from 'pages/PlantsProtect/PlantsProtect.styled';
+import { Outlet } from 'react-router-dom';
+import { HeadInfo } from 'components/HeadInfo/HeadInfo';
+import { useDispatch } from 'react-redux';
+import {
+  addCulture,
+  addNumber,
+  addProducer,
+  deleteCulture,
+  deleteNumber,
+  deleteProducer,
+} from 'redux/products/filterSlice';
 export const FilterProducts = () => {
-    const [valueInput, setValueInput] = useState([])
-    const dispatch = useDispatch()
-    const handleChange = (e) => {
-        setValueInput(e.target.name);
-        if (e.target.name.includes('producer')) {
-          const filter = {
-            filterProducer: e.target.name,
-            filterCulture: [],
-            filterNumber: null,
-          };
-          dispatch(filterProducts(filter));
-        }
-          console.log(e.target.name.includes('producer'));
-          console.log(valueInput);
+  const dispatch = useDispatch();
+  const handleChange = e => {
+    const normalizatorFilter = e.target.name
+      .slice(8, e.target.name.length)
+      .trim();
+    const actionProducer = e.target.checked ? addProducer : deleteProducer;
+    const actionCulture = e.target.checked ? addCulture : deleteCulture;
+    const actionNumber = e.target.checked ? addNumber : deleteNumber;
+    if (e.target.name.includes('producer')) {
+      dispatch(actionProducer(normalizatorFilter));
+      console.log(normalizatorFilter);
+    } else if (e.target.name.includes('culture')) {
+      dispatch(actionCulture(normalizatorFilter));
+    } else {
+      dispatch(actionNumber(e.target.name));
     }
+  };
+
   return (
     <Container>
       <HeadInfo />
@@ -65,7 +91,6 @@ export const FilterProducts = () => {
                   <input
                     type="checkbox"
                     name={`producer ${name}`}
-                    value={valueInput}
                     onChange={handleChange}
                   />
                   {name}
@@ -79,7 +104,6 @@ export const FilterProducts = () => {
                   <input
                     type="checkbox"
                     name={`culture ${name}`}
-                    value={valueInput}
                     onChange={handleChange}
                   />
                   {name}
@@ -89,22 +113,58 @@ export const FilterProducts = () => {
             <FormProducer>
               <TitleProducer>Кількість</TitleProducer>
               <LabalInput>
-                <input type="checkbox" name="1" value="1" />1
+                <input
+                  type="checkbox"
+                  name="1"
+                  value="1"
+                  onChange={handleChange}
+                />
+                1
               </LabalInput>
               <LabalInput>
-                <input type="checkbox" name="2" value="2" />2
+                <input
+                  type="checkbox"
+                  name="2"
+                  value="2"
+                  onChange={handleChange}
+                />
+                2
               </LabalInput>
               <LabalInput>
-                <input type="checkbox" name="3" value="3" />3
+                <input
+                  type="checkbox"
+                  name="3"
+                  value="3"
+                  onChange={handleChange}
+                />
+                3
               </LabalInput>
               <LabalInput>
-                <input type="checkbox" name="4" value="4" />4
+                <input
+                  type="checkbox"
+                  name="4"
+                  value="4"
+                  onChange={handleChange}
+                />
+                4
               </LabalInput>
               <LabalInput>
-                <input type="checkbox" name="5" value="5" />5
+                <input
+                  type="checkbox"
+                  name="5"
+                  value="5"
+                  onChange={handleChange}
+                />
+                5
               </LabalInput>
               <LabalInput>
-                <input type="checkbox" name="6" value="6" />6
+                <input
+                  type="checkbox"
+                  name="6"
+                  value="6"
+                  onChange={handleChange}
+                />
+                6
               </LabalInput>
             </FormProducer>
           </WrapFilter>
