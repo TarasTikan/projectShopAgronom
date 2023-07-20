@@ -13,6 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { productsReducer } from './products/productsSlice';
 import { filterReducer } from './products/filterSlice';
+import { paginationReducer } from './pagination/paginationSlice';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -30,6 +31,7 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
+    pagination: paginationReducer,
     products: productsReducer,
     auth: persistReducer(authPersistConfig, authReducer),
     filter: filterReducer,
