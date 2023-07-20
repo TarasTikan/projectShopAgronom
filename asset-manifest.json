@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/projectShopAgronom/static/css/main.6fb07f6a.css",
-    "main.js": "/projectShopAgronom/static/js/main.a4407be4.js",
+    "main.js": "/projectShopAgronom/static/js/main.fe65e29d.js",
     "static/media/heroBg.jpg": "/projectShopAgronom/static/media/heroBg.d22abdaa25a6894b7da4.jpg",
     "static/media/herbicides.png": "/projectShopAgronom/static/media/herbicides.bbe8fff4298d99f87e70.png",
     "static/media/fungicides.png": "/projectShopAgronom/static/media/fungicides.0c248efe794d670741c6.png",
@@ -13,10 +13,10 @@
     "static/media/retardants.png": "/projectShopAgronom/static/media/retardants.ff43b687ec282f32e9c1.png",
     "index.html": "/projectShopAgronom/index.html",
     "main.6fb07f6a.css.map": "/projectShopAgronom/static/css/main.6fb07f6a.css.map",
-    "main.a4407be4.js.map": "/projectShopAgronom/static/js/main.a4407be4.js.map"
+    "main.fe65e29d.js.map": "/projectShopAgronom/static/js/main.fe65e29d.js.map"
   },
   "entrypoints": [
     "static/css/main.6fb07f6a.css",
-    "static/js/main.a4407be4.js"
+    "static/js/main.fe65e29d.js"
   ]
 }
