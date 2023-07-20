@@ -12,7 +12,6 @@ import {
 } from './PlantsProtect.styled';
 import treelist from '../../assets/images/treelist.png';
 import { plantsProtectCatalog } from 'fakeAPI';
-import { NavLink } from 'react-router-dom';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 export const PlantsProtect = () => {
   const handleSaveRouter = (e) => {
