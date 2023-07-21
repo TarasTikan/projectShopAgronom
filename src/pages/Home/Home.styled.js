@@ -7,6 +7,7 @@ export const HeroSection = styled.section`
   background-repeat: no-repeat;
   background-position: center;
   padding-bottom: 300px;
+  position: relative;
 `;
 
 export const Container = styled.div`
@@ -73,11 +74,12 @@ export const MainImageDecor = styled.img`
   height: 650px;
   border-bottom-right-radius: 50%;
   border-top-left-radius: 50%;
-  position: absolute;
-  top: 46%;
-  right: 0%;
+  position: absolute; 
+  bottom: 0; 
+  right: 0;
 `;
 
 export const MainConent = styled.div`
-display: flex;
+  display: flex;
+  
 `;
