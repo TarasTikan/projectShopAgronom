@@ -4,7 +4,9 @@ export const HeroSection = styled.section`
   background-image: url(${backgroundImage});
   background-size: cover;
   padding-top: 20px;
-  padding-bottom: 336px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 319px;
 `;
 
 export const Container = styled.div`
@@ -64,3 +66,18 @@ export const BtnCompany = styled.button`
     background-color: #ba3c0b;
   }
 `;;
+
+
+export const MainImageDecor = styled.img`
+  width: 700px;
+  height: 650px;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 50%;
+  position: absolute;
+  top: 46%;
+  right: 0%;
+`;
+
+export const MainConent = styled.div`
+display: flex;
+`;

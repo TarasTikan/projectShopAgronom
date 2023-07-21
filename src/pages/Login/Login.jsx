@@ -1,7 +1,7 @@
-import { CompanyDetails } from 'components/CompanyDetails/CompanyDetails';
 import { Container } from './Login.styled';
 import { FormLogin } from 'components/FormLogin/FormLogin';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
+import { Footer } from 'components/Footer/Footer';
 
 export const Login = () => {
   return (
@@ -12,11 +12,7 @@ export const Login = () => {
           <FormLogin />
         </Container>
       </main>
-      <footer>
-        <Container>
-          <CompanyDetails />
-        </Container>
-      </footer>
+      <Footer />
     </>
   );
 };

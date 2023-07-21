@@ -33,7 +33,7 @@ export const HeadInfo = () => {
           <ListBtn>
             <li>
               <BtnEmotions type="button">
-                <LoveIcon />
+                <LoveIcon/>
               </BtnEmotions>
             </li>
             <li>

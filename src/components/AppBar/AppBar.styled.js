@@ -11,11 +11,13 @@ export const Container = styled.div`
   margin: 0 auto;
   align-items: center;
   display: flex;
+  justify-content: center;
 `;
 
 export const Nav = styled.nav`
 display: flex;
 align-items:center;
+
 `;
 
 export const NavList = styled.ul`

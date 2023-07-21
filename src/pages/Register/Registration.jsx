@@ -1,22 +1,18 @@
-import { CompanyDetails } from "components/CompanyDetails/CompanyDetails"
 import { FormRegister } from "components/FormRegister/FormRegister"
 import { Container } from "./Registration.styled";
 import { HeadInfo } from "components/HeadInfo/HeadInfo";
+import { Footer } from "components/Footer/Footer";
 
 export const Registration = () => {
     return (
       <>
         <main>
           <Container>
-          <HeadInfo/>
+            <HeadInfo />
             <FormRegister />
           </Container>
         </main>
-        <footer>
-          <Container>
-            <CompanyDetails />
-          </Container>
-        </footer>
+        <Footer />
       </>
     );
 }

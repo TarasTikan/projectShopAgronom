@@ -4,6 +4,7 @@ export const WrapSideBar = styled.div`
   display: flex;
   align-items: center;
   margin-top: 20px;
+  justify-content: center;
 `;
 export const Container = styled.div`
   width: 1200px;
@@ -118,6 +119,7 @@ export const TextMoney = styled.p`
    align-items: center;
    margin-top: 22px;
    margin-bottom: 46px;
+   justify-content: center;
  `;
 
  export const KatalogItem = styled.li`

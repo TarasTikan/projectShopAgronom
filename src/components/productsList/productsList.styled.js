@@ -66,4 +66,5 @@ export const IteamStock = styled.p`
 export const WrapPagination = styled.div`
 display: flex;
 flex-direction: column;
+margin-right: auto;
 `;

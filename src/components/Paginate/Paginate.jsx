@@ -6,6 +6,8 @@ import { selectFilteredProducts } from "redux/products/selectors";
 import { addCurrentItems, addItemOffset, addPageCount } from "redux/pagination/paginationSlice";
 import { selectCurrentItems, selectItemOffset, selectPageCount } from "redux/pagination/selectors";
 import { PageNumber, PaginationContainer } from "./Pagination.styled";
+import { RightArrow } from "assets/icon/right-arrow";
+import { LeftArrow } from "assets/icon/left-arrow";
 
 export const Paginate = () => {
         const filter = useSelector(selectFilteredProducts);
@@ -32,11 +34,19 @@ export const Paginate = () => {
      <PaginationContainer>
        <ReactPaginate
          breakLabel={<PageNumber>...</PageNumber>}
-         nextLabel={<PageNumber>n</PageNumber>}
+         nextLabel={
+           <PageNumber>
+             <LeftArrow />
+           </PageNumber>
+         }
          onPageChange={handlePageClick}
          pageRangeDisplayed={3}
          pageCount={pageCount}
-         previousLabel={<PageNumber>p</PageNumber>}
+         previousLabel={
+           <PageNumber>
+             <RightArrow />
+           </PageNumber>
+         }
          renderOnZeroPageCount={null}
          activeClassName="active"
          pageClassName="page-item" // Додаємо клас "page-item" для чисел-сторінок

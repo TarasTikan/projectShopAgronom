@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const UrlList = styled.ul`
   display: flex;
@@ -16,7 +15,9 @@ export const WrapTitle = styled.div`
   align-items: center;
   margin-bottom: 37px;
 `;
-
+export const FilterSection = styled.section`
+padding-bottom: 120px;
+`;
 export const TitleCatalog = styled.h1`
   font-family: Montserrat;
   font-size: 45px;
@@ -39,13 +40,13 @@ export const WrapNumberProducts = styled.div`
 `;
 
 export const TitleNumberProducts = styled.h1`
-margin-right: auto;
-font-family: Montserrat;
-font-size: 16px;
-font-weight: 400;
-line-height: 20px;
-letter-spacing: 0em;
-text-align: left;
+  margin-right: auto;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
 `;
 
 export const SortButton = styled.button`
@@ -64,66 +65,6 @@ export const SortButton = styled.button`
   padding-left: 28px;
 `;
 
-export const ListCatalogName = styled.ul`
-  border-radius: 20px;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-width: 255px;
-justify-content: center;
-list-style: none;
-padding-top: 26px;
-padding-bottom: 23px;
-padding-left: 30px;
-padding-right: 28px;
-gap: 20px;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
-`;
-
-
-export const StyledLink = styled(NavLink)`
-  color: rgba(0, 0, 0, 0.5);
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight: 400;
-  text-decoration: none;
-  &.active {
-    color: #84c551;
-    font-weight: 700;
-  }
-`;
-
-
-export const TitleFilter = styled.h1`
-  border-radius: 20px 20px 0px 0px;
-  background: #84be51;
-  width: 255px;
-  color: #fff;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight: 600;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
-`;
-
-export const WrapTitleFilter = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-`;
-export const WrapFilter = styled.div`
-margin-top: 30px;
-  border-radius: 20px 20px 0px 0px;
-  width: 255px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
-`;
 export const WrapFilterALL = styled.div`
   display: flex;
   align-items: start;
@@ -131,14 +72,6 @@ export const WrapFilterALL = styled.div`
   gap: 30px;
 `;
 
-export const FormProducer = styled.form`
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  justify-content: center;
-  gap: 16px;
-  padding-left: 30px;
-`;
 export const CultureForm = styled.form`
   display: flex;
   align-items: start;
@@ -147,32 +80,6 @@ export const CultureForm = styled.form`
   gap: 16px;
   padding-left: 30px;
 `;
-export const TitleCulture = styled.h1`
-  color: #000;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 3px;
-  margin-right: auto;
-  margin-top: 17px;
-`;
-export const TitleProducer = styled.h1`
-  color: #000;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 3px;
-  margin-right: auto;
-  margin-top: 17px;
-`;
-
-export const LabalInput = styled.label`
-display: flex;
-gap:12px;
- color: rgba(0, 0, 0, 0.50);
-font-family: Montserrat;
-font-size: 16px;
-font-weight: 400;`;
 
 export const NumberForm = styled.form`
   display: flex;

@@ -13,10 +13,12 @@ import {
 import treelist from '../../assets/images/treelist.png';
 import { plantsProtectCatalog } from 'fakeAPI';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
+import { InfoPlantsProtect } from 'components/InfoPlantsProtect/InfoPlantsProtect';
+import { Footer } from 'components/Footer/Footer';
 export const PlantsProtect = () => {
-  const handleSaveRouter = (e) => {
-localStorage.setItem('router', e.target.name);
-  }
+  const handleSaveRouter = e => {
+    localStorage.setItem('router', e.target.name);
+  };
   return (
     <main>
       <PlantsSection>
@@ -55,6 +57,8 @@ localStorage.setItem('router', e.target.name);
           </ListCatalog>
         </Container>
       </PlantsSection>
+      <InfoPlantsProtect />
+      <Footer />
     </main>
   );
 };

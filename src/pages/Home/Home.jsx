@@ -5,9 +5,12 @@ import {
   HeroDescription,
   HeroSection,
   HeroTextTitle,
+  MainConent,
+  MainImageDecor,
   TitleHeroSpan,
   WrapHeroText,
 } from './Home.styled';
+import mainImageDecor from '../../assets/images/mainIMageDecor.jpg'
 export const Home = () => {
   return (
     <>
@@ -15,18 +18,21 @@ export const Home = () => {
         <HeroSection>
           <Container>
             <HeadInfo />
-            <WrapHeroText>
-              <HeroTextTitle>
-                <TitleHeroSpan>Аграрний</TitleHeroSpan>
-                <br />
-                інтернет-магазин
-              </HeroTextTitle>
-              <HeroDescription>
-                Основна сфера діяльності – дистрибуція насіння, засобів захисту
-                рослин, мінеральних макро - та мікродобрив
-              </HeroDescription>
-              <BtnCompany>Про компанію</BtnCompany>
-            </WrapHeroText>
+            <MainConent>
+              <WrapHeroText>
+                <HeroTextTitle>
+                  <TitleHeroSpan>Аграрний</TitleHeroSpan>
+                  <br />
+                  інтернет-магазин
+                </HeroTextTitle>
+                <HeroDescription>
+                  Основна сфера діяльності – дистрибуція насіння, засобів
+                  захисту рослин, мінеральних макро - та мікродобрив
+                </HeroDescription>
+                <BtnCompany>Про компанію</BtnCompany>
+              </WrapHeroText>
+              <MainImageDecor src={mainImageDecor} alt="man take apple" />
+            </MainConent>
           </Container>
         </HeroSection>
       </main>
