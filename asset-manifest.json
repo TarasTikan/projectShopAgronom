@@ -1,22 +1,24 @@
 {
   "files": {
     "main.css": "/projectShopAgronom/static/css/main.6fb07f6a.css",
-    "main.js": "/projectShopAgronom/static/js/main.fe65e29d.js",
+    "main.js": "/projectShopAgronom/static/js/main.4c8fe7ea.js",
+    "static/media/happy-farmer-in-the-corn.jpg": "/projectShopAgronom/static/media/happy-farmer-in-the-corn.4003d4aa437ccf911aa3.jpg",
     "static/media/heroBg.jpg": "/projectShopAgronom/static/media/heroBg.d22abdaa25a6894b7da4.jpg",
     "static/media/herbicides.png": "/projectShopAgronom/static/media/herbicides.bbe8fff4298d99f87e70.png",
     "static/media/fungicides.png": "/projectShopAgronom/static/media/fungicides.0c248efe794d670741c6.png",
     "static/media/insecticides.png": "/projectShopAgronom/static/media/insecticides.569c231f43d5ada70acf.png",
     "static/media/stainremovers.png": "/projectShopAgronom/static/media/stainremovers.f36688a0f5f593f7c6f7.png",
     "static/media/adjuvants.png": "/projectShopAgronom/static/media/adjuvants.31837f758d36d7fff4f9.png",
+    "static/media/mainIMageDecor.jpg": "/projectShopAgronom/static/media/mainIMageDecor.89db89baf9f34169f09f.jpg",
     "static/media/desiccants.png": "/projectShopAgronom/static/media/desiccants.5488c635a353681bce79.png",
     "static/media/rodenticides.png": "/projectShopAgronom/static/media/rodenticides.dd90f4d2496d12f0f47e.png",
     "static/media/retardants.png": "/projectShopAgronom/static/media/retardants.ff43b687ec282f32e9c1.png",
     "index.html": "/projectShopAgronom/index.html",
     "main.6fb07f6a.css.map": "/projectShopAgronom/static/css/main.6fb07f6a.css.map",
-    "main.fe65e29d.js.map": "/projectShopAgronom/static/js/main.fe65e29d.js.map"
+    "main.4c8fe7ea.js.map": "/projectShopAgronom/static/js/main.4c8fe7ea.js.map"
   },
   "entrypoints": [
     "static/css/main.6fb07f6a.css",
-    "static/js/main.fe65e29d.js"
+    "static/js/main.4c8fe7ea.js"
   ]
 }
