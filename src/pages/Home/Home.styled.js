@@ -6,7 +6,7 @@ export const HeroSection = styled.section`
   padding-top: 20px;
   background-repeat: no-repeat;
   background-position: center;
-  padding-bottom: 319px;
+  padding-bottom: 300px;
 `;
 
 export const Container = styled.div`
