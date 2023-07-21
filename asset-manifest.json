@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/projectShopAgronom/static/css/main.6fb07f6a.css",
-    "main.js": "/projectShopAgronom/static/js/main.4c8fe7ea.js",
+    "main.js": "/projectShopAgronom/static/js/main.cbd77cab.js",
     "static/media/happy-farmer-in-the-corn.jpg": "/projectShopAgronom/static/media/happy-farmer-in-the-corn.4003d4aa437ccf911aa3.jpg",
     "static/media/heroBg.jpg": "/projectShopAgronom/static/media/heroBg.d22abdaa25a6894b7da4.jpg",
     "static/media/herbicides.png": "/projectShopAgronom/static/media/herbicides.bbe8fff4298d99f87e70.png",
@@ -15,10 +15,10 @@
     "static/media/retardants.png": "/projectShopAgronom/static/media/retardants.ff43b687ec282f32e9c1.png",
     "index.html": "/projectShopAgronom/index.html",
     "main.6fb07f6a.css.map": "/projectShopAgronom/static/css/main.6fb07f6a.css.map",
-    "main.4c8fe7ea.js.map": "/projectShopAgronom/static/js/main.4c8fe7ea.js.map"
+    "main.cbd77cab.js.map": "/projectShopAgronom/static/js/main.cbd77cab.js.map"
   },
   "entrypoints": [
     "static/css/main.6fb07f6a.css",
-    "static/js/main.4c8fe7ea.js"
+    "static/js/main.cbd77cab.js"
   ]
 }
