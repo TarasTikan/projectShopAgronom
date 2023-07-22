@@ -11,6 +11,8 @@ import {
   WrapHeroText,
 } from './Home.styled';
 import mainImageDecor from '../../assets/images/mainIMageDecor.jpg'
+import { AboutCompany } from 'components/AboutCompany/AboutCompany';
+import { SwiperNews } from 'components/SwiperNews/SwiperNews';
 export const Home = () => {
   return (
     <>
@@ -35,6 +37,8 @@ export const Home = () => {
             </MainConent>
           </Container>
         </HeroSection>
+        <AboutCompany/>
+        <SwiperNews/>
       </main>
     </>
   );
