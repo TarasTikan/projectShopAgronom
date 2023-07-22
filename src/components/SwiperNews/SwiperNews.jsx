@@ -7,12 +7,21 @@ import 'swiper/css/scrollbar';
 import { Container, CustomBtnContainer, CustomBtnNext, CustomBtnPrev, IteamStock, ItemInfo, ItemNumber, ItemPrice, ItemTitle, NewsSection, StyledSwiper } from './SwiperNews.styled';
 import { ArroLeftSwiper } from 'assets/icon/arroLeftSwiper';
 import { ArroRightSwiper } from 'assets/icon/arroRightSwiper';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectProducts } from 'redux/products/selectors';
+import { useEffect } from 'react';
+import { fetchProducts } from 'redux/products/operations';
 export const SwiperNews = () => {
+  const dispatch = useDispatch()
+  const productsNew = useSelector(selectProducts)
+  useEffect(() => {
+    dispatch(fetchProducts('herbicides'));
+  }, [dispatch]);
   return (
     <NewsSection>
       <Container>
         <CustomBtnContainer>
-          <CustomBtnPrev >
+          <CustomBtnPrev className="swiper-button-prev">
             <ArroLeftSwiper />
           </CustomBtnPrev>
           <StyledSwiper
@@ -26,106 +35,24 @@ export const SwiperNews = () => {
             pagination={{ clickable: true }}
             onSwiper={swiper => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
-            nested={false} 
+            nested={false}
           >
-            <SwiperSlide>
-              <ItemInfo>
-                <div>
-                  <ItemTitle>helo</ItemTitle>
-                  <IteamStock>В наявності</IteamStock>
-                </div>
-                <div>
-                  <ItemPrice>222 грн</ItemPrice>
-                  <ItemNumber>22 шт</ItemNumber>
-                </div>
-              </ItemInfo>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ItemInfo>
-                <div>
-                  <ItemTitle>helo</ItemTitle>
-                  <IteamStock>В наявності</IteamStock>
-                </div>
-                <div>
-                  <ItemPrice>222 грн</ItemPrice>
-                  <ItemNumber>22 шт</ItemNumber>
-                </div>
-              </ItemInfo>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ItemInfo>
-                <div>
-                  <ItemTitle>helo</ItemTitle>
-                  <IteamStock>В наявності</IteamStock>
-                </div>
-                <div>
-                  <ItemPrice>222 грн</ItemPrice>
-                  <ItemNumber>22 шт</ItemNumber>
-                </div>
-              </ItemInfo>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ItemInfo>
-                <div>
-                  <ItemTitle>helo</ItemTitle>
-                  <IteamStock>В наявності</IteamStock>
-                </div>
-                <div>
-                  <ItemPrice>222 грн</ItemPrice>
-                  <ItemNumber>22 шт</ItemNumber>
-                </div>
-              </ItemInfo>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ItemInfo>
-                <div>
-                  <ItemTitle>helo</ItemTitle>
-                  <IteamStock>В наявності</IteamStock>
-                </div>
-                <div>
-                  <ItemPrice>222 грн</ItemPrice>
-                  <ItemNumber>22 шт</ItemNumber>
-                </div>
-              </ItemInfo>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ItemInfo>
-                <div>
-                  <ItemTitle>helo</ItemTitle>
-                  <IteamStock>В наявності</IteamStock>
-                </div>
-                <div>
-                  <ItemPrice>222 грн</ItemPrice>
-                  <ItemNumber>22 шт</ItemNumber>
-                </div>
-              </ItemInfo>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ItemInfo>
-                <div>
-                  <ItemTitle>helo</ItemTitle>
-                  <IteamStock>В наявності</IteamStock>
-                </div>
-                <div>
-                  <ItemPrice>222 грн</ItemPrice>
-                  <ItemNumber>22 шт</ItemNumber>
-                </div>
-              </ItemInfo>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ItemInfo>
-                <div>
-                  <ItemTitle>helo</ItemTitle>
-                  <IteamStock>В наявності</IteamStock>
-                </div>
-                <div>
-                  <ItemPrice>222 грн</ItemPrice>
-                  <ItemNumber>22 шт</ItemNumber>
-                </div>
-              </ItemInfo>
-            </SwiperSlide>
+            {productsNew.map(({name,price,number}) => (
+              <SwiperSlide>
+                <ItemInfo>
+                  <div>
+                    <ItemTitle>{name}</ItemTitle>
+                    <IteamStock>В наявності</IteamStock>
+                  </div>
+                  <div>
+                    <ItemPrice>{price} грн</ItemPrice>
+                    <ItemNumber>{number} шт</ItemNumber>
+                  </div>
+                </ItemInfo>
+              </SwiperSlide>
+            ))}
           </StyledSwiper>
-          <CustomBtnNext >
+          <CustomBtnNext className="swiper-button-next">
             <ArroRightSwiper />
           </CustomBtnNext>
         </CustomBtnContainer>

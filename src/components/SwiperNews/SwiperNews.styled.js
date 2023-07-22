@@ -100,6 +100,8 @@ export const ItemNumber = styled.p`
 `;
 
 export const CustomBtnPrev = styled.button`
+  width: 80px;
+  height: 70px;
   border-radius: 40px;
   border: 1px solid #84c551;
   padding: 12px;
@@ -108,9 +110,13 @@ export const CustomBtnPrev = styled.button`
   display: flex;
   justify-content: center;
   cursor: pointer;
+  position: relative;
   fill: #84c551;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &::after {
+    content: none; /* This will remove the content of the ::after pseudo-element */
+  }
   &:hover {
     background-color: #84c551;
     stroke: #fff;
@@ -125,9 +131,12 @@ export const CustomBtnPrev = styled.button`
 export const CustomBtnContainer = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
 export const CustomBtnNext = styled.button`
+  width: 80px;
+  height: 70px;
   border-radius: 40px;
   border: 1px solid #84c551;
   padding: 12px;
@@ -137,8 +146,12 @@ export const CustomBtnNext = styled.button`
   justify-content: center;
   cursor: pointer;
   fill: #84c551;
+  position: relative;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &::after {
+    content: none; /* This will remove the content of the ::after pseudo-element */
+  }
   &:hover {
     background-color: #84c551;
     stroke: #fff;
