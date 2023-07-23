@@ -7,7 +7,6 @@ import { AuthNav } from "components/AuthNav/AuthNav";
 
 export const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn)
-  console.log(isLoggedIn);
   return (
     <>
       <Head>

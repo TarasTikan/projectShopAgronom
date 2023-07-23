@@ -57,6 +57,9 @@ export const Container = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 export const ItemInfo = styled.div`
   display: flex;
@@ -100,7 +103,7 @@ export const ItemNumber = styled.p`
 `;
 
 export const CustomBtnPrev = styled.button`
-  width: 80px;
+  width: 70px;
   height: 70px;
   border-radius: 40px;
   border: 1px solid #84c551;
@@ -135,7 +138,7 @@ export const CustomBtnContainer = styled.div`
 `;
 
 export const CustomBtnNext = styled.button`
-  width: 80px;
+  width: 70px;
   height: 70px;
   border-radius: 40px;
   border: 1px solid #84c551;
@@ -162,4 +165,21 @@ export const CustomBtnNext = styled.button`
     height: 20px;
   }
   margin-left: 80px;
+`;
+
+export const WrapTilte = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 39px;
+`;
+
+export const TitleNewsSwiper = styled.h1`
+  color: #000;
+  font-family: Montserrat;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 `;

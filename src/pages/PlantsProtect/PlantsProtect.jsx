@@ -3,7 +3,6 @@ import {
   Container,
   ListCatalog,
   PlantsSection,
-  RoteteImg,
   StyledLink,
   TitleCatalog,
   UrlList,
@@ -11,6 +10,7 @@ import {
   WrapTitle,
 } from './PlantsProtect.styled';
 import treelist from '../../assets/images/treelist.png';
+import treeleastRight from '../../assets/images/treelestright.png';
 import { plantsProtectCatalog } from 'fakeAPI';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import { InfoPlantsProtect } from 'components/InfoPlantsProtect/InfoPlantsProtect';
@@ -38,7 +38,7 @@ export const PlantsProtect = () => {
           <WrapTitle>
             <img src={treelist} alt="treelist" />
             <TitleCatalog>Засоби захисту рослин</TitleCatalog>
-            <RoteteImg src={treelist} alt="treelist" />
+            <img src={treeleastRight} alt="treelist" />
           </WrapTitle>
           <ListCatalog>
             {plantsProtectCatalog.map(({ id, name, routesName, imgPL }) => (

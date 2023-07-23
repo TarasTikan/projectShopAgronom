@@ -1,25 +1,32 @@
-import {  SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Container, CustomBtnContainer, CustomBtnNext, CustomBtnPrev, IteamStock, ItemInfo, ItemNumber, ItemPrice, ItemTitle, NewsSection, StyledSwiper } from './SwiperNews.styled';
 import { ArroLeftSwiper } from 'assets/icon/arroLeftSwiper';
 import { ArroRightSwiper } from 'assets/icon/arroRightSwiper';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProducts } from 'redux/products/selectors';
 import { useEffect } from 'react';
 import { fetchProducts } from 'redux/products/operations';
-export const SwiperNews = () => {
-  const dispatch = useDispatch()
-  const productsNew = useSelector(selectProducts)
+import treeleast from '../../../assets/images/treelist.png';
+import treeleastRight from '../../../assets/images/treelestright.png';
+import { ActionsButton, ActionsSection, Container, CustomBtnContainer, CustomBtnNext, CustomBtnPrev, IteamStock, ItemInfo, ItemNumber, ItemPrice, ItemTitle, StyledSwiper, TitleActionsSwiper, WrapTilte } from './SwiperActions.styled';
+export const SwiperActions = () => {
+  const dispatch = useDispatch();
+  const productsNew = useSelector(selectProducts);
   useEffect(() => {
     dispatch(fetchProducts('herbicides'));
   }, [dispatch]);
   return (
-    <NewsSection>
+    <ActionsSection>
       <Container>
+        <WrapTilte>
+          <img src={treeleast} alt="decorLeast" />
+          <TitleActionsSwiper>Акції</TitleActionsSwiper>
+          <img src={treeleastRight} alt="decorLeast" />
+        </WrapTilte>
         <CustomBtnContainer>
           <CustomBtnPrev className="swiper-button-prev">
             <ArroLeftSwiper />
@@ -37,8 +44,8 @@ export const SwiperNews = () => {
             onSlideChange={() => console.log('slide change')}
             nested={false}
           >
-            {productsNew.map(({name,price,number}) => (
-              <SwiperSlide>
+            {productsNew.map(({ name, price, number, _id }) => (
+              <SwiperSlide key={_id}>
                 <ItemInfo>
                   <div>
                     <ItemTitle>{name}</ItemTitle>
@@ -56,7 +63,8 @@ export const SwiperNews = () => {
             <ArroRightSwiper />
           </CustomBtnNext>
         </CustomBtnContainer>
+        <ActionsButton>Дивитися усі товари</ActionsButton>
       </Container>
-    </NewsSection>
+    </ActionsSection>
   );
 };

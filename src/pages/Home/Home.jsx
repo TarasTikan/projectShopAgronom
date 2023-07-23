@@ -12,7 +12,9 @@ import {
 } from './Home.styled';
 import mainImageDecor from '../../assets/images/mainIMageDecor.jpg'
 import { AboutCompany } from 'components/AboutCompany/AboutCompany';
-import { SwiperNews } from 'components/SwiperNews/SwiperNews';
+import { SwiperNews } from 'components/SwipersAll/SwiperNews/SwiperNews';
+import { SwiperActions } from 'components/SwipersAll/SwiperActions/SwiperActions';
+import { SwiperPartners } from 'components/SwipersAll/SwiperPartners/SwiperPartners';
 export const Home = () => {
   return (
     <>
@@ -39,6 +41,8 @@ export const Home = () => {
         </HeroSection>
         <AboutCompany/>
         <SwiperNews/>
+        <SwiperActions/>
+        <SwiperPartners/>
       </main>
     </>
   );
