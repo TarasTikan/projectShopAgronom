@@ -113,72 +113,81 @@ export const TextMoney = styled.p`
   font-family: Montserrat;
   font-weight: 700;
 `;
- export const ListKatalog = styled.ul`
-   display: flex;
-   list-style: none;
-   gap: 26px;
-   align-items: center;
-   margin-top: 22px;
-   margin-bottom: 46px;
-   justify-content: center;
- `;
+export const ListKatalog = styled.ul`
+  display: flex;
+  list-style: none;
+  gap: 26px;
+  align-items: center;
+  margin-top: 22px;
+  margin-bottom: 46px;
+  justify-content: center;
+`;
 
- export const KatalogItem = styled.li`
-   display: flex;
-   gap: 14px;
-   align-items: center;
-   justify-content: center;
-   border-radius: 20px;
-   border: 1px solid #1e6140;
-   width: 200px;
-   height: 40px;
-   fill: #84be51;
-   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-     stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
-     fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-   &:nth-child(2) {
-     gap: 9px;
-     padding-left: 15px;
-   }
-   &:nth-child(3) {
-     gap: 4px;
-   }
-   &:nth-child(4) {
-     gap: 8px;
-   }
-   &:nth-child(5) {
-     gap: 5px;
-   }
-   &:hover {
-     background-color: #e74e13;
-     stroke: #fff;
-     color: #fff;
-     fill: #fff;
-     border: none;
-   }
-   a:hover {
-     color: #fff;
-   }
- `;
+export const KatalogItem = styled.li`
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: 1px solid #1e6140;
+  width: 200px;
+  height: 40px;
+  fill: #84be51;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  export const ItemText = styled.p`
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 15px;
-    letter-spacing: 0em;
-    text-align: left;
-  `;
+  &:nth-child(2) {
+    gap: 9px;
+    padding-left: 15px;
+  }
+  &:nth-child(3) {
+    gap: 4px;
+  }
+  &:nth-child(4) {
+    gap: 8px;
+  }
+  &:nth-child(5) {
+    gap: 5px;
+  }
 
-  export const StyledLink = styled(NavLink)`
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 15px;
-    letter-spacing: 0em;
-    text-decoration: none;
-    color: #000;
-    text-align: left;
-  `;
+  &:hover {
+    background-color: #e74e13;
+    stroke: #fff;
+    color: #fff;
+    fill: #fff;
+    border: none;
+    cursor: pointer;
+    svg {
+      fill: #fff;
+    }
+    a {
+      color: #fff;
+    }
+  }
+`;
+
+export const ItemText = styled.p`
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+`;
+
+export const StyledLink = styled(NavLink)`
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-decoration: none;
+  color: #000;
+  text-align: left;
+  &:hover {
+    color: #fff;
+  }
+`;

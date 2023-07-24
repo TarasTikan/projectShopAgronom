@@ -10,6 +10,9 @@ export const Container = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const UrlList = styled.ul`
@@ -25,6 +28,7 @@ export const WrapInfoProduct = styled.div`
   align-items: center;
   gap: 80px;
   justify-content: center;
+  margin-bottom: 72px;
 `;
 
 export const Wrapimg = styled.div`
@@ -184,9 +188,10 @@ export const WrapPriceInfo = styled.div`
 `;
 
 export const WrapPrice = styled.div`
-display: flex;
-margin-right: auto;
-flex-direction: column;`
+  display: flex;
+  margin-right: auto;
+  flex-direction: column;
+`;
 
 export const TitlePrice = styled.h1`
   color: #84be51;
@@ -230,11 +235,11 @@ export const BuyButton = styled.button`
 `;
 
 export const ListIcon = styled.ul`
-display: flex;
-gap: 15px;
-list-style: none;
-justify-content: center;
-align-items: center;
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const IconItem = styled.li`
@@ -253,4 +258,16 @@ export const IconItem = styled.li`
     background-color: #8c3213;
     fill: #fff;
   }
+`;
+
+export const WrapContainerInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+`;
+
+export const WrapDescrip = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
 `;
