@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const WrapSideBar = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 20px;
   justify-content: center;
 `;
 export const Container = styled.div`
@@ -63,11 +62,12 @@ export const CallBtn = styled.button`
   display: flex;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #8c3213;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background-color: #8c3213;
-    stroke: #fff;
+    fill: #fff;
   }
 `;
 
@@ -98,11 +98,12 @@ export const BtnEmotions = styled.button`
   display: flex;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #8c3213;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background-color: #8c3213;
-    stroke: #fff;
+    fill: #fff;
   }
 `;
 
@@ -131,8 +132,10 @@ export const TextMoney = styled.p`
    border: 1px solid #1e6140;
    width: 200px;
    height: 40px;
+   fill: #84be51;
    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
      stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
+     fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
      border 250ms cubic-bezier(0.4, 0, 0.2, 1),
      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
    &:nth-child(2) {
@@ -152,6 +155,7 @@ export const TextMoney = styled.p`
      background-color: #e74e13;
      stroke: #fff;
      color: #fff;
+     fill: #fff;
      border: none;
    }
    a:hover {

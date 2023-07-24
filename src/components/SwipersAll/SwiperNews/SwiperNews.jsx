@@ -1,21 +1,35 @@
-import {  SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Container, CustomBtnContainer, CustomBtnNext, CustomBtnPrev, IteamStock, ItemInfo, ItemNumber, ItemPrice, ItemTitle, NewsSection, StyledSwiper, TitleNewsSwiper, WrapTilte } from './SwiperNews.styled';
+import {
+  Container,
+  CustomBtnContainer,
+  CustomBtnNext,
+  CustomBtnPrev,
+  IteamStock,
+  ItemInfo,
+  ItemNumber,
+  ItemPrice,
+  ItemTitle,
+  NewsSection,
+  StyledSwiper,
+  TitleNewsSwiper,
+  WrapTilte,
+} from './SwiperNews.styled';
 import { ArroLeftSwiper } from 'assets/icon/arroLeftSwiper';
 import { ArroRightSwiper } from 'assets/icon/arroRightSwiper';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProducts } from 'redux/products/selectors';
 import { useEffect } from 'react';
 import { fetchProducts } from 'redux/products/operations';
-import treeleast from '../../../assets/images/treelist.png'
+import treeleast from '../../../assets/images/treelist.png';
 import treeleastRight from '../../../assets/images/treelestright.png';
 export const SwiperNews = () => {
-  const dispatch = useDispatch()
-  const productsNew = useSelector(selectProducts)
+  const dispatch = useDispatch();
+  const productsNew = useSelector(selectProducts);
   useEffect(() => {
     dispatch(fetchProducts('herbicides'));
   }, [dispatch]);
@@ -28,7 +42,7 @@ export const SwiperNews = () => {
           <img src={treeleastRight} alt="decorLeast" />
         </WrapTilte>
         <CustomBtnContainer>
-          <CustomBtnPrev className="swiper-button-prev">
+          <CustomBtnPrev className="swiper-button-prev3">
             <ArroLeftSwiper />
           </CustomBtnPrev>
           <StyledSwiper
@@ -36,8 +50,8 @@ export const SwiperNews = () => {
             spaceBetween={30}
             slidesPerView={4}
             navigation={{
-              prevEl: '.swiper-button-prev',
-              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev3',
+              nextEl: '.swiper-button-next4',
             }}
             pagination={{ clickable: true }}
             onSwiper={swiper => console.log(swiper)}
@@ -59,7 +73,7 @@ export const SwiperNews = () => {
               </SwiperSlide>
             ))}
           </StyledSwiper>
-          <CustomBtnNext className="swiper-button-next">
+          <CustomBtnNext className="swiper-button-next4">
             <ArroRightSwiper />
           </CustomBtnNext>
         </CustomBtnContainer>

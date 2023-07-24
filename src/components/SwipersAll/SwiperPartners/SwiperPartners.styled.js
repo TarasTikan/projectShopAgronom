@@ -9,11 +9,6 @@ export const StyledSwiper = styled(Swiper)`
     background: #fff;
     border-radius: 20px;
   }
-
-  .swiper-wrapper {
-    display: flex;
-    justify-content: center;
-  }
   .swiper-pagination {
     align-items: end;
     display: flex;
@@ -34,17 +29,17 @@ export const StyledSwiper = styled(Swiper)`
       background-color: #8d3200;
     }
   }
-  .swiper-button-prev,
-  .swiper-button-next {
+  .swiper-button-prev1,
+  .swiper-button-next2 {
     position: absolute;
-    top: 42%;
+    top: 31%;
     transform: translateY(-50%);
     cursor: pointer;
     border-radius: 50%;
   }
 
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
+  .swiper-button-prev1::after,
+  .swiper-button-next2::after {
     content: '';
   }
 `;
@@ -113,21 +108,23 @@ export const CustomBtnPrev = styled.button`
   border-radius: 40px;
   border: 1px solid #84c551;
   padding: 12px;
-  background-color: transparent;
+  background-color: #84c551;
   align-items: center;
   display: flex;
   justify-content: center;
+  z-index: 1;
   cursor: pointer;
-  fill: #84c551;
+  fill: #fff;
+  stroke: #fff;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &::after {
     content: none;
   }
   &:hover {
-    background-color: #84c551;
-    stroke: #fff;
-    fill: #fff;
+    background-color: #fff;
+    stroke: #84c551;
+    fill: #84c551;
   }
   svg {
     width: 20px;
@@ -142,26 +139,28 @@ export const CustomBtnContainer = styled.div`
 `;
 
 export const CustomBtnNext = styled.button`
+  z-index: 1;
   width: 70px;
   height: 70px;
   border-radius: 40px;
   border: 1px solid #84c551;
   padding: 12px;
-  background-color: transparent;
+  background-color: #84c551;
   align-items: center;
   display: flex;
   justify-content: center;
   cursor: pointer;
-  fill: #84c551;
+  fill: #fff;
+
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &::after {
     content: none;
   }
   &:hover {
-    background-color: #84c551;
-    stroke: #fff;
-    fill: #fff;
+    background-color: #fff;
+    stroke: #84c551;
+    fill: #84c551;
   }
   svg {
     width: 20px;

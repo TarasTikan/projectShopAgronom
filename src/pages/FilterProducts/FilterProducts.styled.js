@@ -17,6 +17,7 @@ export const WrapTitle = styled.div`
 `;
 export const FilterSection = styled.section`
 padding-bottom: 120px;
+padding-top: 20px;
 `;
 export const TitleCatalog = styled.h1`
   font-family: Montserrat;

@@ -12,7 +12,22 @@ import { useEffect } from 'react';
 import { fetchProducts } from 'redux/products/operations';
 import treeleast from '../../../assets/images/treelist.png';
 import treeleastRight from '../../../assets/images/treelestright.png';
-import { ActionsButton, ActionsSection, Container, CustomBtnContainer, CustomBtnNext, CustomBtnPrev, IteamStock, ItemInfo, ItemNumber, ItemPrice, ItemTitle, StyledSwiper, TitleActionsSwiper, WrapTilte } from './SwiperActions.styled';
+import {
+  ActionsButton,
+  ActionsSection,
+  Container,
+  CustomBtnContainer,
+  CustomBtnNext,
+  CustomBtnPrev,
+  IteamStock,
+  ItemInfo,
+  ItemNumber,
+  ItemPrice,
+  ItemTitle,
+  StyledSwiper,
+  TitleActionsSwiper,
+  WrapTilte,
+} from './SwiperActions.styled';
 export const SwiperActions = () => {
   const dispatch = useDispatch();
   const productsNew = useSelector(selectProducts);

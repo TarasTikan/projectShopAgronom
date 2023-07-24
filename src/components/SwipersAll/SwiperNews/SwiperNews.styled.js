@@ -34,17 +34,9 @@ export const StyledSwiper = styled(Swiper).attrs({
       background-color: #8d3200;
     }
   }
-  .swiper-button-prev,
-  .swiper-button-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    border-radius: 50%;
-  }
 
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
+  .swiper-button-prev3::after,
+  .swiper-button-next4::after {
     content: '';
   }
 `;
@@ -118,7 +110,7 @@ export const CustomBtnPrev = styled.button`
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &::after {
-    content: none; /* This will remove the content of the ::after pseudo-element */
+    content: none;
   }
   &:hover {
     background-color: #84c551;
@@ -130,11 +122,11 @@ export const CustomBtnPrev = styled.button`
     height: 20px;
   }
   margin-right: 80px;
+  margin-bottom: 75px;
 `;
 export const CustomBtnContainer = styled.div`
   display: flex;
   align-items: center;
-  position: relative;
 `;
 
 export const CustomBtnNext = styled.button`
@@ -153,7 +145,7 @@ export const CustomBtnNext = styled.button`
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &::after {
-    content: none; /* This will remove the content of the ::after pseudo-element */
+    content: none;
   }
   &:hover {
     background-color: #84c551;
@@ -165,6 +157,7 @@ export const CustomBtnNext = styled.button`
     height: 20px;
   }
   margin-left: 80px;
+  margin-bottom: 75px;
 `;
 
 export const WrapTilte = styled.div`

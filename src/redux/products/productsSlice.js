@@ -1,4 +1,4 @@
-import { fetchProducts } from "./operations";
+import { fetchProductOne, fetchProducts } from "./operations";
 
 const { createSlice } = require("@reduxjs/toolkit");
 
@@ -7,6 +7,7 @@ const initialState = {
     items: [],
     isLoading: false,
     error: null,
+    item: []
   },
 };
 
@@ -18,7 +19,11 @@ const productsSlice = createSlice({
       state.products.items = payload;
       state.products.isLoading = false;
       state.products.error = null;
-    }),
+    }).addCase(fetchProductOne.fulfilled, (state, {payload})=>{
+      state.products.item = payload;
+       state.products.isLoading = false;
+       state.products.error = null;
+    })
 });
 
 export const productsReducer = productsSlice.reducer;

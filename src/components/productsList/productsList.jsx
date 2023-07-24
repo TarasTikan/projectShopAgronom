@@ -7,7 +7,7 @@ import {
   ItemInfo,
   ItemNumber,
   ItemPrice,
-  ItemTitle,
+  ItemTitleLink,
   ProductItem,
   ProductList,
   WrapPagination,
@@ -30,7 +30,7 @@ export const ProductsList = () => {
             {/* <img width={255} /> */}
             <ItemInfo>
               <div>
-                <ItemTitle>{name}</ItemTitle>
+                <ItemTitleLink to={`/productDetails/${routesName}/${_id}`}>{name}</ItemTitleLink>
                 <IteamStock>В наявності</IteamStock>
               </div>
               <div>

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const ProductList = styled.ul`
   display: flex;
@@ -35,7 +36,7 @@ export const ItemInfo = styled.div`
   padding-bottom: 25px;
 `;
 
-export const ItemTitle = styled.h1`
+export const ItemTitleLink = styled(NavLink)`
   color: #000;
   font-family: Montserrat;
   font-size: 16px;

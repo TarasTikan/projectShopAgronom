@@ -13,3 +13,15 @@ export const fetchProducts = createAsyncThunk(
     }
   }
 );
+
+export const fetchProductOne = createAsyncThunk('product/fetchOne', async (plantsInfo, thunkApi)=>{
+  try {
+    const {plants, id} = plantsInfo
+    const response = await axios.get(
+      `/api/plantsProtect/${plants}/${id}`
+    );
+   return response.data
+  } catch (e) {
+    return thunkApi.rejectWithValue(e.message);
+  }
+})

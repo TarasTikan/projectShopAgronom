@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const PlantsSection = styled.section`
 padding-bottom: 122px;
+padding-top: 20px;
 `;
 
 export const Container = styled.div`
@@ -16,7 +17,6 @@ export const UrlList = styled.ul`
   list-style: none;
   justify-content: center;
   align-items: center;
-  margin-top: 46px;
   margin-bottom: 8px;
 `;
 

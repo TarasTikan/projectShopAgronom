@@ -23,19 +23,20 @@ export const SwiperPartners = () => {
           <img src={treeleastRight} alt="decorLeast" />
         </WrapTilte>
         <StyledSwiper
+          id="swiper1"
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={30}
           slidesPerView={4}
           navigation={{
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev1',
+            nextEl: '.swiper-button-next2',
           }}
           pagination={{ clickable: true }}
           onSwiper={swiper => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
           nested={false}
         >
-          <CustomBtnPrev className="swiper-button-prev">
+          <CustomBtnPrev className="swiper-button-prev1">
             <ArroLeftSwiper />
           </CustomBtnPrev>
           <SwiperSlide></SwiperSlide>
@@ -49,7 +50,7 @@ export const SwiperPartners = () => {
           <SwiperSlide></SwiperSlide>
           <SwiperSlide></SwiperSlide>
           <SwiperSlide></SwiperSlide>
-          <CustomBtnNext className="swiper-button-next">
+          <CustomBtnNext className="swiper-button-next2">
             <ArroRightSwiper />
           </CustomBtnNext>
         </StyledSwiper>

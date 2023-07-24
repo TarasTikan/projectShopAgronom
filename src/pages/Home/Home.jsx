@@ -15,6 +15,8 @@ import { AboutCompany } from 'components/AboutCompany/AboutCompany';
 import { SwiperNews } from 'components/SwipersAll/SwiperNews/SwiperNews';
 import { SwiperActions } from 'components/SwipersAll/SwiperActions/SwiperActions';
 import { SwiperPartners } from 'components/SwipersAll/SwiperPartners/SwiperPartners';
+import { AboutSeeds } from 'components/AboutSeeds/AboutSeeds';
+import { Footer } from 'components/Footer/Footer';
 export const Home = () => {
   return (
     <>
@@ -43,6 +45,8 @@ export const Home = () => {
         <SwiperNews/>
         <SwiperActions/>
         <SwiperPartners/>
+        <AboutSeeds/>
+        <Footer/>
       </main>
     </>
   );

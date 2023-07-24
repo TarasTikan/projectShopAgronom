@@ -155,7 +155,7 @@ export const CustomBtnNext = styled.button`
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &::after {
-    content: none; 
+    content: none;
   }
   &:hover {
     background-color: #84c551;
@@ -178,12 +178,12 @@ export const WrapTilte = styled.div`
 `;
 
 export const TitleActionsSwiper = styled.h1`
-color: #FFF;
-font-family: Montserrat;
-font-size: 45px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 `;
 
 export const ActionsButton = styled.button`
