@@ -68,7 +68,7 @@ export function Modal({ imgModal, onClose }) {
     }
 
     if (name === 'minus') {
-      number === 0 ? setNumber(0) : setNumber(prevState => prevState - 1);
+      number === 1 ? setNumber(1) : setNumber(prevState => prevState - 1);
     }
   };
   return createPortal(
@@ -87,7 +87,10 @@ export function Modal({ imgModal, onClose }) {
             <WrapProductImg>
               <ContImg />
               <div>
-                <PriceProductModal>{productOne.price} грн</PriceProductModal>
+                <PriceProductModal>
+                  {(Number(productOne.price) * number).toLocaleString('en-US')}
+                  грн
+                </PriceProductModal>
                 <TextPrice>Ціна за 5 л</TextPrice>
                 <TitleProducerModal>Виробник</TitleProducerModal>
                 <ProducerText>{productOne.producer}</ProducerText>
