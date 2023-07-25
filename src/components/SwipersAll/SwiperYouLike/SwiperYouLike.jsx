@@ -13,8 +13,8 @@ import { fetchProducts } from 'redux/products/operations';
 import treeleast from '../../../assets/images/treelist.png';
 import treeleastRight from '../../../assets/images/treelestright.png';
 import {
-  ActionsButton,
-  ActionsSection,
+  LikeButton,
+  LikeSection,
   Container,
   CustomBtnContainer,
   CustomBtnNext,
@@ -25,21 +25,21 @@ import {
   ItemPrice,
   ItemTitle,
   StyledSwiper,
-  TitleActionsSwiper,
+  TitleLikeSwiper,
   WrapTilte,
-} from './SwiperActions.styled';
-export const SwiperActions = () => {
+} from './SwiperYouLike.styled';
+export const SwiperYouLike = () => {
   const dispatch = useDispatch();
   const productsNew = useSelector(selectProducts);
   useEffect(() => {
     dispatch(fetchProducts('herbicides'));
   }, [dispatch]);
   return (
-    <ActionsSection>
+    <LikeSection>
       <Container>
         <WrapTilte>
           <img src={treeleast} alt="decorLeast" />
-          <TitleActionsSwiper>Акції</TitleActionsSwiper>
+          <TitleLikeSwiper>Вам також сподобається</TitleLikeSwiper>
           <img src={treeleastRight} alt="decorLeast" />
         </WrapTilte>
         <CustomBtnContainer>
@@ -75,8 +75,8 @@ export const SwiperActions = () => {
             <ArroRightSwiper />
           </CustomBtnNext>
         </CustomBtnContainer>
-        <ActionsButton>Дивитися усі товари</ActionsButton>
+        <LikeButton>Дивитися усі товари</LikeButton>
       </Container>
-    </ActionsSection>
+    </LikeSection>
   );
 };

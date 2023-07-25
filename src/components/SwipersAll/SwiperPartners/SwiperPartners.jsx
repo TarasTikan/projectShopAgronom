@@ -32,9 +32,6 @@ export const SwiperPartners = () => {
             nextEl: '.swiper-button-next2',
           }}
           pagination={{ clickable: true }}
-          onSwiper={swiper => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
-          nested={false}
         >
           <CustomBtnPrev className="swiper-button-prev1">
             <ArroLeftSwiper />

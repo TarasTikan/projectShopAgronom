@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { Swiper } from 'swiper/react';
-export const StyledSwiper = styled(Swiper).attrs({
-  containerModifierClass: 'custom-swiper-container',
-})`
+export const StyledSwiper = styled(Swiper)`
   width: 1110px;
   height: 444px;
 

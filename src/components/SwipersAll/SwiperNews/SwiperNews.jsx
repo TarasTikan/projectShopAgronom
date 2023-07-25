@@ -54,9 +54,6 @@ export const SwiperNews = () => {
               nextEl: '.swiper-button-next4',
             }}
             pagination={{ clickable: true }}
-            onSwiper={swiper => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
-            nested={false}
           >
             {productsNew.map(({ name, price, number, _id }) => (
               <SwiperSlide key={_id}>

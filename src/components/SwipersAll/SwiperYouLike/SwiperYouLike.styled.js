@@ -19,7 +19,7 @@ export const StyledSwiper = styled(Swiper)`
   .swiper-pagination-bullet {
     width: 6px;
     height: 16px;
-    background-color: rgba(141, 50, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     opacity: 1;
     transition: opacity 0.2s ease;
     border-radius: 20px;
@@ -29,17 +29,27 @@ export const StyledSwiper = styled(Swiper)`
       height: 30px;
       opacity: 0.8;
       border-radius: 20px;
-      background-color: #8d3200;
+      background-color: #ffffff;
     }
   }
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 50%;
+  }
 
-  .swiper-button-prev3::after,
-  .swiper-button-next4::after {
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
     content: '';
   }
 `;
-export const NewsSection = styled.section`
-  padding-bottom: 120px;
+export const LikeSection = styled.section`
+  padding-top: 112px;
+  background: #1e6140;
+  padding-bottom: 117px;
 `;
 
 export const Container = styled.div`
@@ -120,11 +130,11 @@ export const CustomBtnPrev = styled.button`
     height: 20px;
   }
   margin-right: 80px;
-  margin-bottom: 75px;
 `;
 export const CustomBtnContainer = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
 export const CustomBtnNext = styled.button`
@@ -155,22 +165,41 @@ export const CustomBtnNext = styled.button`
     height: 20px;
   }
   margin-left: 80px;
-  margin-bottom: 75px;
 `;
 
 export const WrapTilte = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 17px;
   margin-bottom: 39px;
 `;
 
-export const TitleNewsSwiper = styled.h1`
-  color: #000;
+export const TitleLikeSwiper = styled.h1`
+  color: #fff;
   font-family: Montserrat;
   font-size: 45px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+`;
+
+export const LikeButton = styled.button`
+  border-radius: 90px;
+  background-color: #e74e13;
+  width: 220px;
+  height: 47px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-family: Montserrat;
+  border: none;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    background-color: #ba3c0b;
+  }
 `;

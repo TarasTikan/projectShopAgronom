@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { fetchCurrentUser } from "redux/auth/operations";
 import { FilterProducts } from "pages/FilterProducts/FilterProducts";
 import { ProductsList } from "./productsList/productsList";
-import { ProductInfo } from "./ProductInfo/ProductInfo";
+import { ProductInfo } from "../pages/ProductInfo/ProductInfo";
 
 export const App = () => {
   const dispatch = useDispatch()

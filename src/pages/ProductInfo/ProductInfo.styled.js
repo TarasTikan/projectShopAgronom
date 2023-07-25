@@ -269,5 +269,86 @@ export const WrapContainerInfo = styled.div`
 export const WrapDescrip = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: auto;
 `;
+
+export const ProductBtnInfo = styled.button`
+  width: 220px;
+  height: 44px;
+  background-color: ${props =>
+    props.$active === 'true' ? '#1E6140' : 'transparent'};
+  box-shadow: ${props =>
+    props.$active === 'true' ? '0px 0px 8px 0px rgba(0, 0, 0, 0.15)' : 'none'};
+  color: ${props => (props.$active === 'true' ? '#fff' : '#000')};
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  border-radius: 20px 20px 0px 0px;
+`;
+
+
+export const WrapBtnInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 1005px;
+  padding-top: 36px;
+  padding-left: 40px;
+  padding-right: 65px;
+  padding-bottom: 28px;
+  border-radius: 0px 20px 20px 20px;
+  background: #fff;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+`;
+
+export const TitlteDescipProduct = styled.h2`
+  color: #000;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 11px;
+`;
+
+export const TextDescripProduct = styled.p`
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 19px;
+`;
+
+export const InfoList = styled.ul`
+display:flex;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 14px;
+list-style:none;`
+
+export const SpanTextProduct = styled.span`
+  color: #1e6140;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
+
+export const TextProductDescript = styled.p`
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
+
+export const WrapCharachtersInfo = styled.div`
+display:flex;
+flex-direction: column;
+margin-bottom: 13px`
