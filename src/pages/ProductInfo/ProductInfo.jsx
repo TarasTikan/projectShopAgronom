@@ -1,5 +1,4 @@
 import { LoveIcon } from 'assets/icon/loveIcon';
-import treeleast from '../../assets/images/treelist.png';
 import { VesaIcon } from 'assets/icon/vesaIcon';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import { useParams } from 'react-router-dom';
@@ -13,7 +12,6 @@ import {
   ContainerInfoProduct,
   DeliverButton,
   IconItem,
-  ImgDecoration,
   InfoList,
   ListIcon,
   PriceText,
