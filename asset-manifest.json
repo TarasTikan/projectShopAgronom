@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/projectShopAgronom/static/css/main.c9eb4026.css",
-    "main.js": "/projectShopAgronom/static/js/main.c036a29b.js",
+    "main.js": "/projectShopAgronom/static/js/main.49eaff55.js",
     "static/media/happy-farmer-in-the-corn.jpg": "/projectShopAgronom/static/media/happy-farmer-in-the-corn.4003d4aa437ccf911aa3.jpg",
     "static/media/aboutcompanyimg.png": "/projectShopAgronom/static/media/aboutcompanyimg.12942ff36ee9f5232b9d.png",
     "static/media/heroBg.jpg": "/projectShopAgronom/static/media/heroBg.d22abdaa25a6894b7da4.jpg",
@@ -14,12 +14,13 @@
     "static/media/desiccants.png": "/projectShopAgronom/static/media/desiccants.5488c635a353681bce79.png",
     "static/media/rodenticides.png": "/projectShopAgronom/static/media/rodenticides.dd90f4d2496d12f0f47e.png",
     "static/media/retardants.png": "/projectShopAgronom/static/media/retardants.ff43b687ec282f32e9c1.png",
+    "static/media/aboutsemens.jpg": "/projectShopAgronom/static/media/aboutsemens.e14877fc23c21b80ca9e.jpg",
     "index.html": "/projectShopAgronom/index.html",
     "main.c9eb4026.css.map": "/projectShopAgronom/static/css/main.c9eb4026.css.map",
-    "main.c036a29b.js.map": "/projectShopAgronom/static/js/main.c036a29b.js.map"
+    "main.49eaff55.js.map": "/projectShopAgronom/static/js/main.49eaff55.js.map"
   },
   "entrypoints": [
     "static/css/main.c9eb4026.css",
-    "static/js/main.c036a29b.js"
+    "static/js/main.49eaff55.js"
   ]
 }
