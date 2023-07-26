@@ -8,7 +8,6 @@ export const FormLogin = () => {
     const dispatch = useDispatch();
     const handleSubmit = e => {
       e.preventDefault();
-      console.log(email)
       const form = e.currentTarget;
       if (
         email.trim() === '' ||

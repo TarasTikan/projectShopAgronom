@@ -10,6 +10,7 @@ import { fetchCurrentUser } from "redux/auth/operations";
 import { FilterProducts } from "pages/FilterProducts/FilterProducts";
 import { ProductsList } from "./productsList/productsList";
 import { ProductInfo } from "../pages/ProductInfo/ProductInfo";
+import { PlacingOrder } from "pages/PlacingOrder/PlacingOrder";
 
 export const App = () => {
   const dispatch = useDispatch()
@@ -28,6 +29,7 @@ export const App = () => {
           path="productDetails/:routesName/:productId"
           element={<ProductInfo/>}
         />
+        <Route path="basketProducts" element={<PlacingOrder/>}/>
       </Route>
     </Routes>
   );

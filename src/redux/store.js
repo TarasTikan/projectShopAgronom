@@ -14,6 +14,7 @@ import storage from 'redux-persist/lib/storage';
 import { productsReducer } from './products/productsSlice';
 import { filterReducer } from './products/filterSlice';
 import { paginationReducer } from './pagination/paginationSlice';
+import { basketReducer } from './basket/basketSlice';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -35,6 +36,7 @@ export const store = configureStore({
     products: productsReducer,
     auth: persistReducer(authPersistConfig, authReducer),
     filter: filterReducer,
+    basket: basketReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

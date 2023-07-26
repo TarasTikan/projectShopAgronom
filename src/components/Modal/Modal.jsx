@@ -30,13 +30,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectProductOne } from 'redux/products/selectors';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchProductOne } from 'redux/products/operations';
+import { addProductBacket } from 'redux/basket/operations';
 const ModalRoot = document.querySelector('#ModalRoot');
-export function Modal({ imgModal, onClose }) {
+export function Modal({ onClose }) {
   const { routesName, productId } = useParams();
   const [number, setNumber] = useState(1);
+  const [errorNumber, setErrorNumber] = useState(false);
   const navigate = useNavigate();
   const productOne = useSelector(selectProductOne);
+  const totalPrice = Number(productOne.price) * number;
   const dispatch = useDispatch();
+  
   useEffect(() => {
     const routerInfo = {
       plants: routesName,
@@ -56,7 +60,10 @@ export function Modal({ imgModal, onClose }) {
       onClose();
     }
   };
-
+  if (!productOne) {
+    // You can return a loading state here, like a spinner or "Loading..." text.
+    return <div>Loading...</div>;
+  }
   const onOverlayClose = e => {
     if (e.currentTarget === e.target) {
       onClose();
@@ -65,13 +72,30 @@ export function Modal({ imgModal, onClose }) {
   const hundlePlusAndMinus = e => {
     const name = e.target.name;
     if (name === 'plus') {
-      setNumber(prevState => prevState + 1);
+      Number(productOne.number) === number
+        ? setErrorNumber(true)
+        : setNumber(prevState => prevState + 1);
     }
 
     if (name === 'minus') {
       number === 1 ? setNumber(1) : setNumber(prevState => prevState - 1);
     }
   };
+
+  const handleOrderProduct = () => {
+    try {
+      const { _id, ...productInBasket } = {
+        ...productOne,
+        price: String(totalPrice),
+        number: String(number),
+      };
+        dispatch(addProductBacket(productInBasket));
+        console.log(productInBasket);
+        navigate('/basketProducts')
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return createPortal(
     <Overlay onClick={onOverlayClose}>
       <ContainerModal>
@@ -89,7 +113,7 @@ export function Modal({ imgModal, onClose }) {
               <ContImg />
               <div>
                 <PriceProductModal>
-                  {(Number(productOne.price) * number).toLocaleString('en-US')}
+                  {totalPrice.toLocaleString('en-US')}
                   грн
                 </PriceProductModal>
                 <TextPrice>Ціна за 5 л</TextPrice>
@@ -127,7 +151,9 @@ export function Modal({ imgModal, onClose }) {
           >
             Продовжити покупки
           </BtnDelivery>
-          <BtnOrder type="button">Оформити заказ</BtnOrder>
+          <BtnOrder type="button" onClick={handleOrderProduct}>
+            Оформити заказ
+          </BtnOrder>
         </WrapBtnOrder>
       </ContainerModal>
     </Overlay>,

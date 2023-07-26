@@ -3,6 +3,7 @@ export const ImgLogo = styled.img`
   margin-right: 30px;
 `;
 export const FooterSection = styled.footer`
+background-color: #fff;
 padding-top: 120px;
 padding-bottom:17px;
 display: flex;
