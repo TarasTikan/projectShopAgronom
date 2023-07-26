@@ -40,7 +40,12 @@ export const ItemTitleLink = styled(NavLink)`
   color: #000;
   font-family: Montserrat;
   font-size: 16px;
+  text-decoration: none;
   font-weight: 600;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: #84be51;
+  }
 `;
 
 export const ItemPrice = styled.h1`

@@ -60,10 +60,7 @@ export function Modal({ onClose }) {
       onClose();
     }
   };
-  if (!productOne) {
-    // You can return a loading state here, like a spinner or "Loading..." text.
-    return <div>Loading...</div>;
-  }
+
   const onOverlayClose = e => {
     if (e.currentTarget === e.target) {
       onClose();
@@ -84,7 +81,7 @@ export function Modal({ onClose }) {
 
   const handleOrderProduct = () => {
     try {
-      const { _id, ...productInBasket } = {
+      const { _id,updatedAt,createdAt, ...productInBasket } = {
         ...productOne,
         price: String(totalPrice),
         number: String(number),

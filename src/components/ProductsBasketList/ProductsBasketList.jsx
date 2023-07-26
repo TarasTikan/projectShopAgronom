@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 export const ProductsBasketList = () => {
   const [totalPrice, setTotalPrice] = useState(0)
     const productsBasket = useSelector(selectItemsBasket);
-    useEffect(()=>{
+    useEffect(() => {
       setTotalPrice(
         productsBasket.reduce((total, { price }) => {
           return total + Number(price);
         }, 0)
       );
-    })
+    }, [productsBasket]);
     return (
       <>
         <ListBasketProducts>

@@ -61,7 +61,6 @@ export const NumberProduct = styled.p`
 `;
 export const ContainerInfoPrice = styled.div`
   width: 422px;
-  height: 20px;
   border-radius: 20px;
   background: #21603f;
   padding-bottom: 26px;
