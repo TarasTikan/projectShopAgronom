@@ -77,6 +77,7 @@ export function Modal({ onClose }) {
     if (name === 'minus') {
       number === 1 ? setNumber(1) : setNumber(prevState => prevState - 1);
     }
+    console.log(errorNumber);
   };
 
   const handleOrderProduct = () => {
