@@ -40,13 +40,12 @@ export const selectFilteredProducts = createSelector(
     } else {
       const producerFilter = products.filter(({ producer }) =>
         producer.includes(filterProducer[0])
-      );
-      const cultureFilter = producerFilter.filter(({ culture }) =>
+      ).filter(({ culture }) =>
         normalizator.every(crop =>
           culture ? culture.toUpperCase().includes(crop) : false
         )
       );
-      return cultureFilter;
+      return producerFilter;
     }
   }
 );

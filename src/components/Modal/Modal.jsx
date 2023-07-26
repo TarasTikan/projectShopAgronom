@@ -28,12 +28,13 @@ import treeleastLeft from '../../assets/images/treelist.png';
 import treeleastRight from '../../assets/images/treelestright.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProductOne } from 'redux/products/selectors';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { fetchProductOne } from 'redux/products/operations';
 const ModalRoot = document.querySelector('#ModalRoot');
 export function Modal({ imgModal, onClose }) {
   const { routesName, productId } = useParams();
   const [number, setNumber] = useState(1);
+  const navigate = useNavigate();
   const productOne = useSelector(selectProductOne);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -120,7 +121,12 @@ export function Modal({ imgModal, onClose }) {
           </WrapProductBuy>
         </WrapInfoProduct>
         <WrapBtnOrder>
-          <BtnDelivery type="button">Продовжити покупки</BtnDelivery>
+          <BtnDelivery
+            type="button"
+            onClick={() => navigate(`/plantsProtect/filter/${routesName}`)}
+          >
+            Продовжити покупки
+          </BtnDelivery>
           <BtnOrder type="button">Оформити заказ</BtnOrder>
         </WrapBtnOrder>
       </ContainerModal>
