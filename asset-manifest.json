@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/projectShopAgronom/static/css/main.c9eb4026.css",
-    "main.js": "/projectShopAgronom/static/js/main.5b86996a.js",
+    "main.js": "/projectShopAgronom/static/js/main.1fb54a7f.js",
     "static/media/happy-farmer-in-the-corn.jpg": "/projectShopAgronom/static/media/happy-farmer-in-the-corn.4003d4aa437ccf911aa3.jpg",
     "static/media/aboutcompanyimg.png": "/projectShopAgronom/static/media/aboutcompanyimg.12942ff36ee9f5232b9d.png",
     "static/media/heroBg.jpg": "/projectShopAgronom/static/media/heroBg.d22abdaa25a6894b7da4.jpg",
@@ -17,10 +17,10 @@
     "static/media/aboutsemens.jpg": "/projectShopAgronom/static/media/aboutsemens.e14877fc23c21b80ca9e.jpg",
     "index.html": "/projectShopAgronom/index.html",
     "main.c9eb4026.css.map": "/projectShopAgronom/static/css/main.c9eb4026.css.map",
-    "main.5b86996a.js.map": "/projectShopAgronom/static/js/main.5b86996a.js.map"
+    "main.1fb54a7f.js.map": "/projectShopAgronom/static/js/main.1fb54a7f.js.map"
   },
   "entrypoints": [
     "static/css/main.c9eb4026.css",
-    "static/js/main.5b86996a.js"
+    "static/js/main.1fb54a7f.js"
   ]
 }
