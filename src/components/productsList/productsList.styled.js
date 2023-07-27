@@ -11,7 +11,6 @@ export const ProductList = styled.ul`
   margin-left: auto;
 `;
 
-
 export const ProductItem = styled.li`
   width: 255px;
   height: 355px;
@@ -21,7 +20,6 @@ export const ProductItem = styled.li`
   width: calc((100% - 30px) / 4);
   flex-grow: 3;
 `;
-
 
 export const ItemInfo = styled.div`
   display: flex;
@@ -70,7 +68,34 @@ export const IteamStock = styled.p`
 `;
 
 export const WrapPagination = styled.div`
-display: flex;
-flex-direction: column;
-margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+`;
+
+export const BtnBasket = styled.button`
+  display: flex;
+  width: 47px;
+  height: 47px;
+  border-radius: 90px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: transparent;
+  fill: #8c3213;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    fill: #fff;
+    background-color: #8c3213;
+  }
+`;
+
+export const WrapInfoPrice = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 69px;
+  align-items: center;
 `;

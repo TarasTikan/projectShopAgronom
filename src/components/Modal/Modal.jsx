@@ -29,25 +29,17 @@ import treeleastRight from '../../assets/images/treelestright.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProductOne } from 'redux/products/selectors';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchProductOne } from 'redux/products/operations';
 import { addProductBacket } from 'redux/basket/operations';
+import useTotalPrice from 'hooks/useTotalPrice';
 const ModalRoot = document.querySelector('#ModalRoot');
-export function Modal({ onClose }) {
-  const { routesName, productId } = useParams();
+export function Modal({ product, onClose }) {
+  const { routesName} = useParams();
   const [number, setNumber] = useState(1);
   const [errorNumber, setErrorNumber] = useState(false);
   const navigate = useNavigate();
   const productOne = useSelector(selectProductOne);
-  const totalPrice = Number(productOne.price) * number;
   const dispatch = useDispatch();
-  
-  useEffect(() => {
-    const routerInfo = {
-      plants: routesName,
-      id: productId,
-    };
-    dispatch(fetchProductOne(routerInfo));
-  }, [routesName, productId, dispatch]);
+const totalPrice = useTotalPrice(productOne, number);
   useEffect(() => {
     window.addEventListener('keydown', keyDown);
 
@@ -81,19 +73,14 @@ export function Modal({ onClose }) {
   };
 
   const handleOrderProduct = () => {
-    try {
-      const { _id,updatedAt,createdAt, ...productInBasket } = {
+      const { _id, updatedAt, createdAt, ...productInBasket } = {
         ...productOne,
         price: String(totalPrice),
         number: String(number),
       };
-        dispatch(addProductBacket(productInBasket));
-        console.log(productInBasket);
-        navigate('/basketProducts')
-    } catch (error) {
-      console.log(error);
-    }
-  }
+      dispatch(addProductBacket(productInBasket));
+      navigate('/basketProducts');
+  };
   return createPortal(
     <Overlay onClick={onOverlayClose}>
       <ContainerModal>
@@ -111,8 +98,7 @@ export function Modal({ onClose }) {
               <ContImg />
               <div>
                 <PriceProductModal>
-                  {totalPrice.toLocaleString('en-US')}
-                  грн
+                  {totalPrice.toLocaleString('en-US')} грн
                 </PriceProductModal>
                 <TextPrice>Ціна за 5 л</TextPrice>
                 <TitleProducerModal>Виробник</TitleProducerModal>

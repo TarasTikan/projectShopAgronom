@@ -6,10 +6,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { ArroLeftSwiper } from 'assets/icon/arroLeftSwiper';
 import { ArroRightSwiper } from 'assets/icon/arroRightSwiper';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectProducts } from 'redux/products/selectors';
-import { useEffect } from 'react';
-import { fetchProducts } from 'redux/products/operations';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { selectProducts } from 'redux/products/selectors';
+// import { useEffect } from 'react';
+// import { fetchProducts } from 'redux/products/operations';
 import treeleast from '../../../assets/images/treelist.png';
 import treeleastRight from '../../../assets/images/treelestright.png';
 import {
@@ -29,11 +29,11 @@ import {
   WrapTilte,
 } from './SwiperYouLike.styled';
 export const SwiperYouLike = () => {
-  const dispatch = useDispatch();
-  const productsNew = useSelector(selectProducts);
-  useEffect(() => {
-    dispatch(fetchProducts('herbicides'));
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // const productsNew = useSelector(selectProducts);
+  // useEffect(() => {
+  //   dispatch(fetchProducts('herbicides'));
+  // }, [dispatch]);
   return (
     <LikeSection>
       <Container>
@@ -56,20 +56,177 @@ export const SwiperYouLike = () => {
             }}
             pagination={{ clickable: true }}
           >
-            {productsNew.map(({ name, price, number, _id }) => (
-              <SwiperSlide key={_id}>
-                <ItemInfo>
-                  <div>
-                    <ItemTitle>{name}</ItemTitle>
-                    <IteamStock>В наявності</IteamStock>
-                  </div>
-                  <div>
-                    <ItemPrice>{price} грн</ItemPrice>
-                    <ItemNumber>{number} шт</ItemNumber>
-                  </div>
-                </ItemInfo>
-              </SwiperSlide>
-            ))}
+            {/* {productsNew.map(({ name, price, number, _id }) => (
+    
+            ))} */}
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ItemInfo>
+                <div>
+                  <ItemTitle>asfasfaf</ItemTitle>
+                  <IteamStock>В наявності</IteamStock>
+                </div>
+                <div>
+                  <ItemPrice>2222 грн</ItemPrice>
+                  <ItemNumber>2222 шт</ItemNumber>
+                </div>
+              </ItemInfo>
+            </SwiperSlide>
           </StyledSwiper>
           <CustomBtnNext className="swiper-button-next">
             <ArroRightSwiper />

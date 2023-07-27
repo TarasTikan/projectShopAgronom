@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFilteredProducts } from "redux/products/selectors";
 import { addCurrentItems, addItemOffset, addPageCount } from "redux/pagination/paginationSlice";
-import { selectCurrentItems, selectItemOffset, selectPageCount } from "redux/pagination/selectors";
+import { selectItemOffset, selectPageCount } from "redux/pagination/selectors";
 import { PageNumber, PaginationContainer } from "./Pagination.styled";
 import { RightArrow } from "assets/icon/right-arrow";
 import { LeftArrow } from "assets/icon/left-arrow";
@@ -12,7 +12,6 @@ import { LeftArrow } from "assets/icon/left-arrow";
 export const Paginate = () => {
         const filter = useSelector(selectFilteredProducts);
  const itemOffset = useSelector(selectItemOffset);
- const currentItems = useSelector(selectCurrentItems);
  const pageCount = useSelector(selectPageCount);
  const dispatch = useDispatch()
  const itemsPerPage = 15
@@ -25,7 +24,6 @@ export const Paginate = () => {
 
  const handlePageClick = event => {
    const newOffset = (event.selected * itemsPerPage) % filter.length;
-   console.log(currentItems)
    dispatch(addItemOffset(newOffset))
  };
 

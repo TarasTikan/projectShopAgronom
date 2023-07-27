@@ -1,11 +1,14 @@
-import { useSelector } from "react-redux";
-import { ContainerImg, ContainerInfoPrice, ListBasketProducts, NumberProduct, PriceAllProduct, PriceProduct, PriceSpan, ProductItem, TitleProduct, WrapInfoPrice, WrapTitleProduct } from "./ProductsBasketList.styled";
+import { useDispatch, useSelector } from "react-redux";
+import { ContainerImg, ContainerInfoPrice, ListBasketProducts, NumberProduct, PriceAllProduct, PriceProduct, PriceSpan, ProductItem, TitleProduct, WrapIconExit, WrapInfoPrice, WrapTitleProduct } from "./ProductsBasketList.styled";
 import { selectItemsBasket } from "redux/basket/selectors";
 import { useEffect, useState } from "react";
+import { ExitIcon } from "assets/icon/exitIcon";
+import { fetchBasketProducts, removeProductsBasket } from "redux/basket/operations";
 
 export const ProductsBasketList = () => {
   const [totalPrice, setTotalPrice] = useState(0)
     const productsBasket = useSelector(selectItemsBasket);
+    const dispatch = useDispatch()
     useEffect(() => {
       setTotalPrice(
         productsBasket.reduce((total, { price }) => {
@@ -13,6 +16,13 @@ export const ProductsBasketList = () => {
         }, 0)
       );
     }, [productsBasket]);
+useEffect(() => {
+  dispatch(fetchBasketProducts());
+}, [dispatch]);
+    const removeProduct = e => {
+      const productId = e.currentTarget.id
+      dispatch(removeProductsBasket(productId));
+    }
     return (
       <>
         <ListBasketProducts>
@@ -30,6 +40,9 @@ export const ProductsBasketList = () => {
                   <NumberProduct>x{number}</NumberProduct>
                 </WrapInfoPrice>
               </WrapTitleProduct>
+              <WrapIconExit id={_id} onClick={removeProduct}>
+                <ExitIcon />
+              </WrapIconExit>
             </ProductItem>
           ))}
         </ListBasketProducts>

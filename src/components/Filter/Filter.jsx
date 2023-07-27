@@ -14,7 +14,6 @@ export const Filter = () => {
     const actionNumber = e.target.checked ? addNumber : deleteNumber;
     if (e.target.name.includes('producer')) {
       dispatch(actionProducer(normalizatorFilter));
-      console.log(normalizatorFilter);
     } else if (e.target.name.includes('culture')) {
       dispatch(actionCulture(normalizatorFilter));
     } else {
