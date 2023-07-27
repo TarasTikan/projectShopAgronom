@@ -5,3 +5,8 @@ export const Container = styled.div`
   padding-right: 15px;
   margin: 0 auto;
 `;
+
+export const RegisterSection = styled.section`
+padding-top: 20px;
+padding-bottom: 100px;
+`

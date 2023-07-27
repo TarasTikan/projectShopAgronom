@@ -1,7 +1,22 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-
+import {
+  CheackBoxSpan,
+  CheckBoxText,
+  FormBtnSubmit,
+  FormInput,
+  FormPssword,
+  RegisterForm,
+  RegisterText,
+  TextUrl,
+  UrlList,
+  WrapCheckBox,
+  WrapContainerTitle,
+  WrapTitle,
+} from './FormRegister.styled';
+import treeLeastLeft from '../../assets/images/treelist.png';
+import treeLeastRight from '../../assets/images/treelestright.png';
 export const FormRegister = () => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
@@ -69,80 +84,83 @@ export const FormRegister = () => {
   };
   return (
     <>
-      <ul>
+      <UrlList>
         <li>
-          <p>Головна</p>
+          <TextUrl>Головна</TextUrl>
         </li>
         <li>
-          <p>Авторизація</p>
+          <TextUrl>Авторизація</TextUrl>
         </li>
         <li>
-          <p>Реєстрація</p>
+          <TextUrl>Реєстрація</TextUrl>
         </li>
-      </ul>
-      <div>
-        <h1>Реєстрація</h1>
-        <p>
+      </UrlList>
+      <WrapContainerTitle>
+        <WrapTitle>
+          <img src={treeLeastLeft} alt="decorLeast" />
+          <h1>Реєстрація</h1>
+          <img src={treeLeastRight} alt="decorLeast" />
+        </WrapTitle>
+        <RegisterText>
           Увійдіть, щоб використовувати всі можливості особистого кабінету:
           відстеження замовлень, налаштування передплати, зв'язки з соціальними
           мережами та інші. Ми ніколи і за жодних умов не розголошуємо особисті
           дані клієнтів. Контактна інформація буде використана тільки для
           оформлення замовлень та зручнішої роботи з сайтом
-        </p>
-      </div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            placeholder="Ім’я"
-            onChange={handleChange}
-            name="name"
-            value={name}
-          />
-          <input
-            type="text"
-            placeholder="Прізвище"
-            onChange={handleChange}
-            name="surname"
-            value={surname}
-          />
-          <input
-            type="tel"
-            placeholder="Телефон"
-            onChange={handleChange}
-            name="phone"
-            value={phone}
-          />
-          <input
-            type="email"
-            placeholder="E-mail"
-            onChange={handleChange}
-            name="email"
-            value={email}
-          />
-        </div>
-        <input
+        </RegisterText>
+      </WrapContainerTitle>
+      <RegisterForm onSubmit={handleSubmit}>
+        <FormInput
+          type="text"
+          placeholder="Ім’я"
+          onChange={handleChange}
+          name="name"
+          value={name}
+        />
+        <FormInput
+          type="text"
+          placeholder="Прізвище"
+          onChange={handleChange}
+          name="surname"
+          value={surname}
+        />
+        <FormInput
+          type="tel"
+          placeholder="Телефон"
+          onChange={handleChange}
+          name="phone"
+          value={phone}
+        />
+        <FormInput
+          type="email"
+          placeholder="E-mail"
+          onChange={handleChange}
+          name="email"
+          value={email}
+        />
+        <FormPssword
           type="password"
           placeholder="Пароль"
           onChange={handleChange}
           name="password"
           value={password}
         />
-        <input
+        <FormPssword
           type="password"
           placeholder="Підтвердити пароль"
           onChange={handleChange}
           name="confirmPassword"
           value={confirmPassword}
         />
-        <div>
+        <WrapCheckBox>
           <input type="checkbox" />
-          <p>
-            я згоден на обробку і захист <span>персональних даних</span>
-          </p>
-        </div>
-        <button type="submit">Зареєструватися</button>
-      </form>
+          <CheckBoxText>
+            я згоден на обробку і захист{' '}
+            <CheackBoxSpan>персональних даних</CheackBoxSpan>
+          </CheckBoxText>
+        </WrapCheckBox>
+        <FormBtnSubmit type="submit">Зареєструватися</FormBtnSubmit>
+      </RegisterForm>
     </>
   );
 };

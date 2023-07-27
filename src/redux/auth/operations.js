@@ -46,6 +46,13 @@ export const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunk
   const token = state.auth.token
 
   if(!token) {
-    return
+    return thunkAPI.rejectWithValue("No valid Token");
+  }
+  setAuthHeader(token);
+  try {
+    const res = await axios.get('/api/auth/logout');
+    return res.data
+  } catch (e) {
+        return thunkAPI.rejectWithValue(e.message);
   }
 })

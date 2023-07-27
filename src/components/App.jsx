@@ -12,6 +12,8 @@ import { ProductsList } from "./productsList/productsList";
 import { ProductInfo } from "../pages/ProductInfo/ProductInfo";
 import { PlacingOrder } from "pages/PlacingOrder/PlacingOrder";
 import { selectIsRefreshing } from "redux/auth/selectors";
+import { RestrictedRoute } from "./RestrictedRoute";
+import { PrivateRoute } from "./PrivateRoute";
 
 export const App = () => {
   const dispatch = useDispatch()
@@ -23,8 +25,16 @@ export const App = () => {
         <Route path="/" element={<AppBar />}>
           <Route index element={<Home />} />
           <Route path="catalog/plantsProtect" element={<PlantsProtect />} />
-          <Route path="signUp" element={<Registration />} />
-          <Route path="signIn" element={<Login />} />
+          <Route
+            path="signUp"
+            element={
+              <RestrictedRoute component={Registration} redirectTo="/" />
+            }
+          />
+          <Route
+            path="signIn"
+            element={<RestrictedRoute component={Login} redirectTo="/" />}
+          />
           <Route path="plantsProtect" element={<FilterProducts />}>
             <Route path="filter/:routesName" element={<ProductsList />} />
           </Route>
@@ -32,7 +42,12 @@ export const App = () => {
             path="productDetails/:routesName/:productId"
             element={<ProductInfo />}
           />
-          <Route path="basketProducts" element={<PlacingOrder />} />
+          <Route
+            path="basketProducts"
+            element={
+              <PrivateRoute component={PlacingOrder} redirectTo="/signIn"/>
+            }
+          />
         </Route>
       </Routes>
     )

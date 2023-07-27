@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "redux/auth/operations";
-
+import { FormBtnSubmit, FormInput, LoginForm, LoginText, TextUrl, UrlList, WrapContainerTitle, WrapTitle } from "./FormLogin.styled";
+import treeLeastLeft from '../../assets/images/treelist.png';
+import treeLeastRight from '../../assets/images/treelestright.png';
 export const FormLogin = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -40,44 +42,48 @@ export const FormLogin = () => {
     };
   return (
     <>
-      <ul>
+      <UrlList>
         <li>
-          <p>Головна</p>
+          <TextUrl>Головна</TextUrl>
         </li>
         <li>
-          <p>Авторизація</p>
+          <TextUrl>Авторизація</TextUrl>
         </li>
         <li>
-          <p>Реєстрація</p>
+          <TextUrl>Реєстрація</TextUrl>
         </li>
-      </ul>
-      <div>
-        <h1>Авторизація</h1>
-        <p>
+      </UrlList>
+      <WrapContainerTitle>
+        <WrapTitle>
+          <img src={treeLeastLeft} alt="decorLeast" />
+          <h1>Авторизація</h1>
+          <img src={treeLeastRight} alt="decorLeast" />
+        </WrapTitle>
+        <LoginText>
           Увійдіть, щоб використовувати всі можливості особистого кабінету:
           відстеження замовлень, налаштування передплати, зв'язки з соціальними
           мережами та інші. Ми ніколи і за жодних умов не розголошуємо особисті
           дані клієнтів. Контактна інформація буде використана тільки для
           оформлення замовлень та зручнішої роботи з сайтом
-        </p>
-      </div>
-      <form onSubmit={handleSubmit}>
-        <input
+        </LoginText>
+      </WrapContainerTitle>
+      <LoginForm onSubmit={handleSubmit}>
+        <FormInput
           type="email"
           placeholder="E-mail"
           onChange={handleChange}
           value={email}
           name="email"
         />
-        <input
+        <FormInput
           type="password"
           placeholder="Пароль"
           onChange={handleChange}
           value={password}
           name="password"
         />
-        <button type="submit">Увійти</button>
-      </form>
+        <FormBtnSubmit type="submit">Увійти</FormBtnSubmit>
+      </LoginForm>
     </>
   );
 };
