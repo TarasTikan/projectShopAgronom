@@ -45,7 +45,7 @@ export const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunk
   const state = thunkAPI.getState()
   const token = state.auth.token
 
-  if(token === null) {
+  if(!token) {
     return
   }
 })

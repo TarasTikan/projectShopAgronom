@@ -4,33 +4,37 @@ import { Home } from "pages/Home/Home";
 import { PlantsProtect } from "pages/PlantsProtect/PlantsProtect";
 import { Registration } from "pages/Register/Registration";
 import { Login } from "pages/Login/Login";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCurrentUser } from "redux/auth/operations";
 import { FilterProducts } from "pages/FilterProducts/FilterProducts";
 import { ProductsList } from "./productsList/productsList";
 import { ProductInfo } from "../pages/ProductInfo/ProductInfo";
 import { PlacingOrder } from "pages/PlacingOrder/PlacingOrder";
+import { selectIsRefreshing } from "redux/auth/selectors";
 
 export const App = () => {
   const dispatch = useDispatch()
-  useEffect(() => {dispatch(fetchCurrentUser());}, [dispatch]);
+  const isRefreshing = useSelector(selectIsRefreshing);
+  useEffect(() => {dispatch(fetchCurrentUser())}, [dispatch]);
   return (
-    <Routes>
-      <Route path="/" element={<AppBar />}>
-        <Route index element={<Home />} />
-        <Route path="catalog/plantsProtect" element={<PlantsProtect />} />
-        <Route path="signUp" element={<Registration />} />
-        <Route path="signIn" element={<Login />} />
-        <Route path="plantsProtect" element={<FilterProducts />}>
-          <Route path="filter/:routesName" element={<ProductsList />} />
+    !isRefreshing && (
+      <Routes>
+        <Route path="/" element={<AppBar />}>
+          <Route index element={<Home />} />
+          <Route path="catalog/plantsProtect" element={<PlantsProtect />} />
+          <Route path="signUp" element={<Registration />} />
+          <Route path="signIn" element={<Login />} />
+          <Route path="plantsProtect" element={<FilterProducts />}>
+            <Route path="filter/:routesName" element={<ProductsList />} />
+          </Route>
+          <Route
+            path="productDetails/:routesName/:productId"
+            element={<ProductInfo />}
+          />
+          <Route path="basketProducts" element={<PlacingOrder />} />
         </Route>
-        <Route
-          path="productDetails/:routesName/:productId"
-          element={<ProductInfo/>}
-        />
-        <Route path="basketProducts" element={<PlacingOrder/>}/>
-      </Route>
-    </Routes>
+      </Routes>
+    )
   );
 };
