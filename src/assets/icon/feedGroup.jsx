@@ -1,4 +1,4 @@
-export const FeedGroup = () => {
+export const FeedGroupIcon = () => {
   return (
     <svg
       version="1.1"

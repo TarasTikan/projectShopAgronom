@@ -9,7 +9,7 @@ import { Seeds } from "assets/icon/seeds";
 import { Sapling } from "assets/icon/sapling";
 import { Fertilizer } from "assets/icon/fertilizer";
 import { Farmer } from "assets/icon/farmer";
-import { FeedGroup } from "assets/icon/feedGroup";
+import { FeedGroupIcon } from "assets/icon/feedGroup";
 import { useSelector } from "react-redux";
 import { selectItemsBasket } from "redux/basket/selectors";
 import { useNavigate } from "react-router-dom";
@@ -76,8 +76,8 @@ export const HeadInfo = () => {
             <ItemText>Добрива</ItemText>
           </KatalogItem>
           <KatalogItem>
-            <FeedGroup />
-            <ItemText>кормова група</ItemText>
+            <FeedGroupIcon />
+            <StyledLink to="/catalog/feedGroup">КОРМОВА ГРУПА</StyledLink>
           </KatalogItem>
           <KatalogItem>
             <Farmer />

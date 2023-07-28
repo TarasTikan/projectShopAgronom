@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchProductOne, fetchProducts } from 'redux/products/operations';
@@ -23,12 +23,20 @@ import { addProductBacket } from 'redux/basket/operations';
 export const ProductsList = () => {
   const currentItems = useSelector(selectCurrentItems);
   const productOne = useSelector(selectProductOne);
+  const [page] = useState(localStorage.getItem('page'));
   const dispatch = useDispatch();
-  const { routesName } = useParams();
+  const { routesName, category } = useParams();
+  const fetchProductsData = useCallback(() => {
+    const requestData = {
+      page: page,
+      router: routesName,
+      category: category,
+    };
+    dispatch(fetchProducts(requestData));
+  }, [page, routesName, category, dispatch]);
   useEffect(() => {
-    dispatch(fetchProducts(routesName));
-  }, [routesName, dispatch]);
-
+    fetchProductsData();
+  }, [fetchProductsData]);
   const addBasketProduct = () => {
     const { _id, updatedAt, createdAt, ...productInBasket } = {
       ...productOne,

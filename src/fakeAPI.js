@@ -6,6 +6,9 @@ import stainRemoversImg from './assets/images/stainremovers.png';
 import rodenticidesImg from './assets/images/rodenticides.png';
 import retardantsImg from './assets/images/retardants.png';
 import adjuvantsImg from './assets/images/adjuvants.png';
+import bird from './assets/images/bird-min.jpg';
+import fish from './assets/images/fish-min.jpg';
+import animals from './assets/images/animals-min.jpg';
 export const plantsProtectCatalog = [
   {
     id: 'p-1',
@@ -54,6 +57,65 @@ export const plantsProtectCatalog = [
     name: 'Ад’юванти',
     routesName: 'adjuvants',
     imgPL: adjuvantsImg,
+  },
+];
+export const feedGroupCatalog = [
+  {
+    id: 'l-1',
+    name: 'Для тварин',
+    routesName: 'animals/pigs',
+    imgPL: animals,
+  },
+  {
+    id: 'l-2',
+    name: 'Для риби',
+    routesName: 'water/fishs',
+    imgPL: fish,
+  },
+  {
+    id: 'l-3',
+    name: 'Для птиці',
+    routesName: 'bird/chickens',
+    imgPL: bird,
+  },
+];
+export const feedGroupAnimals = [
+  {
+    id: 'f-1',
+    name: 'Для свиней',
+    routesName: 'animals/pigs',
+  },
+  {
+    id: 'f-2',
+    name: 'Для ВРХ',
+    routesName: 'animals/cattles',
+  },
+  {
+    id: 'f-3',
+    name: 'Для кроликів',
+    routesName: 'animals/rabbits',
+  },
+];
+export const feedGroupBird = [
+  {
+    id: 'g-1',
+    name: 'Для курей',
+    routesName: 'bird/chickens',
+  },
+  {
+    id: 'g-2',
+    name: 'Для індиків',
+    routesName: 'bird/turkeys',
+  },
+  {
+    id: 'g-3',
+    name: 'Для водоплавної птиці',
+    routesName: 'bird/waterfowls',
+  },
+  {
+    id: '4-3',
+    name: 'Для  перепелів',
+    routesName: 'bird/quails',
   },
 ];
 

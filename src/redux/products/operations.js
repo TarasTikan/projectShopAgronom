@@ -4,9 +4,11 @@ axios.defaults.baseURL = 'https://shopagronom-backend.onrender.com';
 
 export const fetchProducts = createAsyncThunk(
   'products/fetchAll',
-  async (plants, thunkApi) => {
+  async (requestData, thunkApi) => {
     try {
-      const response = await axios.get(`/api/plantsProtect/${plants}`);
+      const { page, router, category } = requestData;
+      const selectedRouter = category ? category : router;
+      const response = await axios.get(`/api/${page}/${selectedRouter}`);
       return response.data;
     } catch (e) {
       return thunkApi.rejectWithValue(e.message);

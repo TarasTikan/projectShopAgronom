@@ -10,25 +10,16 @@ import {
   WrapTitle,
 } from './FilterProducts.styled';
 import treelist from '../../assets/images/treelist.png';
-import { RoteteImg } from 'pages/PlantsProtect/PlantsProtect.styled';
-import { Outlet, useNavigate } from 'react-router-dom';
+import treelistRight from '../../assets/images/treelestright.png';
+import { Outlet } from 'react-router-dom';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
-import { useEffect } from 'react';
-import { Filter } from 'components/Filter/Filter';
+import { useState } from 'react';
+import { FilterPlantsProtect } from 'components/Filter/FilterPlantsProtect/FilterPlantsProtect';
 import { InfoPlantsProtect } from 'components/InfoPlantsProtect/InfoPlantsProtect';
 import { Footer } from 'components/Footer/Footer';
+import { FilterFeedGroup } from 'components/Filter/FilterFeedGroup/FilterFeedGroup';
 export const FilterProducts = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    const saveRouter = localStorage.getItem('router');
-    if (saveRouter) {
-      navigate(`filter/${saveRouter}`);
-    } else {
-      localStorage.setItem('router', 'herbicides');
-    }
-    localStorage.removeItem('router');
-  }, [navigate]);
-
+  const [page] = useState(localStorage.getItem('page'));
   return (
     <>
       <FilterSection>
@@ -48,14 +39,18 @@ export const FilterProducts = () => {
           <WrapTitle>
             <img src={treelist} alt="treelist" />
             <TitleCatalog>Засоби захисту рослин</TitleCatalog>
-            <RoteteImg src={treelist} alt="treelist" />
+            <img src={treelistRight} alt="treelist" />
           </WrapTitle>
           <WrapNumberProducts>
             <TitleNumberProducts>Показано 621 товарів</TitleNumberProducts>
             <SortButton type="button">Сортувати за</SortButton>
           </WrapNumberProducts>
           <WrapFilterALL>
-            <Filter />
+            {page === 'plantsProtect' ? (
+              <FilterPlantsProtect />
+            ) : (
+              <FilterFeedGroup />
+            )}
             <Outlet />
           </WrapFilterALL>
         </Container>

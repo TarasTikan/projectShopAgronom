@@ -43,6 +43,7 @@ export const CatalogItem = styled.li`
   width: 255px;
   height: 164px;
   background-image: ${props => `url(${props.imgpl})`};
+  background-size: cover;
   background-color: #84c551;
   border-radius: 20px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
@@ -69,6 +70,10 @@ export const TitleCatalog = styled.h1`
   letter-spacing: 0em;
   text-align: left;
   color: #000;
+`;
+
+export const RoteteImg = styled.img`
+  transform: rotate(80deg);
 `;
 
 export const StyledLink = styled(NavLink)`

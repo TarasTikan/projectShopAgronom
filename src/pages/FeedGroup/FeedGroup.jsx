@@ -8,16 +8,16 @@ import {
   UrlList,
   WrapTextItem,
   WrapTitle,
-} from './PlantsProtect.styled';
+} from './FeedGroup.styled';
 import treelist from '../../assets/images/treelist.png';
 import treeleastRight from '../../assets/images/treelestright.png';
-import { plantsProtectCatalog } from 'fakeAPI';
+import { feedGroupCatalog } from 'fakeAPI';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import { InfoPlantsProtect } from 'components/InfoPlantsProtect/InfoPlantsProtect';
 import { Footer } from 'components/Footer/Footer';
-export const PlantsProtect = () => {
+export const FeedGroup = () => {
   const handleSaveRouter = e => {
-    localStorage.setItem('page', 'plantsProtect')
+      localStorage.setItem('page', 'feedGroup');
   };
   return (
     <main>
@@ -32,20 +32,20 @@ export const PlantsProtect = () => {
               <p>Каталог</p>
             </li>
             <li>
-              <p>Засоби захисту рослин</p>
+              <p>Кормова група</p>
             </li>
           </UrlList>
           <WrapTitle>
             <img src={treelist} alt="treelist" />
-            <TitleCatalog>Засоби захисту рослин</TitleCatalog>
+            <TitleCatalog>Кормова група</TitleCatalog>
             <img src={treeleastRight} alt="treelist" />
           </WrapTitle>
           <ListCatalog>
-            {plantsProtectCatalog.map(({ id, name, routesName, imgPL }) => (
+            {feedGroupCatalog.map(({ id, name, routesName, imgPL }) => (
               <CatalogItem key={id} imgpl={imgPL}>
                 <WrapTextItem>
                   <StyledLink
-                    to={`/plantsProtect/filter/${routesName}`}
+                    to={`/feedGroup/filter/${routesName}`}
                     onClick={handleSaveRouter}
                   >
                     {name}

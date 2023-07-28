@@ -7,13 +7,14 @@ import { Login } from "pages/Login/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCurrentUser } from "redux/auth/operations";
-import { FilterProducts } from "pages/FilterProducts/FilterProducts";
+import { FilterProducts } from 'pages/FilterProducts/FilterProducts';
 import { ProductsList } from "./productsList/productsList";
 import { ProductInfo } from "../pages/ProductInfo/ProductInfo";
 import { PlacingOrder } from "pages/PlacingOrder/PlacingOrder";
 import { selectIsRefreshing } from "redux/auth/selectors";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { PrivateRoute } from "./PrivateRoute";
+import { FeedGroup } from "pages/FeedGroup/FeedGroup";
 
 export const App = () => {
   const dispatch = useDispatch()
@@ -25,6 +26,7 @@ export const App = () => {
         <Route path="/" element={<AppBar />}>
           <Route index element={<Home />} />
           <Route path="catalog/plantsProtect" element={<PlantsProtect />} />
+          <Route path="catalog/feedGroup" element={<FeedGroup />} />
           <Route
             path="signUp"
             element={
@@ -38,6 +40,9 @@ export const App = () => {
           <Route path="plantsProtect" element={<FilterProducts />}>
             <Route path="filter/:routesName" element={<ProductsList />} />
           </Route>
+          <Route path="feedGroup" element={<FilterProducts />}>
+            <Route path="filter/:routesName/:category" element={<ProductsList />} />
+          </Route>
           <Route
             path="productDetails/:routesName/:productId"
             element={<ProductInfo />}
@@ -45,7 +50,7 @@ export const App = () => {
           <Route
             path="basketProducts"
             element={
-              <PrivateRoute component={PlacingOrder} redirectTo="/signIn"/>
+              <PrivateRoute component={PlacingOrder} redirectTo="/signIn" />
             }
           />
         </Route>

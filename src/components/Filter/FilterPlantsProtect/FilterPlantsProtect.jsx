@@ -1,9 +1,9 @@
 import { plantsCulture, plantsProducer, plantsProtectCatalog } from "fakeAPI";
 import { useDispatch } from "react-redux";
 import { addCulture, addNumber, addProducer, deleteCulture, deleteNumber, deleteProducer } from "redux/products/filterSlice";
-import { FormProducer, LabalInput, ListCatalogName, StyledLink, TitleCulture, TitleFilter, TitleProducer, WrapFilter, WrapTitleFilter } from "./Filter.styled";
+import { FormProducer, LabalInput, ListCatalogName, StyledLink, TitleCulture, TitleFilter, TitleProducer, WrapFilter, WrapTitleFilter } from "./FilterPlantsProtect.styled";
 
-export const Filter = () => {
+export const FilterPlantsProtect = () => {
     const dispatch = useDispatch()
       const handleChange = e => {
     const normalizatorFilter = e.target.name
