@@ -97,6 +97,7 @@ export const BtnEmotions = styled.button`
   align-items: center;
   display: flex;
   justify-content: center;
+  position: relative;
   cursor: pointer;
   fill: #8c3213;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -190,4 +191,21 @@ export const StyledLink = styled(NavLink)`
   &:hover {
     color: #fff;
   }
+`;
+
+export const NumberBasket = styled.p`
+  width: 14px;
+  height: 14px;
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 50%;
+  background-color: #84be51;
+  position: absolute;
+  top: 0;
+  right: 0;
 `;

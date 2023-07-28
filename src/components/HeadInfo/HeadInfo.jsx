@@ -1,5 +1,5 @@
 import { SearchIcon } from "assets/icon/searchIcon";
-import { BtnEmotions, CallBtn, Container, ImgLogo, InputSearch, ItemText, KatalogItem, ListBtn, ListKatalog, SearchBtn, StyledLink, TextCall, TextInfoCall, TextMoney, WrapCall, WrapSideBar } from "./HeadInfo.styled";
+import { BtnEmotions, CallBtn, Container, ImgLogo, InputSearch, ItemText, KatalogItem, ListBtn, ListKatalog, NumberBasket, SearchBtn, StyledLink, TextCall, TextInfoCall, TextMoney, WrapCall, WrapSideBar } from "./HeadInfo.styled";
 import { CallIcon } from "assets/icon/callIcon";
 import { LoveIcon } from "assets/icon/loveIcon";
 import { VesaIcon } from "assets/icon/vesaIcon";
@@ -10,7 +10,12 @@ import { Sapling } from "assets/icon/sapling";
 import { Fertilizer } from "assets/icon/fertilizer";
 import { Farmer } from "assets/icon/farmer";
 import { FeedGroup } from "assets/icon/feedGroup";
+import { useSelector } from "react-redux";
+import { selectItemsBasket } from "redux/basket/selectors";
+import { useNavigate } from "react-router-dom";
 export const HeadInfo = () => {
+  const basketProduct = useSelector(selectItemsBasket)
+  const navigate = useNavigate()
     return (
       <Container>
         <WrapSideBar>
@@ -33,7 +38,7 @@ export const HeadInfo = () => {
           <ListBtn>
             <li>
               <BtnEmotions type="button">
-                <LoveIcon/>
+                <LoveIcon />
               </BtnEmotions>
             </li>
             <li>
@@ -42,7 +47,13 @@ export const HeadInfo = () => {
               </BtnEmotions>
             </li>
             <li>
-              <BtnEmotions type="button">
+              <BtnEmotions
+                type="button"
+                onClick={() => navigate('/basketProducts')}
+              >
+                {basketProduct.length !== 0 && (
+                  <NumberBasket>{basketProduct.length}</NumberBasket>
+                )}
                 <ShopBascetIcon />
               </BtnEmotions>
             </li>
