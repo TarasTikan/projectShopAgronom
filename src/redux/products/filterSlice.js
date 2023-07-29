@@ -5,6 +5,8 @@ const initialState = {
         filterCulture: [],
         filterNumber: [],
         filteredItem: [],
+        filterPriceMin: null,
+        filterPriceMax: null,
 }
 const filterSlice = createSlice({
   name: 'filter',
@@ -18,6 +20,12 @@ const filterSlice = createSlice({
     },
     addNumber: (state, { payload }) => {
       state.filterNumber.push(payload);
+    },
+    addPriceMin: (state, { payload }) => {
+      state.filterPriceMin = payload;
+    },
+    addPriceMax: (state, { payload }) => {
+      state.filterPriceMax = payload;
     },
     deleteProducer: (state, { payload }) => {
       state.filterProducer = state.filterProducer.filter(
@@ -33,7 +41,7 @@ const filterSlice = createSlice({
       state.filterNumber = state.filterNumber.filter(item => item !== payload);
     },
     filteredProducts: (state, { payload }) => {
-      state.filteredItem = payload
+      state.filteredItem = payload;
     },
   },
 });
@@ -45,5 +53,7 @@ export const {
   deleteProducer,
   deleteCulture,
   deleteNumber,
+  addPriceMin,
+  addPriceMax,
 } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;

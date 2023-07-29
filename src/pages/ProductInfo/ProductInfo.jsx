@@ -49,20 +49,23 @@ import { Footer } from 'components/Footer/Footer';
 import { Modal } from 'components/Modal/Modal';
 import { Loader } from 'components/Loader/Loader';
 export const ProductInfo = () => {
-  const { routesName, productId } = useParams();
+  const { routesName, productId,category } = useParams();
   const productOne = useSelector(selectProductOne);
   const [showInfo, setShowInfo] = useState(true);
   const [isShowModal, setIsShowModal] = useState(false);
+  const [page] = useState(localStorage.getItem('page'))
   const dispatch = useDispatch()
   useEffect(() => {
     const product = {
       plants: routesName,
       id: productId,
+      page,
     };
     dispatch(fetchProductOne(product));
-  }, [productId, routesName, dispatch]);
+  }, [productId, routesName, dispatch, page, category]);
   const toggleModal = e => {
     setIsShowModal(!isShowModal);
+    console.log(productOne);
   };
   return (
     <>

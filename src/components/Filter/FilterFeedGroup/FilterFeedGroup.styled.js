@@ -8,6 +8,7 @@ export const WrapTitleFilter = styled.div`
 margin-right: auto;
 `;
 export const ListCatalogName = styled.ul`
+margin-bottom: 30px;
   border-radius: 20px;
   background: #fff;
   display: flex;
@@ -36,7 +37,6 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 export const WrapFilter = styled.div`
-  margin-top: 30px;
   border-radius: 20px 20px 0px 0px;
   width: 255px;
   display: flex;
@@ -44,6 +44,8 @@ export const WrapFilter = styled.div`
   flex-direction: column;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
   border-bottom-left-radius: 20px;
+  align-items: center;
+  justify-content: center;
   border-bottom-right-radius: 20px;
 `;
 export const TitleFilter = styled.h1`
@@ -66,7 +68,11 @@ export const FormProducer = styled.form`
   flex-direction: column;
   justify-content: center;
   gap: 16px;
-  padding-left: 30px;
+  padding-left: 14px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  width: 196px;
 `;
 export const TitleProducer = styled.h1`
   color: #000;
@@ -93,5 +99,53 @@ export const TitleCulture = styled.h1`
   font-weight: 600;
   margin-bottom: 3px;
   margin-right: auto;
+  margin-top: 17px;
+`;
+
+export const FormPrice = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 196px;
+`;
+
+export const TitlePrice = styled.h1`
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 17px;
+`;
+
+export const PriceInput = styled.input`
+  width: 83px;
+  height: 29px;
+  border: 1px solid #cccccc;
+`;
+
+export const PriceLabel = styled.label`
+display: flex;
+color: rgba(0, 0, 0, 0.50);
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+gap: 3px;
+line-height: normal;
+flex-direction: column;`
+
+export const WrapInput = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+`;
+
+export const TextWrapInput = styled.p`
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   margin-top: 17px;
 `;

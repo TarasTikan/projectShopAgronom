@@ -6,9 +6,8 @@ export const fetchProducts = createAsyncThunk(
   'products/fetchAll',
   async (requestData, thunkApi) => {
     try {
-      const { page, router, category } = requestData;
-      const selectedRouter = category ? category : router;
-      const response = await axios.get(`/api/${page}/${selectedRouter}`);
+      const { page, router } = requestData;
+      const response = await axios.get(`/api/${page}/${router}`);
       return response.data;
     } catch (e) {
       return thunkApi.rejectWithValue(e.message);
@@ -18,10 +17,8 @@ export const fetchProducts = createAsyncThunk(
 
 export const fetchProductOne = createAsyncThunk('product/fetchOne', async (plantsInfo, thunkApi)=>{
   try {
-    const {plants, id} = plantsInfo
-    const response = await axios.get(
-      `/api/plantsProtect/${plants}/${id}`
-    );
+    const {plants, id,page} = plantsInfo
+    const response = await axios.get(`/api/${page}/${plants}/${id}`);
    return response.data
   } catch (e) {
     return thunkApi.rejectWithValue(e.message);

@@ -63,19 +63,19 @@ export const feedGroupCatalog = [
   {
     id: 'l-1',
     name: 'Для тварин',
-    routesName: 'animals/pigs',
+    routesName: 'pigs',
     imgPL: animals,
   },
   {
     id: 'l-2',
     name: 'Для риби',
-    routesName: 'water/fishs',
+    routesName: 'fishs',
     imgPL: fish,
   },
   {
     id: 'l-3',
     name: 'Для птиці',
-    routesName: 'bird/chickens',
+    routesName: 'chickens',
     imgPL: bird,
   },
 ];
@@ -83,39 +83,39 @@ export const feedGroupAnimals = [
   {
     id: 'f-1',
     name: 'Для свиней',
-    routesName: 'animals/pigs',
+    routesName: 'pigs',
   },
   {
     id: 'f-2',
     name: 'Для ВРХ',
-    routesName: 'animals/cattles',
+    routesName: 'cattles',
   },
   {
     id: 'f-3',
     name: 'Для кроликів',
-    routesName: 'animals/rabbits',
+    routesName: 'rabbits',
   },
 ];
 export const feedGroupBird = [
   {
     id: 'g-1',
     name: 'Для курей',
-    routesName: 'bird/chickens',
+    routesName: 'chickens',
   },
   {
     id: 'g-2',
     name: 'Для індиків',
-    routesName: 'bird/turkeys',
+    routesName: 'turkeys',
   },
   {
     id: 'g-3',
     name: 'Для водоплавної птиці',
-    routesName: 'bird/waterfowls',
+    routesName: 'waterfowls',
   },
   {
     id: '4-3',
     name: 'Для  перепелів',
-    routesName: 'bird/quails',
+    routesName: 'quails',
   },
 ];
 

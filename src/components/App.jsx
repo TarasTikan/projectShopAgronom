@@ -41,7 +41,7 @@ export const App = () => {
             <Route path="filter/:routesName" element={<ProductsList />} />
           </Route>
           <Route path="feedGroup" element={<FilterProducts />}>
-            <Route path="filter/:routesName/:category" element={<ProductsList />} />
+            <Route path="filter/:routesName" element={<ProductsList />} />
           </Route>
           <Route
             path="productDetails/:routesName/:productId"

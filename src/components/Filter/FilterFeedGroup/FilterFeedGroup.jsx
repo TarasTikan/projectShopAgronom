@@ -1,29 +1,24 @@
+import { feedGroupAnimals, feedGroupBird, plantsProducer } from 'fakeAPI';
+import { useDispatch} from 'react-redux';
 import {
-  feedGroupAnimals,
-  feedGroupBird,
-  plantsProducer,
-} from 'fakeAPI';
-import { useDispatch } from 'react-redux';
-import {
-  addCulture,
-  addNumber,
-  addProducer,
-  deleteCulture,
-  deleteNumber,
-  deleteProducer,
-} from 'redux/products/filterSlice';
-import {
+  FormPrice,
   FormProducer,
   LabalInput,
   ListCatalogName,
+  PriceInput,
+  PriceLabel,
   StyledLink,
+  TextWrapInput,
   TitleFilter,
+  TitlePrice,
   TitleProducer,
   WrapFilter,
+  WrapInput,
   WrapTitleFilter,
 } from './FilterFeedGroup.styled';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { addPriceMax, addPriceMin, addProducer, deleteProducer } from 'redux/products/filterSlice';
 
 export const FilterFeedGroup = () => {
   const { routesName } = useParams();
@@ -31,29 +26,35 @@ export const FilterFeedGroup = () => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
     switch (routesName) {
-      case 'animals':
-        setCategory(feedGroupAnimals);
-        break;
-      case 'bird':
-        setCategory(feedGroupBird);
-        break;
-      default:
+      case 'pigs':
+      case 'cattles':
+      case 'rabbits':
+        return setCategory(feedGroupAnimals);
+      case 'fishs':
         return;
+      default:
+        return setCategory(feedGroupBird);
     }
-  }, [routesName, category]);
-  const handleChange = e => {
-    const normalizatorFilter = e.target.name
-      .slice(8, e.target.name.length)
-      .trim();
-    const actionProducer = e.target.checked ? addProducer : deleteProducer;
-    const actionCulture = e.target.checked ? addCulture : deleteCulture;
-    const actionNumber = e.target.checked ? addNumber : deleteNumber;
-    if (e.target.name.includes('producer')) {
-      dispatch(actionProducer(normalizatorFilter));
-    } else if (e.target.name.includes('culture')) {
-      dispatch(actionCulture(normalizatorFilter));
-    } else {
-      dispatch(actionNumber(e.target.name));
+  }, [routesName]);
+  const handleChangeProducer = e => {
+const normalizatorFilter = e.target.name
+ .slice(8, e.target.name.length)
+ .trim();
+const actionProducer = e.target.checked ? addProducer : deleteProducer;
+if (e.target.name.includes('producer')) {
+ dispatch(actionProducer(normalizatorFilter));
+} 
+};
+  const handleChangePrice = e => {
+    const targetInput = e.target.name
+    if(targetInput === "min") {
+      dispatch(
+        addPriceMin(e.target.value !== '' ? Number(e.target.value) : null)
+      );
+    }else {
+      dispatch(
+        addPriceMax(e.target.value !== '' ? Number(e.target.value) : null)
+      );
     }
   };
   return (
@@ -76,12 +77,36 @@ export const FilterFeedGroup = () => {
               <input
                 type="checkbox"
                 name={`producer ${name}`}
-                onChange={handleChange}
+                onChange={handleChangeProducer}
               />
               {name}
             </LabalInput>
           ))}
         </FormProducer>
+        <FormPrice>
+          <TitlePrice>Ціна</TitlePrice>
+          <WrapInput>
+            <PriceLabel>
+              От
+              <PriceInput
+                type="number"
+                name="min"
+                onChange={handleChangePrice}
+     
+              />
+            </PriceLabel>
+            <TextWrapInput>-</TextWrapInput>
+            <PriceLabel>
+              До
+              <PriceInput
+                type="number"
+                name="max"
+                onChange={handleChangePrice}
+
+              />
+            </PriceLabel>
+          </WrapInput>
+        </FormPrice>
       </WrapFilter>
     </WrapTitleFilter>
   );
