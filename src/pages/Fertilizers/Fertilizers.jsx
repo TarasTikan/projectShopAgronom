@@ -11,7 +11,7 @@ import {
 } from './Fertilizers.styled';
 import treelist from '../../assets/images/treelist.png';
 import treeleastRight from '../../assets/images/treelestright.png';
-import { feedGroupCatalog } from 'fakeAPI';
+import {fertilizersCatalog } from 'fakeAPI';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import { InfoPlantsProtect } from 'components/InfoPlantsProtect/InfoPlantsProtect';
 import { Footer } from 'components/Footer/Footer';
@@ -41,7 +41,7 @@ export const Fertilizers = () => {
             <img src={treeleastRight} alt="treelist" />
           </WrapTitle>
           <ListCatalog>
-            {feedGroupCatalog.map(({ id, name, routesName, imgPL }) => (
+            {fertilizersCatalog.map(({ id, name, routesName, imgPL }) => (
               <CatalogItem key={id} imgpl={imgPL}>
                 <WrapTextItem>
                   <StyledLink

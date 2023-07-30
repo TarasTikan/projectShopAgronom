@@ -25,7 +25,7 @@ export const ProductsList = () => {
   const productOne = useSelector(selectProductOne);
   const [page] = useState(localStorage.getItem('page'));
   const dispatch = useDispatch();
-  const { routesName} = useParams();
+  const { routesName } = useParams();
   const fetchProductsData = useCallback(() => {
     const requestData = {
       page: page,

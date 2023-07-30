@@ -73,7 +73,7 @@ export const HeadInfo = () => {
           </KatalogItem>
           <KatalogItem>
             <Fertilizer />
-            <ItemText>Добрива</ItemText>
+            <StyledLink to="/catalog/fertilizers">ДОБРИВА</StyledLink>
           </KatalogItem>
           <KatalogItem>
             <FeedGroupIcon />

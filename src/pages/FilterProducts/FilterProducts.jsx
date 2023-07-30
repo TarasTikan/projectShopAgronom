@@ -18,8 +18,19 @@ import { FilterPlantsProtect } from 'components/Filter/FilterPlantsProtect/Filte
 import { InfoPlantsProtect } from 'components/InfoPlantsProtect/InfoPlantsProtect';
 import { Footer } from 'components/Footer/Footer';
 import { FilterFeedGroup } from 'components/Filter/FilterFeedGroup/FilterFeedGroup';
+import { FilterFertilizers } from 'components/Filter/FilterFertilizers/FilterFertilizers';
 export const FilterProducts = () => {
   const [page] = useState(localStorage.getItem('page'));
+
+  const confirmPage = page => {
+    if (page === 'plantsProtect') {
+      return <FilterPlantsProtect />;
+    } else if (page === 'feedGroup') {
+      return <FilterFeedGroup />;
+    } else {
+      return <FilterFertilizers />;
+    }
+  };
   return (
     <>
       <FilterSection>
@@ -46,11 +57,7 @@ export const FilterProducts = () => {
             <SortButton type="button">Сортувати за</SortButton>
           </WrapNumberProducts>
           <WrapFilterALL>
-            {page === 'plantsProtect' ? (
-              <FilterPlantsProtect />
-            ) : (
-              <FilterFeedGroup />
-            )}
+            {confirmPage(page)}
             <Outlet />
           </WrapFilterALL>
         </Container>

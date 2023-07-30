@@ -28,6 +28,7 @@ export const App = () => {
           <Route index element={<Home />} />
           <Route path="catalog/plantsProtect" element={<PlantsProtect />} />
           <Route path="catalog/feedGroup" element={<FeedGroup />} />
+          <Route path="catalog/fertilizers" element={<Fertilizers />} />
           <Route
             path="signUp"
             element={
@@ -44,7 +45,7 @@ export const App = () => {
           <Route path="feedGroup" element={<FilterProducts />}>
             <Route path="filter/:routesName" element={<ProductsList />} />
           </Route>
-          <Route path="fertilizers" element={<Fertilizers />}>
+          <Route path="fertilizers" element={<FilterProducts />}>
             <Route path="filter/:routesName" element={<ProductsList />} />
           </Route>
           <Route

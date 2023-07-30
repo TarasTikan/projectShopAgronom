@@ -9,6 +9,9 @@ import adjuvantsImg from './assets/images/adjuvants.png';
 import bird from './assets/images/bird-min.jpg';
 import fish from './assets/images/fish-min.jpg';
 import animals from './assets/images/animals-min.jpg';
+import organic from './assets/images/organicimg-min.jpeg';
+import complex from './assets/images/compleximg-min.jpg';
+import microFertilizers from './assets/images/microfertilizes-min.jpg';
 export const plantsProtectCatalog = [
   {
     id: 'p-1',
@@ -121,24 +124,32 @@ export const feedGroupBird = [
 
 export const fertilizersCatalog = [
   {
-    id: 'l-4',
+    id: 'lk-4',
     name: 'Комплексні',
     routesName: 'complex',
-    imgPL: animals,
+    imgPL: complex,
   },
   {
-    id: 'l-5',
+    id: 'lk-5',
     name: 'Органічні',
     routesName: 'organic',
-    imgPL: fish,
+    imgPL: organic,
   },
   {
-    id: 'l-6',
+    id: 'lk-6',
     name: 'Мікродобрива',
     routesName: 'microFertilizers',
-    imgPL: bird,
+    imgPL: microFertilizers,
   },
 ];
+export const fertilizersProducer = [
+  { id: 'c-28', name: 'Нертус' },
+  { id: 'c-29', name: 'WUXAL - Unifer (Aglukon)' },
+  { id: 'c-30', name: 'Terra Tarsa' },
+  { id: 'c-31', name: ' Квадроплюс' },
+  { id: 'c-32', name: 'УкрАвіт' },
+];
+
 export const plantsProducer = [
   { id: 'c-1', name: 'Нертус' },
   { id: 'c-2', name: 'Басф' },
