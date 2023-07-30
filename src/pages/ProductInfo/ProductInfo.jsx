@@ -176,44 +176,44 @@ export const ProductInfo = () => {
                     <li>
                       <TextProductDescript>
                         <SpanTextProduct>Діюча речовина:</SpanTextProduct>
-                        {productOne.ActiveSubstance}
+                        {productOne.activeSubstance}
                       </TextProductDescript>
                     </li>
                     <li>
                       <TextProductDescript>
                         <SpanTextProduct>Препаративна форма:</SpanTextProduct>
-                        {productOne.PreparativeForm}
+                        {productOne.preparativeForm}
                       </TextProductDescript>
                     </li>
                     <li>
                       <TextProductDescript>
                         <SpanTextProduct>Норма використання: </SpanTextProduct>
-                        {productOne.RateOfUser}
+                        {productOne.rateOfUser}
                       </TextProductDescript>
                     </li>
                     <li>
                       <TextProductDescript>
                         <SpanTextProduct>Клас токсичності:</SpanTextProduct>
-                        {productOne.ToxicityClass}
+                        {productOne.toxicityClass}
                       </TextProductDescript>
                     </li>
                     <li>
                       <TextProductDescript>
                         <SpanTextProduct> Термін зберігання:</SpanTextProduct>
-                        {productOne.StoragePeriod}
+                        {productOne.storagePeriod}
                       </TextProductDescript>
                     </li>
                   </InfoList>
                   <WrapCharachtersInfo>
                     <TitlteDescipProduct>Характеристики:</TitlteDescipProduct>
                     <TextProductDescript>
-                      {productOne.Characteristics}
+                      {productOne.characteristics}
                     </TextProductDescript>
                   </WrapCharachtersInfo>
                   <div>
                     <TitlteDescipProduct>Рекомендаціїї:</TitlteDescipProduct>
                     <TextProductDescript>
-                      {productOne.Recommendations}
+                      {productOne.recommendations}
                     </TextProductDescript>
                   </div>
                 </WrapBtnInfo>

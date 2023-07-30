@@ -15,6 +15,7 @@ import { selectIsRefreshing } from "redux/auth/selectors";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { PrivateRoute } from "./PrivateRoute";
 import { FeedGroup } from "pages/FeedGroup/FeedGroup";
+import { Fertilizers } from "pages/Fertilizers/Fertilizers";
 
 export const App = () => {
   const dispatch = useDispatch()
@@ -41,6 +42,9 @@ export const App = () => {
             <Route path="filter/:routesName" element={<ProductsList />} />
           </Route>
           <Route path="feedGroup" element={<FilterProducts />}>
+            <Route path="filter/:routesName" element={<ProductsList />} />
+          </Route>
+          <Route path="fertilizers" element={<Fertilizers />}>
             <Route path="filter/:routesName" element={<ProductsList />} />
           </Route>
           <Route

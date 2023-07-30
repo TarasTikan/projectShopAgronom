@@ -119,6 +119,26 @@ export const feedGroupBird = [
   },
 ];
 
+export const fertilizersCatalog = [
+  {
+    id: 'l-4',
+    name: 'Комплексні',
+    routesName: 'complex',
+    imgPL: animals,
+  },
+  {
+    id: 'l-5',
+    name: 'Органічні',
+    routesName: 'organic',
+    imgPL: fish,
+  },
+  {
+    id: 'l-6',
+    name: 'Мікродобрива',
+    routesName: 'microFertilizers',
+    imgPL: bird,
+  },
+];
 export const plantsProducer = [
   { id: 'c-1', name: 'Нертус' },
   { id: 'c-2', name: 'Басф' },
