@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/projectShopAgronom/static/css/main.c9eb4026.css",
-    "main.js": "/projectShopAgronom/static/js/main.65663960.js",
+    "main.js": "/projectShopAgronom/static/js/main.3f9b971e.js",
     "static/media/happy-farmer-in-the-corn.jpg": "/projectShopAgronom/static/media/happy-farmer-in-the-corn.4003d4aa437ccf911aa3.jpg",
     "static/media/aboutcompanyimg.png": "/projectShopAgronom/static/media/aboutcompanyimg.12942ff36ee9f5232b9d.png",
     "static/media/heroBg.jpg": "/projectShopAgronom/static/media/heroBg.d22abdaa25a6894b7da4.jpg",
+    "static/media/organicimg-min.jpeg": "/projectShopAgronom/static/media/organicimg-min.27b37e643c94de8ee11c.jpeg",
     "static/media/herbicides.png": "/projectShopAgronom/static/media/herbicides.bbe8fff4298d99f87e70.png",
     "static/media/fungicides.png": "/projectShopAgronom/static/media/fungicides.0c248efe794d670741c6.png",
     "static/media/insecticides.png": "/projectShopAgronom/static/media/insecticides.569c231f43d5ada70acf.png",
@@ -18,12 +19,14 @@
     "static/media/aboutsemens.jpg": "/projectShopAgronom/static/media/aboutsemens.e14877fc23c21b80ca9e.jpg",
     "static/media/fish-min.jpg": "/projectShopAgronom/static/media/fish-min.b4930dc759dee5a175f9.jpg",
     "static/media/bird-min.jpg": "/projectShopAgronom/static/media/bird-min.7bba359df0ecbed7c46a.jpg",
+    "static/media/microfertilizes-min.jpg": "/projectShopAgronom/static/media/microfertilizes-min.fc85844c485d48222fac.jpg",
+    "static/media/compleximg-min.jpg": "/projectShopAgronom/static/media/compleximg-min.c5eb8211c00239988b90.jpg",
     "index.html": "/projectShopAgronom/index.html",
     "main.c9eb4026.css.map": "/projectShopAgronom/static/css/main.c9eb4026.css.map",
-    "main.65663960.js.map": "/projectShopAgronom/static/js/main.65663960.js.map"
+    "main.3f9b971e.js.map": "/projectShopAgronom/static/js/main.3f9b971e.js.map"
   },
   "entrypoints": [
     "static/css/main.c9eb4026.css",
-    "static/js/main.65663960.js"
+    "static/js/main.3f9b971e.js"
   ]
 }
