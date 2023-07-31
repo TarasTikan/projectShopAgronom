@@ -64,6 +64,7 @@ export const ContainerInfoPrice = styled.div`
   display: flex;
   gap: 149px;
   margin-bottom: 20px;
+  margin-top: auto;
   `;
 export const PriceAllProduct = styled.p`
   color: #fff;

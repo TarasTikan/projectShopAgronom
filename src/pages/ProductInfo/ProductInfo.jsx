@@ -12,16 +12,13 @@ import {
   ContainerInfoProduct,
   DeliverButton,
   IconItem,
-  InfoList,
   ListIcon,
   PriceText,
   ProductBtnInfo,
   ProductSection,
-  SpanTextProduct,
   TextDelivery,
   TextDescripProduct,
   TextProducer,
-  TextProductDescript,
   TextProductPrice,
   TextProductStock,
   TitleDelivery,
@@ -29,10 +26,8 @@ import {
   TitleProducer,
   TitleProduct,
   TitlteDescipProduct,
-  UrlList,
   WrapBtnInfo,
   WrapCardsBank,
-  WrapCharachtersInfo,
   WrapContainerInfo,
   WrapDelivery,
   WrapDescrip,
@@ -48,6 +43,8 @@ import { SwiperYouLike } from 'components/SwipersAll/SwiperYouLike/SwiperYouLike
 import { Footer } from 'components/Footer/Footer';
 import { Modal } from 'components/Modal/Modal';
 import { Loader } from 'components/Loader/Loader';
+import { ProductDescription } from 'components/ProductDescription/ProductDescription';
+import { UrlList } from 'components/UrlList/UrlList';
 export const ProductInfo = () => {
   const { routesName, productId,category } = useParams();
   const productOne = useSelector(selectProductOne);
@@ -65,30 +62,13 @@ export const ProductInfo = () => {
   }, [productId, routesName, dispatch, page, category]);
   const toggleModal = e => {
     setIsShowModal(!isShowModal);
-    console.log(productOne);
   };
   return (
     <>
       <ProductSection>
         <Container>
           <HeadInfo />
-          <UrlList>
-            <li>
-              <p>Головна</p>
-            </li>
-            <li>
-              <p>Каталог</p>
-            </li>
-            <li>
-              <p>Засоби захисту рослин</p>
-            </li>
-            <li>
-              <p>Гербіциди</p>
-            </li>
-            <li>
-              <p>Комманд</p>
-            </li>
-          </UrlList>
+          <UrlList productOne={productOne} />
           {productOne === null || productOne === undefined ? (
             <Loader />
           ) : (
@@ -131,8 +111,7 @@ export const ProductInfo = () => {
                   <WrapPriceInfo>
                     <WrapPrice>
                       <TitlePrice>
-                        {productOne.price}
-                        грн
+                        {productOne.price} грн
                       </TitlePrice>
                       <PriceText>Ціна за 5 л</PriceText>
                     </WrapPrice>
@@ -172,50 +151,7 @@ export const ProductInfo = () => {
                   <TextDescripProduct>
                     {productOne.description}
                   </TextDescripProduct>
-                  <InfoList>
-                    <li>
-                      <TextProductDescript>
-                        <SpanTextProduct>Діюча речовина:</SpanTextProduct>
-                        {productOne.activeSubstance}
-                      </TextProductDescript>
-                    </li>
-                    <li>
-                      <TextProductDescript>
-                        <SpanTextProduct>Препаративна форма:</SpanTextProduct>
-                        {productOne.preparativeForm}
-                      </TextProductDescript>
-                    </li>
-                    <li>
-                      <TextProductDescript>
-                        <SpanTextProduct>Норма використання: </SpanTextProduct>
-                        {productOne.rateOfUser}
-                      </TextProductDescript>
-                    </li>
-                    <li>
-                      <TextProductDescript>
-                        <SpanTextProduct>Клас токсичності:</SpanTextProduct>
-                        {productOne.toxicityClass}
-                      </TextProductDescript>
-                    </li>
-                    <li>
-                      <TextProductDescript>
-                        <SpanTextProduct> Термін зберігання:</SpanTextProduct>
-                        {productOne.storagePeriod}
-                      </TextProductDescript>
-                    </li>
-                  </InfoList>
-                  <WrapCharachtersInfo>
-                    <TitlteDescipProduct>Характеристики:</TitlteDescipProduct>
-                    <TextProductDescript>
-                      {productOne.characteristics}
-                    </TextProductDescript>
-                  </WrapCharachtersInfo>
-                  <div>
-                    <TitlteDescipProduct>Рекомендаціїї:</TitlteDescipProduct>
-                    <TextProductDescript>
-                      {productOne.recommendations}
-                    </TextProductDescript>
-                  </div>
+                  <ProductDescription productOne={productOne} />
                 </WrapBtnInfo>
               </WrapDescrip>
             </>

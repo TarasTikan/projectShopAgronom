@@ -5,7 +5,6 @@ import {
   PlantsSection,
   StyledLink,
   TitleCatalog,
-  UrlList,
   WrapTextItem,
   WrapTitle,
 } from './PlantsProtect.styled';
@@ -15,26 +14,15 @@ import { plantsProtectCatalog } from 'fakeAPI';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import { InfoPlantsProtect } from 'components/InfoPlantsProtect/InfoPlantsProtect';
 import { Footer } from 'components/Footer/Footer';
+import { UrlList } from 'components/UrlList/UrlList';
 export const PlantsProtect = () => {
-  const handleSaveRouter = e => {
-    localStorage.setItem('page', 'plantsProtect')
-  };
+
   return (
     <main>
       <PlantsSection>
         <Container>
           <HeadInfo />
-          <UrlList>
-            <li>
-              <p>Головна</p>
-            </li>
-            <li>
-              <p>Каталог</p>
-            </li>
-            <li>
-              <p>Засоби захисту рослин</p>
-            </li>
-          </UrlList>
+          <UrlList/>
           <WrapTitle>
             <img src={treelist} alt="treelist" />
             <TitleCatalog>Засоби захисту рослин</TitleCatalog>
@@ -46,7 +34,6 @@ export const PlantsProtect = () => {
                 <WrapTextItem>
                   <StyledLink
                     to={`/plantsProtect/filter/${routesName}`}
-                    onClick={handleSaveRouter}
                   >
                     {name}
                   </StyledLink>

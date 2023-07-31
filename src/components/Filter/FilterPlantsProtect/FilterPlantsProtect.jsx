@@ -1,7 +1,7 @@
 import { plantsCulture, plantsProducer, plantsProtectCatalog } from "fakeAPI";
 import { useDispatch } from "react-redux";
 import { addCulture, addNumber, addProducer, deleteCulture, deleteNumber, deleteProducer } from "redux/products/filterSlice";
-import { FormProducer, LabalInput, ListCatalogName, StyledLink, TitleCulture, TitleFilter, TitleProducer, WrapFilter, WrapTitleFilter } from "./FilterPlantsProtect.styled";
+import { FormNumber, FormProducer, LabalInput, ListCatalogName, StyledLink, TitleCulture, TitleFilter, TitleNumber, TitleProducer, WrapFilter, WrapTitleFilter } from "./FilterPlantsProtect.styled";
 
 export const FilterPlantsProtect = () => {
     const dispatch = useDispatch()
@@ -57,8 +57,8 @@ export const FilterPlantsProtect = () => {
               </LabalInput>
             ))}
           </FormProducer>
-          <FormProducer>
-            <TitleProducer>Кількість</TitleProducer>
+          <FormNumber>
+            <TitleNumber>Кількість</TitleNumber>
             <LabalInput>
               <input
                 type="checkbox"
@@ -113,7 +113,7 @@ export const FilterPlantsProtect = () => {
               />
               6
             </LabalInput>
-          </FormProducer>
+          </FormNumber>
         </WrapFilter>
       </WrapTitleFilter>
     );

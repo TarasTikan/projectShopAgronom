@@ -18,8 +18,6 @@ export const ListCatalogName = styled.ul`
   list-style: none;
   padding-top: 26px;
   padding-bottom: 23px;
-  padding-left: 30px;
-  padding-right: 28px;
   gap: 20px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
 `;
@@ -36,6 +34,7 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 export const WrapFilter = styled.div`
+    align-items: center;
   margin-top: 30px;
   border-radius: 20px 20px 0px 0px;
   width: 255px;
@@ -66,7 +65,20 @@ export const FormProducer = styled.form`
   flex-direction: column;
   justify-content: center;
   gap: 16px;
-  padding-left: 30px;
+  padding-left: 14px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  width: 196px;
+`;
+export const FormNumber = styled.form`
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding-left: 14px;
+  width: 196px;
 `;
 export const TitleProducer = styled.h1`
   color: #000;
@@ -76,6 +88,14 @@ export const TitleProducer = styled.h1`
   margin-bottom: 3px;
   margin-right: auto;
   margin-top: 17px;
+`;
+export const TitleNumber = styled.h1`
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  margin-right: auto;
 `;
 export const LabalInput = styled.label`
   display: flex;
@@ -93,5 +113,4 @@ export const TitleCulture = styled.h1`
   font-weight: 600;
   margin-bottom: 3px;
   margin-right: auto;
-  margin-top: 17px;
 `;

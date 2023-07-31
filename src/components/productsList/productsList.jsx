@@ -17,12 +17,17 @@ import {
 import { Paginate } from 'components/Paginate/Paginate';
 import { selectCurrentItems } from 'redux/pagination/selectors';
 import { ShopBascetIcon } from 'assets/icon/shopBascetIcon';
-import { selectProductOne } from 'redux/products/selectors';
+import {
+  selectIsLoading,
+  selectProductOne,
+} from 'redux/products/selectors';
 import { addProductBacket } from 'redux/basket/operations';
+import { Loader } from 'components/Loader/Loader';
 
 export const ProductsList = () => {
   const currentItems = useSelector(selectCurrentItems);
   const productOne = useSelector(selectProductOne);
+  const isLoading = useSelector(selectIsLoading);
   const [page] = useState(localStorage.getItem('page'));
   const dispatch = useDispatch();
   const { routesName } = useParams();
@@ -36,6 +41,7 @@ export const ProductsList = () => {
   useEffect(() => {
     fetchProductsData();
   }, [fetchProductsData]);
+
   const addBasketProduct = () => {
     const { _id, updatedAt, createdAt, ...productInBasket } = {
       ...productOne,
@@ -54,30 +60,30 @@ export const ProductsList = () => {
   };
   return (
     <WrapPagination>
-      <ProductList>
-        {currentItems.map(({ name, number, price, _id }) => (
-          <ProductItem key={_id}>
-            {/* <img width={255} /> */}
-            <ItemInfo>
+      <ProductList>{isLoading ? <Loader /> : currentItems.map(({ name, number, price, _id }) => (
+        <ProductItem
+          key={_id}
+        >
+          {/* <img width={255} /> */}
+          <ItemInfo>
+            <div>
+              <ItemTitleLink to={`/productDetails/${routesName}/${_id}`}>
+                {name}
+              </ItemTitleLink>
+              <IteamStock>В наявності</IteamStock>
+            </div>
+            <WrapInfoPrice>
               <div>
-                <ItemTitleLink to={`/productDetails/${routesName}/${_id}`}>
-                  {name}
-                </ItemTitleLink>
-                <IteamStock>В наявності</IteamStock>
+                <ItemPrice>{price} грн</ItemPrice>
+                <ItemNumber>{number} шт</ItemNumber>
               </div>
-              <WrapInfoPrice>
-                <div>
-                  <ItemPrice>{price} грн</ItemPrice>
-                  <ItemNumber>{number} шт</ItemNumber>
-                </div>
-                <BtnBasket type="button" name={_id} onClick={handleBasket}>
-                  <ShopBascetIcon />
-                </BtnBasket>
-              </WrapInfoPrice>
-            </ItemInfo>
-          </ProductItem>
-        ))}
-      </ProductList>
+              <BtnBasket type="button" name={_id} onClick={handleBasket}>
+                <ShopBascetIcon />
+              </BtnBasket>
+            </WrapInfoPrice>
+          </ItemInfo>
+        </ProductItem>
+      ))}</ProductList>
       <Paginate />
     </WrapPagination>
   );

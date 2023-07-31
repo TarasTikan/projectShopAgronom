@@ -32,7 +32,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { addProductBacket } from 'redux/basket/operations';
 import useTotalPrice from 'hooks/useTotalPrice';
 const ModalRoot = document.querySelector('#ModalRoot');
-export function Modal({ product, onClose }) {
+export function Modal({ onClose }) {
   const { routesName} = useParams();
   const [number, setNumber] = useState(1);
   const [errorNumber, setErrorNumber] = useState(false);

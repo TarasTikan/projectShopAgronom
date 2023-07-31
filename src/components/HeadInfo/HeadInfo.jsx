@@ -16,6 +16,9 @@ import { useNavigate } from "react-router-dom";
 export const HeadInfo = () => {
   const basketProduct = useSelector(selectItemsBasket)
   const navigate = useNavigate()
+    const handleSaveRouter = e => {
+          localStorage.setItem('page', `${e.currentTarget.name}`);
+      }
     return (
       <Container>
         <WrapSideBar>
@@ -67,17 +70,33 @@ export const HeadInfo = () => {
           </KatalogItem>
           <KatalogItem>
             <Sapling />
-            <StyledLink to="/catalog/plantsProtect">
+            <StyledLink
+              to="/catalog/plantsProtect"
+              onClick={handleSaveRouter}
+              name="plantsProtect"
+            >
               Засоби захисту рослин
             </StyledLink>
           </KatalogItem>
           <KatalogItem>
             <Fertilizer />
-            <StyledLink to="/catalog/fertilizers">ДОБРИВА</StyledLink>
+            <StyledLink
+              to="/catalog/fertilizers"
+              onClick={handleSaveRouter}
+              name="fertilizers"
+            >
+              ДОБРИВА
+            </StyledLink>
           </KatalogItem>
           <KatalogItem>
             <FeedGroupIcon />
-            <StyledLink to="/catalog/feedGroup">КОРМОВА ГРУПА</StyledLink>
+            <StyledLink
+              to="/catalog/feedGroup"
+              onClick={handleSaveRouter}
+              name="feedGroup"
+            >
+              КОРМОВА ГРУПА
+            </StyledLink>
           </KatalogItem>
           <KatalogItem>
             <Farmer />

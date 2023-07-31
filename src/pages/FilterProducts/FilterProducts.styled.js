@@ -1,13 +1,5 @@
 import styled from 'styled-components';
-export const UrlList = styled.ul`
-  display: flex;
-  gap: 5px;
-  list-style: none;
-  justify-content: center;
-  align-items: center;
-  margin-top: 46px;
-  margin-bottom: 8px;
-`;
+
 export const WrapTitle = styled.div`
   display: flex;
   gap: 18px;
@@ -89,4 +81,18 @@ export const NumberForm = styled.form`
   justify-content: center;
   gap: 16px;
   padding-left: 30px;
+`;
+
+export const UrlDecor = styled.div`
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #84c551;
+  margin-right: 9px;
+  margin-left: 7px;
+`;
+export const ListItemUrl = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

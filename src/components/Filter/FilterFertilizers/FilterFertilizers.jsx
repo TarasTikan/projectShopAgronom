@@ -1,4 +1,8 @@
-import { fertilizersCatalog, fertilizersProducer } from 'fakeAPI';
+import {
+  fertilizersCatalog,
+  fertilizersProducer,
+  plantsCulture,
+} from 'fakeAPI';
 import { useDispatch } from 'react-redux';
 import {
   FormPrice,
@@ -9,6 +13,7 @@ import {
   PriceLabel,
   StyledLink,
   TextWrapInput,
+  TitleCulture,
   TitleFilter,
   TitlePrice,
   TitleProducer,
@@ -18,22 +23,27 @@ import {
 } from './FilterFertilizers.styled';
 
 import {
+  addCulture,
   addPriceMax,
   addPriceMin,
   addProducer,
+  deleteCulture,
   deleteProducer,
 } from 'redux/products/filterSlice';
 
 export const FilterFertilizers = () => {
   const dispatch = useDispatch();
 
-  const handleChangeProducer = e => {
+  const handleChange = e => {
     const normalizatorFilter = e.target.name
       .slice(8, e.target.name.length)
       .trim();
     const actionProducer = e.target.checked ? addProducer : deleteProducer;
+    const actionCulture = e.target.checked ? addCulture : deleteCulture;
     if (e.target.name.includes('producer')) {
       dispatch(actionProducer(normalizatorFilter));
+    } else {
+      dispatch(actionCulture(normalizatorFilter));
     }
   };
   const handleChangePrice = e => {
@@ -66,7 +76,20 @@ export const FilterFertilizers = () => {
               <input
                 type="checkbox"
                 name={`producer ${name}`}
-                onChange={handleChangeProducer}
+                onChange={handleChange}
+              />
+              {name}
+            </LabalInput>
+          ))}
+        </FormProducer>
+        <FormProducer>
+          <TitleCulture>Культура</TitleCulture>
+          {plantsCulture.map(({ id, name }) => (
+            <LabalInput key={id}>
+              <input
+                type="checkbox"
+                name={`culture ${name}`}
+                onChange={handleChange}
               />
               {name}
             </LabalInput>

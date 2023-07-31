@@ -121,7 +121,6 @@ export const feedGroupBird = [
     routesName: 'quails',
   },
 ];
-
 export const fertilizersCatalog = [
   {
     id: 'lk-4',
@@ -181,4 +180,103 @@ export const plantsCulture = [
   { id: 'c-25', name: 'Цукровий буряк' },
   { id: 'c-26', name: 'Кормовий буряк' },
   { id: 'c-27', name: 'Інше' },
+];
+
+
+export const allRouterName = [
+  {
+    id: 'rout-1',
+    name: 'Для риби',
+    routesName: 'fishs',
+  },
+  {
+    id: 'rout-2',
+    name: 'Для свиней',
+    routesName: 'pigs',
+  },
+  {
+    id: 'rout-3',
+    name: 'Для ВРХ',
+    routesName: 'cattles',
+  },
+  {
+    id: 'rout-4',
+    name: 'Для кроликів',
+    routesName: 'rabbits',
+  },
+  {
+    id: 'rout-5',
+    name: 'Для курей',
+    routesName: 'chickens',
+  },
+  {
+    id: 'rout-6',
+    name: 'Для індиків',
+    routesName: 'turkeys',
+  },
+  {
+    id: 'rout-7',
+    name: 'Для водоплавної птиці',
+    routesName: 'waterfowls',
+  },
+  {
+    id: 'rout-8',
+    name: 'Для  перепелів',
+    routesName: 'quails',
+  },
+  {
+    id: 'rout-9',
+    name: 'Комплексні',
+    routesName: 'complex',
+  },
+  {
+    id: 'rout-10',
+    name: 'Органічні',
+    routesName: 'organic',
+  },
+  {
+    id: 'rout-11',
+    name: 'Мікродобрива',
+    routesName: 'microFertilizers',
+  },
+  {
+    id: 'rout-12',
+    name: 'Гербіциди',
+    routesName: 'herbicides'
+  },
+  {
+    id: 'rout-13',
+    name: 'Фунгіциди',
+    routesName: 'fungicides'
+  },
+  {
+    id: 'rout-14',
+    name: 'Інсектициди',
+    routesName: 'insecticides'
+  },
+  {
+    id: 'rout-15',
+    name: 'Десиканти',
+    routesName: 'desiccants'
+  },
+  {
+    id: 'rout-16',
+    name: 'Протруювачі',
+    routesName: 'stainRemovers'
+  },
+  {
+    id: 'rout-17',
+    name: 'Родентициди',
+    routesName: 'rodenticides'
+  },
+  {
+    id: 'rout-18',
+    name: 'Ретарданти',
+    routesName: 'retardants'
+  },
+  {
+    id: 'rout-19',
+    name: 'Ад’юванти',
+    routesName: 'adjuvants'
+  },
 ];

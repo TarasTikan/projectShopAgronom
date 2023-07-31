@@ -2,23 +2,29 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const ProductList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 30px;
   list-style: none;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   margin-right: auto;
   margin-left: auto;
 `;
 
 export const ProductItem = styled.li`
-  width: 255px;
-  height: 355px;
+  width: 255px; /* Fixed width for each product */
+  height: 100%;
   background: #fff;
   border-radius: 20px;
   padding: 10px;
-  width: calc((100% - 30px) / 4);
-  flex-grow: 3;
+  margin-bottom: 20px; /* Add some space between rows */
+  cursor: pointer;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const ItemInfo = styled.div`

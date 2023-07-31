@@ -1,4 +1,24 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const overlayEntrance = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const modalEntrance = keyframes`
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
 
 export const Overlay = styled.div`
   position: fixed;
@@ -11,7 +31,9 @@ export const Overlay = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1200;
+  animation: ${overlayEntrance} 0.3s ease;
 `;
+
 export const ContainerModal = styled.div`
   width: 918px;
   height: 444px;
@@ -25,7 +47,9 @@ export const ContainerModal = styled.div`
   align-items: center;
   padding-right: 96px;
   justify-content: center;
+  animation: ${modalEntrance} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 `;
+
 
 export const TitleModal = styled.h1`
   color: #000;

@@ -19,8 +19,6 @@ export const ListCatalogName = styled.ul`
   list-style: none;
   padding-top: 26px;
   padding-bottom: 23px;
-  padding-left: 30px;
-  padding-right: 28px;
   gap: 20px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
 `;
@@ -99,7 +97,6 @@ export const TitleCulture = styled.h1`
   font-weight: 600;
   margin-bottom: 3px;
   margin-right: auto;
-  margin-top: 17px;
 `;
 
 export const FormPrice = styled.form`

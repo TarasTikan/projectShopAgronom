@@ -11,14 +11,6 @@ export const Container = styled.div`
   padding-right: 15px;
   margin: 0 auto;
 `;
-export const UrlList = styled.ul`
-  display: flex;
-  gap: 5px;
-  list-style: none;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 8px;
-`;
 
 export const WrapTitle = styled.div`
   display: flex;
