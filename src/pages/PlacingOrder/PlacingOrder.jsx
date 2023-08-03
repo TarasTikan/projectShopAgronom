@@ -17,30 +17,20 @@ import {
   PlantsSection,
   TitleBasket,
   TitleOrder,
-  UrlList,
   WrapOrder,
   WrapTitle,
 } from './PlacingOrder.styled';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import { Footer } from 'components/Footer/Footer';
 import { ProductsBasketList } from 'components/ProductsBasketList/ProductsBasketList';
+import { UrlList } from 'components/UrlList/UrlList';
 export const PlacingOrder = () => {
   return (
     <>
       <PlantsSection>
         <Container>
           <HeadInfo />
-          <UrlList>
-            <li>
-              <p>Головна</p>
-            </li>
-            <li>
-              <p>Корзина</p>
-            </li>
-            <li>
-              <p>Оформлення заказу</p>
-            </li>
-          </UrlList>
+          <UrlList/>
           <WrapTitle>
             <img src={treeLeastLeft} alt="decorLeast" />
             <TitleOrder>Оформлення заказу</TitleOrder>

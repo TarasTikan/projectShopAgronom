@@ -3,10 +3,12 @@ export const ListBasketProducts = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: center;
+  justify-content: start;
   list-style: none;
   gap: 20px;
+  height: 482px;
   margin-bottom: 30px;
+  overflow-y: auto;
 `;
 
 export const ContainerImg = styled.div`
@@ -86,7 +88,7 @@ export const PriceSpan = styled.span`
 
 export const WrapIconExit = styled.div`
   position: absolute;
-  right: 0;
+  right: 30px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transform: scale(1);

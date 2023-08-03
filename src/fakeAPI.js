@@ -279,4 +279,7 @@ export const allRouterName = [
     name: 'Ад’юванти',
     routesName: 'adjuvants'
   },
+     {id: 'rout-20',
+    name: 'Оформлення заказу',
+    routesName: 'basketProducts' }
 ];

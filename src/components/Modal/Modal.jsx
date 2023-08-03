@@ -80,6 +80,7 @@ const totalPrice = useTotalPrice(productOne, number);
       };
       dispatch(addProductBacket(productInBasket));
       navigate('/basketProducts');
+      localStorage.setItem('page', 'basketProducts');
   };
   return createPortal(
     <Overlay onClick={onOverlayClose}>

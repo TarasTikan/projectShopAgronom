@@ -11,15 +11,16 @@ export const UrlList = ({ productOne }) => {
       return 'Засоби захисту рослин';
     } else if (page === 'feedGroup') {
       return 'Кормова група';
-    } else {
+    } else if (page === 'fertilizers') {
       return 'Добрива';
+    } else {
+      return 'Корзина';
     }
   };
   const routerTitle = () => {
     if (!routesName) return null;
-    const findRouterName = allRouterName.find(
-      item => item.routesName === routesName
-    );
+     const  findRouterName = allRouterName.find(
+        item => item.routesName === routesName)
     return (
       <ListItemUrl>
         <UrlDecor />
