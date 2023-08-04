@@ -49,8 +49,21 @@ export const ContainerModal = styled.div`
   justify-content: center;
   animation: ${modalEntrance} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 `;
-
-
+export const WrapNumberText = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+`;
+export const ErrorText = styled.p`
+    margin-top: 20px;
+  color: red;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
 export const TitleModal = styled.h1`
   color: #000;
   font-family: Montserrat;

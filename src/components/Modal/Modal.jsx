@@ -5,6 +5,7 @@ import {
   BtnOrder,
   ContImg,
   ContainerModal,
+  ErrorText,
   ImgDecor,
   NumberContainer,
   Overlay,
@@ -18,6 +19,7 @@ import {
   WrapBtnOrder,
   WrapInfoProduct,
   WrapNumber,
+  WrapNumberText,
   WrapProductBuy,
   WrapProductImg,
   WrapTitle,
@@ -33,13 +35,13 @@ import { addProductBacket } from 'redux/basket/operations';
 import useTotalPrice from 'hooks/useTotalPrice';
 const ModalRoot = document.querySelector('#ModalRoot');
 export function Modal({ onClose }) {
-  const { routesName} = useParams();
+  const { routesName } = useParams();
   const [number, setNumber] = useState(1);
   const [errorNumber, setErrorNumber] = useState(false);
   const navigate = useNavigate();
   const productOne = useSelector(selectProductOne);
   const dispatch = useDispatch();
-const totalPrice = useTotalPrice(productOne, number);
+  const totalPrice = useTotalPrice(productOne, number);
   useEffect(() => {
     window.addEventListener('keydown', keyDown);
 
@@ -63,24 +65,24 @@ const totalPrice = useTotalPrice(productOne, number);
     if (name === 'plus') {
       Number(productOne.number) === number
         ? setErrorNumber(true)
-        : setNumber(prevState => prevState + 1);
+        : setNumber(prevState => prevState + 1)
     }
 
     if (name === 'minus') {
+      setErrorNumber(false);
       number === 1 ? setNumber(1) : setNumber(prevState => prevState - 1);
     }
-    console.log(errorNumber);
   };
 
   const handleOrderProduct = () => {
-      const { _id, updatedAt, createdAt, ...productInBasket } = {
-        ...productOne,
-        price: String(totalPrice),
-        number: String(number),
-      };
-      dispatch(addProductBacket(productInBasket));
-      navigate('/basketProducts');
-      localStorage.setItem('page', 'basketProducts');
+    const { _id, updatedAt, createdAt, ...productInBasket } = {
+      ...productOne,
+      price: String(totalPrice),
+      number: String(number),
+    };
+    dispatch(addProductBacket(productInBasket));
+    navigate('/basketProducts');
+    localStorage.setItem('page', 'basketProducts');
   };
   return createPortal(
     <Overlay onClick={onOverlayClose}>
@@ -106,33 +108,41 @@ const totalPrice = useTotalPrice(productOne, number);
                 <ProducerText>{productOne.producer}</ProducerText>
               </div>
             </WrapProductImg>
-            <div>
-              <BtnBuy type="button">Канистра 5 л</BtnBuy>
-              <WrapNumber>
-                <TitleNumber>Кількість</TitleNumber>
-                <BtnMinusAndPlus
-                  type="button"
-                  name="minus"
-                  onClick={hundlePlusAndMinus}
-                >
-                  -
-                </BtnMinusAndPlus>
-                <NumberContainer>{number}</NumberContainer>
-                <BtnMinusAndPlus
-                  type="button"
-                  name="plus"
-                  onClick={hundlePlusAndMinus}
-                >
-                  +
-                </BtnMinusAndPlus>
-              </WrapNumber>
-            </div>
+            <WrapNumberText>
+              <div>
+                <BtnBuy type="button">Канистра 5 л</BtnBuy>
+                <WrapNumber>
+                  <TitleNumber>Кількість</TitleNumber>
+                  <BtnMinusAndPlus
+                    type="button"
+                    name="minus"
+                    onClick={hundlePlusAndMinus}
+                  >
+                    -
+                  </BtnMinusAndPlus>
+                  <NumberContainer>{number}</NumberContainer>
+                  <BtnMinusAndPlus
+                    type="button"
+                    name="plus"
+                    onClick={hundlePlusAndMinus}
+                  >
+                    +
+                  </BtnMinusAndPlus>
+                </WrapNumber>
+              </div>
+              {errorNumber && (
+                <ErrorText>Максимальне колічество продуктів</ErrorText>
+              )}
+            </WrapNumberText>
           </WrapProductBuy>
         </WrapInfoProduct>
         <WrapBtnOrder>
           <BtnDelivery
             type="button"
-            onClick={() => navigate(`/plantsProtect/filter/${routesName}`)}
+            onClick={() => {
+              navigate(`/plantsProtect/filter/${routesName}`);
+              handleOrderProduct();
+            }}
           >
             Продовжити покупки
           </BtnDelivery>

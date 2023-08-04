@@ -22,16 +22,22 @@ import {
 import { ArroLeftSwiper } from 'assets/icon/arroLeftSwiper';
 import { ArroRightSwiper } from 'assets/icon/arroRightSwiper';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectProducts } from 'redux/products/selectors';
+import { selectIsLoading, selectProducts } from 'redux/products/selectors';
 import { useEffect } from 'react';
 import { fetchProducts } from 'redux/products/operations';
 import treeleast from '../../../assets/images/treelist.png';
 import treeleastRight from '../../../assets/images/treelestright.png';
+import { Loader } from 'components/Loader/Loader';
 export const SwiperNews = () => {
   const dispatch = useDispatch();
   const productsNew = useSelector(selectProducts);
+  const isLoading = useSelector(selectIsLoading)
   useEffect(() => {
-    dispatch(fetchProducts('herbicides'));
+    const response = {
+      page: 'plantsProtect',
+      router: 'herbicides',
+    };
+    dispatch(fetchProducts(response));
   }, [dispatch]);
   return (
     <NewsSection>
@@ -41,6 +47,7 @@ export const SwiperNews = () => {
           <TitleNewsSwiper>Новинки</TitleNewsSwiper>
           <img src={treeleastRight} alt="decorLeast" />
         </WrapTilte>
+          {isLoading ? <Loader/> :
         <CustomBtnContainer>
           <CustomBtnPrev className="swiper-button-prev3">
             <ArroLeftSwiper />
@@ -74,6 +81,7 @@ export const SwiperNews = () => {
             <ArroRightSwiper />
           </CustomBtnNext>
         </CustomBtnContainer>
+          }
       </Container>
     </NewsSection>
   );

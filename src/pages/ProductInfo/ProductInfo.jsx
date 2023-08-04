@@ -74,7 +74,7 @@ export const ProductInfo = () => {
           ) : (
             <>
               <WrapInfoProduct>
-                <Wrapimg>adasdads</Wrapimg>
+                <Wrapimg></Wrapimg>
                 <WrapContainerInfo>
                   <WrapTitle>
                     {/* <ImgDecoration src={treeleast} alt="decorLeast" /> */}

@@ -13,7 +13,11 @@ import { ArroLeftSwiper } from 'assets/icon/arroLeftSwiper';
 import { SwiperSlide } from 'swiper/react';
 import { ArroRightSwiper } from 'assets/icon/arroRightSwiper';
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { selectIsLoading } from 'redux/products/selectors';
+import { useSelector } from 'react-redux';
+import { Loader } from 'components/Loader/Loader';
 export const SwiperPartners = () => {
+    const isLoading = useSelector(selectIsLoading);
   return (
     <PartnersSection>
       <Container>
@@ -22,6 +26,7 @@ export const SwiperPartners = () => {
           <TitlePartnersSwiper>Партнери</TitlePartnersSwiper>
           <img src={treeleastRight} alt="decorLeast" />
         </WrapTilte>
+        {isLoading ?  <Loader/> :
         <StyledSwiper
           id="swiper1"
           modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -51,6 +56,8 @@ export const SwiperPartners = () => {
             <ArroRightSwiper />
           </CustomBtnNext>
         </StyledSwiper>
+        }
+
       </Container>
     </PartnersSection>
   );

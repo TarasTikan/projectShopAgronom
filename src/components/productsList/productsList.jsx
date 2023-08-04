@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { fetchProductOne, fetchProducts } from 'redux/products/operations';
 import {
   BtnBasket,
@@ -20,13 +20,16 @@ import { ShopBascetIcon } from 'assets/icon/shopBascetIcon';
 import { selectIsLoading } from 'redux/products/selectors';
 import { Loader } from 'components/Loader/Loader';
 import { Modal } from 'components/Modal/Modal';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const ProductsList = () => {
   const currentItems = useSelector(selectCurrentItems);
   const isLoading = useSelector(selectIsLoading);
+  const isLoggedIn = useSelector(selectIsLoggedIn)
   const [isShowModal, setIsShowModal] = useState(false);
   const [page] = useState(localStorage.getItem('page'));
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const { routesName } = useParams();
   const fetchProductsData = useCallback(() => {
     const requestData = {
@@ -40,6 +43,9 @@ export const ProductsList = () => {
   }, [fetchProductsData]);
 
   const handleBasket = e => {
+    if(isLoggedIn === false) {
+      navigate('/signIn');
+    }
     const productId = e.currentTarget.name;
     const product = {
       plants: routesName,
@@ -48,6 +54,7 @@ export const ProductsList = () => {
     };
     setIsShowModal(true);
     dispatch(fetchProductOne(product));
+
   };
   const toggleModal = e => {
     setIsShowModal(!isShowModal);

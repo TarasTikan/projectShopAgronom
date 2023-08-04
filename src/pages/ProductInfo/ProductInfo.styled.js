@@ -34,7 +34,8 @@ export const WrapInfoProduct = styled.div`
 export const Wrapimg = styled.div`
   width: 445px;
   height: 400px;
-  background-color: green;
+  border: 1px solid black;
+  background-color: #ffff;
 `;
 
 export const WrapTitle = styled.div`
