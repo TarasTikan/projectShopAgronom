@@ -10,7 +10,6 @@ export const AuthList = styled.ul`
 
 export const StyledLink = styled(NavLink)`
   color: #ffffff;
-  color: #fff;
   font-size: 16px;
   font-weight: 300;
   font-family: Montserrat;

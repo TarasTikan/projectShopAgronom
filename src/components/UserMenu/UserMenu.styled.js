@@ -7,9 +7,8 @@ export const AuthList = styled.div`
   gap: 16px;
 `;
 
-export const StyledLink = styled(NavLink)`
+export const StyledLink = styled`
   color: #ffffff;
-  color: #fff;
   font-size: 16px;
   font-weight: 300;
   font-family: Montserrat;

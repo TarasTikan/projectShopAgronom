@@ -81,7 +81,6 @@ export function Modal({ onClose }) {
       number: String(number),
     };
     dispatch(addProductBacket(productInBasket));
-    navigate('/basketProducts');
     localStorage.setItem('page', 'basketProducts');
   };
   return createPortal(
@@ -142,11 +141,12 @@ export function Modal({ onClose }) {
             onClick={() => {
               navigate(`/plantsProtect/filter/${routesName}`);
               handleOrderProduct();
+              onClose();
             }}
           >
             Продовжити покупки
           </BtnDelivery>
-          <BtnOrder type="button" onClick={handleOrderProduct}>
+          <BtnOrder type="button" onClick={()=>{handleOrderProduct();navigate('/basketProducts');}}>
             Оформити заказ
           </BtnOrder>
         </WrapBtnOrder>
