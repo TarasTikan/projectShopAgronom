@@ -128,6 +128,7 @@ export const KatalogItem = styled.li`
   display: flex;
   gap: 14px;
   align-items: center;
+  padding-left: 15px;
   justify-content: center;
   border-radius: 20px;
   border: 1px solid #1e6140;

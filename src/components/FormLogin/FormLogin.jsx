@@ -4,9 +4,11 @@ import { login } from 'redux/auth/operations';
 import {
   FormBtnSubmit,
   FormInput,
+  ListItemUrl,
   LoginForm,
   LoginText,
   TextUrl,
+  UrlDecor,
   UrlList,
   WrapContainerTitle,
   WrapTitle,
@@ -53,12 +55,14 @@ export const FormLogin = () => {
         <li>
           <TextUrl>Головна</TextUrl>
         </li>
-        <li>
-          <TextUrl>Авторизація</TextUrl>
-        </li>
-        <li>
+        <ListItemUrl>
+          <UrlDecor />
           <TextUrl>Реєстрація</TextUrl>
-        </li>
+        </ListItemUrl>
+        <ListItemUrl>
+          <UrlDecor />
+          <TextUrl>Авторизація</TextUrl>
+        </ListItemUrl>
       </UrlList>
       <WrapContainerTitle>
         <WrapTitle>

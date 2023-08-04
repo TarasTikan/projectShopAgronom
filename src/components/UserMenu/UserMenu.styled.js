@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const AuthList = styled.div`
   display: flex;
@@ -7,7 +6,8 @@ export const AuthList = styled.div`
   gap: 16px;
 `;
 
-export const StyledLink = styled`
+export const ButtonLogout = styled.button`
+  background-color: transparent;
   color: #ffffff;
   font-size: 16px;
   font-weight: 300;
@@ -15,6 +15,7 @@ export const StyledLink = styled`
   padding-top: 14px;
   padding-bottom: 15px;
   text-decoration: none;
+  border: none;
   &:hover {
     color: orange;
   }

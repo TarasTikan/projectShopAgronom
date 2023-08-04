@@ -5,7 +5,6 @@ import {
   Container,
   ImgLogo,
   InputSearch,
-  ItemText,
   KatalogItem,
   ListBtn,
   ListKatalog,
@@ -23,10 +22,8 @@ import { LoveIcon } from 'assets/icon/loveIcon';
 import { VesaIcon } from 'assets/icon/vesaIcon';
 import { ShopBascetIcon } from 'assets/icon/shopBascetIcon';
 import logo from '../../assets/images/Logo.png';
-import { Seeds } from 'assets/icon/seeds';
 import { Sapling } from 'assets/icon/sapling';
 import { Fertilizer } from 'assets/icon/fertilizer';
-import { Farmer } from 'assets/icon/farmer';
 import { FeedGroupIcon } from 'assets/icon/feedGroup';
 import { useSelector } from 'react-redux';
 import { selectItemsBasket } from 'redux/basket/selectors';
@@ -83,17 +80,13 @@ export const HeadInfo = () => {
       </WrapSideBar>
       <ListKatalog>
         <KatalogItem>
-          <Seeds />
-          <ItemText>Насіння</ItemText>
-        </KatalogItem>
-        <KatalogItem>
           <Sapling />
           <StyledLink
             to="/catalog/plantsProtect"
             onClick={handleSaveRouter}
             name="plantsProtect"
           >
-            Засоби захисту рослин
+            ЗАСОБИ ЗАХИСТУ РОСЛИН
           </StyledLink>
         </KatalogItem>
         <KatalogItem>
@@ -115,10 +108,6 @@ export const HeadInfo = () => {
           >
             КОРМОВА ГРУПА
           </StyledLink>
-        </KatalogItem>
-        <KatalogItem>
-          <Farmer />
-          <ItemText>Агроному в поміч</ItemText>
         </KatalogItem>
       </ListKatalog>
     </Container>

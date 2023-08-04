@@ -80,6 +80,7 @@ export function Modal({ onClose }) {
       price: String(totalPrice),
       number: String(number),
     };
+    console.log(productInBasket);
     dispatch(addProductBacket(productInBasket));
     localStorage.setItem('page', 'basketProducts');
   };

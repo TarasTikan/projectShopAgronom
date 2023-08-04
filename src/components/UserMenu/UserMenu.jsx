@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { AuthList } from './UserMenu.styled';
+import { AuthList, ButtonLogout } from './UserMenu.styled';
 import { logout } from 'redux/auth/operations';
 
 export const UserMenu = () => {
@@ -9,9 +9,9 @@ export const UserMenu = () => {
   };
   return (
     <AuthList>
-      <button type="button" onClick={handleLogout}>
+      <ButtonLogout type="button" onClick={handleLogout}>
         Вихід
-      </button>
+      </ButtonLogout>
     </AuthList>
   );
 };

@@ -7,9 +7,11 @@ import {
   FormBtnSubmit,
   FormInput,
   FormPssword,
+  ListItemUrl,
   RegisterForm,
   RegisterText,
   TextUrl,
+  UrlDecor,
   UrlList,
   WrapCheckBox,
   WrapContainerTitle,
@@ -88,12 +90,14 @@ export const FormRegister = () => {
         <li>
           <TextUrl>Головна</TextUrl>
         </li>
-        <li>
+        <ListItemUrl>
+          <UrlDecor />
           <TextUrl>Авторизація</TextUrl>
-        </li>
-        <li>
+        </ListItemUrl>
+        <ListItemUrl>
+          <UrlDecor />
           <TextUrl>Реєстрація</TextUrl>
-        </li>
+        </ListItemUrl>
       </UrlList>
       <WrapContainerTitle>
         <WrapTitle>
