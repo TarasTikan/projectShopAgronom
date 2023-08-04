@@ -1,12 +1,12 @@
-import { Outlet } from "react-router-dom";
-import { Container, Head, Nav, NavList, StyledLink } from "./AppBar.styled";
-import { UserMenu } from "components/UserMenu/UserMenu";
-import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "redux/auth/selectors";
-import { AuthNav } from "components/AuthNav/AuthNav";
+import { Outlet } from 'react-router-dom';
+import { Container, Head, Nav, NavList, StyledLink } from './AppBar.styled';
+import { UserMenu } from 'components/UserMenu/UserMenu';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
+import { AuthNav } from 'components/AuthNav/AuthNav';
 
 export const AppBar = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn)
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <>
       <Head>

@@ -25,11 +25,11 @@ import { selectIsLoggedIn } from 'redux/auth/selectors';
 export const ProductsList = () => {
   const currentItems = useSelector(selectCurrentItems);
   const isLoading = useSelector(selectIsLoading);
-  const isLoggedIn = useSelector(selectIsLoggedIn)
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const [isShowModal, setIsShowModal] = useState(false);
   const [page] = useState(localStorage.getItem('page'));
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { routesName } = useParams();
   const fetchProductsData = useCallback(() => {
     const requestData = {
@@ -43,7 +43,7 @@ export const ProductsList = () => {
   }, [fetchProductsData]);
 
   const handleBasket = e => {
-    if(isLoggedIn === false) {
+    if (isLoggedIn === false) {
       navigate('/signIn');
     }
     const productId = e.currentTarget.name;
@@ -54,7 +54,6 @@ export const ProductsList = () => {
     };
     setIsShowModal(true);
     dispatch(fetchProductOne(product));
-
   };
   const toggleModal = e => {
     setIsShowModal(!isShowModal);

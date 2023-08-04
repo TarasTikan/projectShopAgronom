@@ -8,8 +8,8 @@ export const WrapTitle = styled.div`
   margin-bottom: 37px;
 `;
 export const FilterSection = styled.section`
-padding-bottom: 120px;
-padding-top: 20px;
+  padding-bottom: 120px;
+  padding-top: 20px;
 `;
 export const TitleCatalog = styled.h1`
   font-family: Montserrat;

@@ -19,8 +19,9 @@ export const UrlList = ({ productOne }) => {
   };
   const routerTitle = () => {
     if (!routesName) return null;
-     const  findRouterName = allRouterName.find(
-        item => item.routesName === routesName)
+    const findRouterName = allRouterName.find(
+      item => item.routesName === routesName
+    );
     return (
       <ListItemUrl>
         <UrlDecor />

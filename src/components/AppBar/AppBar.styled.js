@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const Head = styled.header`
   background: #1e6140;
-  `;
+`;
 export const Container = styled.div`
   width: 1200px;
   padding-left: 15px;
@@ -15,9 +15,8 @@ export const Container = styled.div`
 `;
 
 export const Nav = styled.nav`
-display: flex;
-align-items:center;
-
+  display: flex;
+  align-items: center;
 `;
 
 export const NavList = styled.ul`

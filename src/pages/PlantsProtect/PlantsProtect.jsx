@@ -16,13 +16,12 @@ import { InfoPlantsProtect } from 'components/InfoPlantsProtect/InfoPlantsProtec
 import { Footer } from 'components/Footer/Footer';
 import { UrlList } from 'components/UrlList/UrlList';
 export const PlantsProtect = () => {
-
   return (
     <main>
       <PlantsSection>
         <Container>
           <HeadInfo />
-          <UrlList/>
+          <UrlList />
           <WrapTitle>
             <img src={treelist} alt="treelist" />
             <TitleCatalog>Засоби захисту рослин</TitleCatalog>
@@ -32,9 +31,7 @@ export const PlantsProtect = () => {
             {plantsProtectCatalog.map(({ id, name, routesName, imgPL }) => (
               <CatalogItem key={id} imgpl={imgPL}>
                 <WrapTextItem>
-                  <StyledLink
-                    to={`/plantsProtect/filter/${routesName}`}
-                  >
+                  <StyledLink to={`/plantsProtect/filter/${routesName}`}>
                     {name}
                   </StyledLink>
                 </WrapTextItem>

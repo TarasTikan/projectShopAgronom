@@ -16,9 +16,9 @@ export const Container = styled.div`
 `;
 
 export const WrapTitle = styled.div`
-display: flex;
-gap: 17px;
-align-items: center;
+  display: flex;
+  gap: 17px;
+  align-items: center;
 `;
 export const HeadImgAbout = styled.img`
   width: 32px;
@@ -65,7 +65,6 @@ export const AboutInfoSpan = styled.span`
   font-weight: 700;
   line-height: normal;
 `;
-
 
 export const AboutButton = styled.button`
   color: #fff;

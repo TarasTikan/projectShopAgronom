@@ -16,7 +16,6 @@ import { InfoPlantsProtect } from 'components/InfoPlantsProtect/InfoPlantsProtec
 import { Footer } from 'components/Footer/Footer';
 import { UrlList } from 'components/UrlList/UrlList';
 export const Fertilizers = () => {
-
   return (
     <main>
       <PlantsSection>

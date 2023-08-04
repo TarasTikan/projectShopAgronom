@@ -17,7 +17,7 @@ import {
   WrapDecorationAll,
   ElementsDecoration,
 } from './Footer.styled';
-import logo from '../../assets/images/Logo.png'
+import logo from '../../assets/images/Logo.png';
 import { CallIcon } from 'assets/icon/callIcon';
 import { Email } from 'assets/icon/emailIcon';
 import { ArrowWhite } from 'assets/icon/arrowWhite';

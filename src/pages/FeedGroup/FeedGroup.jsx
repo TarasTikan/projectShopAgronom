@@ -21,7 +21,7 @@ export const FeedGroup = () => {
       <PlantsSection>
         <Container>
           <HeadInfo />
-       <UrlList/>
+          <UrlList />
           <WrapTitle>
             <img src={treelist} alt="treelist" />
             <TitleCatalog>Кормова група</TitleCatalog>
@@ -31,9 +31,7 @@ export const FeedGroup = () => {
             {feedGroupCatalog.map(({ id, name, routesName, imgPL }) => (
               <CatalogItem key={id} imgpl={imgPL}>
                 <WrapTextItem>
-                  <StyledLink
-                    to={`/feedGroup/filter/${routesName}`}
-                  >
+                  <StyledLink to={`/feedGroup/filter/${routesName}`}>
                     {name}
                   </StyledLink>
                 </WrapTextItem>

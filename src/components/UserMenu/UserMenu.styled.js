@@ -5,10 +5,6 @@ export const AuthList = styled.div`
   list-style: none;
   align-items: center;
   gap: 16px;
-  /* НЕЗАБУДЬ ВИДАЛИТИ КОЛОР І ФОНТ ФЕМІЛІ */
-  color: #ffff;
-  font-family: Montserrat;
-  /* НЕЗАБУДЬ ВИДАЛИТИ КОЛОР І ФОНТ ФЕМІЛІ */
 `;
 
 export const StyledLink = styled(NavLink)`

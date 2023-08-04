@@ -3,12 +3,12 @@ export const ImgLogo = styled.img`
   margin-right: 30px;
 `;
 export const FooterSection = styled.footer`
-background-color: #fff;
-padding-top: 120px;
-padding-bottom:17px;
-display: flex;
-flex-direction: column;
-align-items: center;
+  background-color: #fff;
+  padding-top: 120px;
+  padding-bottom: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Container = styled.div`
@@ -22,12 +22,13 @@ export const Container = styled.div`
 `;
 
 export const LogoContainer = styled.ul`
-display: flex;
-flex-direction: column;
-width: 221px;
-list-style: none;
-gap: 15px;
-align-items: start;`
+  display: flex;
+  flex-direction: column;
+  width: 221px;
+  list-style: none;
+  gap: 15px;
+  align-items: start;
+`;
 
 export const LogoText = styled.p`
   color: rgba(0, 0, 0, 0.6);
@@ -35,7 +36,6 @@ export const LogoText = styled.p`
   font-size: 16px;
   font-weight: 400;
 `;
-
 
 export const WrapInformation = styled.ul`
   display: flex;
@@ -58,9 +58,8 @@ export const TitleInformation = styled.h3`
   font-family: Montserrat;
   font-size: 18px;
   font-weight: 600;
-  margin-bottom:4px;
+  margin-bottom: 4px;
 `;
-
 
 export const ContactText = styled.p`
   color: #000;
@@ -97,10 +96,10 @@ export const CallBtn = styled.button`
 `;
 
 export const ItemContact = styled.li`
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 `;
 
 export const FooterText = styled.p`
@@ -119,9 +118,9 @@ export const ContainerDecoration = styled.div`
 `;
 
 export const WrapDecoration = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 export const WrapDecorationAll = styled.div`
   display: flex;

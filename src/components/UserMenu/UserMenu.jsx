@@ -1,16 +1,17 @@
-import { useDispatch } from "react-redux";
-import { AuthList } from "./UserMenu.styled";
-import { logout } from "redux/auth/operations";
-
+import { useDispatch } from 'react-redux';
+import { AuthList } from './UserMenu.styled';
+import { logout } from 'redux/auth/operations';
 
 export const UserMenu = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const handleLogout = () => {
-    dispatch(logout())
-  }
+    dispatch(logout());
+  };
   return (
     <AuthList>
-        <button type="button" onClick={handleLogout}>Вихід</button>
+      <button type="button" onClick={handleLogout}>
+        Вихід
+      </button>
     </AuthList>
   );
 };

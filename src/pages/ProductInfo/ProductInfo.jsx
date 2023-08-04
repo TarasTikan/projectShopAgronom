@@ -4,8 +4,8 @@ import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProductOne} from 'redux/products/operations';
-import { selectProductOne} from 'redux/products/selectors';
+import { fetchProductOne } from 'redux/products/operations';
+import { selectProductOne } from 'redux/products/selectors';
 import {
   BuyButton,
   Container,
@@ -46,12 +46,12 @@ import { Loader } from 'components/Loader/Loader';
 import { ProductDescription } from 'components/ProductDescription/ProductDescription';
 import { UrlList } from 'components/UrlList/UrlList';
 export const ProductInfo = () => {
-  const { routesName, productId,category } = useParams();
+  const { routesName, productId, category } = useParams();
   const productOne = useSelector(selectProductOne);
   const [showInfo, setShowInfo] = useState(true);
   const [isShowModal, setIsShowModal] = useState(false);
-  const [page] = useState(localStorage.getItem('page'))
-  const dispatch = useDispatch()
+  const [page] = useState(localStorage.getItem('page'));
+  const dispatch = useDispatch();
   useEffect(() => {
     const product = {
       plants: routesName,
@@ -77,7 +77,6 @@ export const ProductInfo = () => {
                 <Wrapimg></Wrapimg>
                 <WrapContainerInfo>
                   <WrapTitle>
-                    {/* <ImgDecoration src={treeleast} alt="decorLeast" /> */}
                     <TitleProduct>
                       {productOne.name},<br /> {productOne.producer}
                     </TitleProduct>
@@ -110,9 +109,7 @@ export const ProductInfo = () => {
                   </ContainerInfoProduct>
                   <WrapPriceInfo>
                     <WrapPrice>
-                      <TitlePrice>
-                        {productOne.price} грн
-                      </TitlePrice>
+                      <TitlePrice>{productOne.price} грн</TitlePrice>
                       <PriceText>Ціна за 5 л</PriceText>
                     </WrapPrice>
                     <BuyButton type="button" onClick={toggleModal}>

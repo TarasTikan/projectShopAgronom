@@ -290,7 +290,6 @@ export const ProductBtnInfo = styled.button`
   border-radius: 20px 20px 0px 0px;
 `;
 
-
 export const WrapBtnInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -325,11 +324,12 @@ export const TextDescripProduct = styled.p`
 `;
 
 export const InfoList = styled.ul`
-display:flex;
-flex-direction: column;
-gap: 10px;
-margin-bottom: 14px;
-list-style:none;`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+  list-style: none;
+`;
 
 export const SpanTextProduct = styled.span`
   color: #1e6140;
@@ -350,9 +350,10 @@ export const TextProductDescript = styled.p`
 `;
 
 export const WrapCharachtersInfo = styled.div`
-display:flex;
-flex-direction: column;
-margin-bottom: 13px;`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 13px;
+`;
 
 export const UrlDecor = styled.div`
   width: 6px;

@@ -10,7 +10,7 @@ import {
   TitleHeroSpan,
   WrapHeroText,
 } from './Home.styled';
-import mainImageDecor from '../../assets/images/mainIMageDecor.jpg'
+import mainImageDecor from '../../assets/images/mainIMageDecor.jpg';
 import { AboutCompany } from 'components/AboutCompany/AboutCompany';
 import { SwiperNews } from 'components/SwipersAll/SwiperNews/SwiperNews';
 import { SwiperActions } from 'components/SwipersAll/SwiperActions/SwiperActions';
@@ -41,12 +41,12 @@ export const Home = () => {
             </MainConent>
           </Container>
         </HeroSection>
-        <AboutCompany/>
-        <SwiperNews/>
-        <SwiperActions/>
-        <SwiperPartners/>
-        <AboutSeeds/>
-        <Footer/>
+        <AboutCompany />
+        <SwiperNews />
+        <SwiperActions />
+        <SwiperPartners />
+        <AboutSeeds />
+        <Footer />
       </main>
     </>
   );

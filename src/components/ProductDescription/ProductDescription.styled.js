@@ -32,8 +32,8 @@ export const TitlteDescipProduct = styled.h2`
   line-height: normal;
   margin-bottom: 11px;
 `;
-  export const WrapCharachtersInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 13px;
-  `;
+export const WrapCharachtersInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 13px;
+`;

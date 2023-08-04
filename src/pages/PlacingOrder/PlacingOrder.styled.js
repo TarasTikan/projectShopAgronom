@@ -98,7 +98,6 @@ export const ContactsComment = styled.textarea`
   resize: none;
 `;
 
-
 export const ContactSelect = styled.select`
   border-radius: 90px;
   margin-bottom: 20px;
@@ -110,11 +109,11 @@ export const ContactSelect = styled.select`
   padding-top: 10px;
   padding-bottom: 10px;
   color: #484848;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 `;
 
 export const InputPostIndex = styled.input`
@@ -165,7 +164,6 @@ export const FormLabel = styled.label`
   display: flex;
 `;
 
-
 export const FormChackbox = styled.input`
   color: #484848;
   font-family: Montserrat;
@@ -177,9 +175,10 @@ export const FormChackbox = styled.input`
 `;
 
 export const WrapOrder = styled.div`
-display: flex;
-gap: 29px;
-justify-content: center;`
+  display: flex;
+  gap: 29px;
+  justify-content: center;
+`;
 
 export const ContainerBasket = styled.div`
   display: flex;

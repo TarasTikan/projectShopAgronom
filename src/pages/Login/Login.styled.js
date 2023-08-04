@@ -19,6 +19,7 @@ export const UrlDecor = styled.div`
   margin-left: 7px;
 `;
 export const ListItemUrl = styled.li`
-display: flex;
-align-items: center;
-justify-content: center;`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

@@ -65,7 +65,7 @@ export function Modal({ onClose }) {
     if (name === 'plus') {
       Number(productOne.number) === number
         ? setErrorNumber(true)
-        : setNumber(prevState => prevState + 1)
+        : setNumber(prevState => prevState + 1);
     }
 
     if (name === 'minus') {

@@ -72,7 +72,6 @@ export const FormInput = styled.input`
   margin-bottom: 20px;
 `;
 
-
 export const FormBtnSubmit = styled.button`
   color: #fff;
   text-align: center;

@@ -1,45 +1,52 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { login } from "redux/auth/operations";
-import { FormBtnSubmit, FormInput, LoginForm, LoginText, TextUrl, UrlList, WrapContainerTitle, WrapTitle } from "./FormLogin.styled";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from 'redux/auth/operations';
+import {
+  FormBtnSubmit,
+  FormInput,
+  LoginForm,
+  LoginText,
+  TextUrl,
+  UrlList,
+  WrapContainerTitle,
+  WrapTitle,
+} from './FormLogin.styled';
 import treeLeastLeft from '../../assets/images/treelist.png';
 import treeLeastRight from '../../assets/images/treelestright.png';
 export const FormLogin = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const dispatch = useDispatch();
-    const handleSubmit = e => {
-      e.preventDefault();
-      const form = e.currentTarget;
-      if (
-        email.trim() === '' ||
-        password.trim() === ''
-      ) {
-        alert('Будь ласка, заповніть всі поля.');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    if (email.trim() === '' || password.trim() === '') {
+      alert('Будь ласка, заповніть всі поля.');
+      return;
+    }
+    dispatch(
+      login({
+        email,
+        password,
+      })
+    );
+    setEmail('');
+    setPassword('');
+    form.reset();
+  };
+  const handleChange = e => {
+    const targetValue = e.target.value;
+    switch (e.target.name) {
+      case 'email':
+        setEmail(targetValue);
+        break;
+      case 'password':
+        setPassword(targetValue);
+        break;
+      default:
         return;
-      }
-        dispatch(
-          login({
-            email,
-            password,
-          }))
-        setEmail('');
-        setPassword('');
-        form.reset();
-    };
-    const handleChange = e => {
-      const targetValue = e.target.value;
-      switch (e.target.name) {
-        case 'email':
-          setEmail(targetValue);
-          break;
-        case 'password':
-          setPassword(targetValue);
-          break;
-        default:
-          return;
-      }
-    };
+    }
+  };
   return (
     <>
       <UrlList>

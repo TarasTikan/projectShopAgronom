@@ -24,8 +24,7 @@ export const WrapTitleProduct = styled.div`
   flex-direction: column;
   gap: 7px;
   justify-content: center;
-  `;
-
+`;
 
 export const TitleProduct = styled.h3`
   color: #000;
@@ -34,11 +33,11 @@ export const TitleProduct = styled.h3`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  `;
+`;
 export const WrapInfoPrice = styled.div`
   display: flex;
   gap: 20px;
-  `;
+`;
 export const PriceProduct = styled.p`
   color: #84be51;
   font-family: Montserrat;
@@ -54,7 +53,7 @@ export const NumberProduct = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  `;
+`;
 export const ContainerInfoPrice = styled.div`
   width: 422px;
   border-radius: 20px;
@@ -67,7 +66,7 @@ export const ContainerInfoPrice = styled.div`
   gap: 149px;
   margin-bottom: 20px;
   margin-top: auto;
-  `;
+`;
 export const PriceAllProduct = styled.p`
   color: #fff;
   font-family: Montserrat;
@@ -75,7 +74,7 @@ export const PriceAllProduct = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  `;
+`;
 
 export const PriceSpan = styled.span`
   color: #84c551;
@@ -84,7 +83,7 @@ export const PriceSpan = styled.span`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  `;
+`;
 
 export const WrapIconExit = styled.div`
   position: absolute;
@@ -101,10 +100,10 @@ export const WrapIconExit = styled.div`
     fill: #e74e13;
   }
 `;
-  export const ProductItem = styled.li`
-    display: flex;
-    align-items: center;
-    position: relative;
-    gap: 21px;
-    width: 480px;
-  `;
+export const ProductItem = styled.li`
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 21px;
+  width: 480px;
+`;

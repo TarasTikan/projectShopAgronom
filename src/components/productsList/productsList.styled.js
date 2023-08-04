@@ -13,12 +13,12 @@ export const ProductList = styled.ul`
 `;
 
 export const ProductItem = styled.li`
-  width: 255px; /* Fixed width for each product */
+  width: 255px;
   height: 100%;
   background: #fff;
   border-radius: 20px;
   padding: 10px;
-  margin-bottom: 20px; /* Add some space between rows */
+  margin-bottom: 20px;
   cursor: pointer;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 

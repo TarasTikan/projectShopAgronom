@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const PlantsSection = styled.section`
-padding-bottom: 122px;
-padding-top: 20px;
+  padding-bottom: 122px;
+  padding-top: 20px;
 `;
 
 export const Container = styled.div`
@@ -51,7 +51,7 @@ export const WrapTextItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-margin-top: 115px;
+  margin-top: 115px;
 `;
 
 export const TitleCatalog = styled.h1`

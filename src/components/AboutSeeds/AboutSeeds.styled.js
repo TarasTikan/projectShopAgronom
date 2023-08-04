@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import bgSeedsImg from '../../assets/images/aboutsemens.jpg'
+import bgSeedsImg from '../../assets/images/aboutsemens.jpg';
 export const SeedsSection = styled.section`
   background-image: url(${bgSeedsImg});
   padding-top: 109px;
@@ -25,10 +25,10 @@ export const TitleSeeds = styled.h1`
 `;
 
 export const WrapTitleSeeds = styled.div`
-display: flex;
-align-items: center;
-gap: 17px;`
-
+  display: flex;
+  align-items: center;
+  gap: 17px;
+`;
 
 export const SeedListInfo = styled.ul`
   display: flex;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundImage from '../../assets/images/heroBg.jpg'
+import backgroundImage from '../../assets/images/heroBg.jpg';
 export const HeroSection = styled.section`
   background-image: url(${backgroundImage});
   background-size: cover;
@@ -66,20 +66,18 @@ export const BtnCompany = styled.button`
   &:hover {
     background-color: #ba3c0b;
   }
-`;;
-
+`;
 
 export const MainImageDecor = styled.img`
   width: 700px;
   height: 650px;
   border-bottom-right-radius: 50%;
   border-top-left-radius: 50%;
-  position: absolute; 
-  bottom: 0; 
+  position: absolute;
+  bottom: 0;
   right: 0;
 `;
 
 export const MainConent = styled.div`
   display: flex;
-  
 `;

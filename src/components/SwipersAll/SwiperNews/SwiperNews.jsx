@@ -31,7 +31,7 @@ import { Loader } from 'components/Loader/Loader';
 export const SwiperNews = () => {
   const dispatch = useDispatch();
   const productsNew = useSelector(selectProducts);
-  const isLoading = useSelector(selectIsLoading)
+  const isLoading = useSelector(selectIsLoading);
   useEffect(() => {
     const response = {
       page: 'plantsProtect',
@@ -47,41 +47,43 @@ export const SwiperNews = () => {
           <TitleNewsSwiper>Новинки</TitleNewsSwiper>
           <img src={treeleastRight} alt="decorLeast" />
         </WrapTilte>
-          {isLoading ? <Loader/> :
-        <CustomBtnContainer>
-          <CustomBtnPrev className="swiper-button-prev3">
-            <ArroLeftSwiper />
-          </CustomBtnPrev>
-          <StyledSwiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={30}
-            slidesPerView={4}
-            navigation={{
-              prevEl: '.swiper-button-prev3',
-              nextEl: '.swiper-button-next4',
-            }}
-            pagination={{ clickable: true }}
-          >
-            {productsNew.map(({ name, price, number, _id }) => (
-              <SwiperSlide key={_id}>
-                <ItemInfo>
-                  <div>
-                    <ItemTitle>{name}</ItemTitle>
-                    <IteamStock>В наявності</IteamStock>
-                  </div>
-                  <div>
-                    <ItemPrice>{price} грн</ItemPrice>
-                    <ItemNumber>{number} шт</ItemNumber>
-                  </div>
-                </ItemInfo>
-              </SwiperSlide>
-            ))}
-          </StyledSwiper>
-          <CustomBtnNext className="swiper-button-next4">
-            <ArroRightSwiper />
-          </CustomBtnNext>
-        </CustomBtnContainer>
-          }
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <CustomBtnContainer>
+            <CustomBtnPrev className="swiper-button-prev3">
+              <ArroLeftSwiper />
+            </CustomBtnPrev>
+            <StyledSwiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={30}
+              slidesPerView={4}
+              navigation={{
+                prevEl: '.swiper-button-prev3',
+                nextEl: '.swiper-button-next4',
+              }}
+              pagination={{ clickable: true }}
+            >
+              {productsNew.map(({ name, price, number, _id }) => (
+                <SwiperSlide key={_id}>
+                  <ItemInfo>
+                    <div>
+                      <ItemTitle>{name}</ItemTitle>
+                      <IteamStock>В наявності</IteamStock>
+                    </div>
+                    <div>
+                      <ItemPrice>{price} грн</ItemPrice>
+                      <ItemNumber>{number} шт</ItemNumber>
+                    </div>
+                  </ItemInfo>
+                </SwiperSlide>
+              ))}
+            </StyledSwiper>
+            <CustomBtnNext className="swiper-button-next4">
+              <ArroRightSwiper />
+            </CustomBtnNext>
+          </CustomBtnContainer>
+        )}
       </Container>
     </NewsSection>
   );

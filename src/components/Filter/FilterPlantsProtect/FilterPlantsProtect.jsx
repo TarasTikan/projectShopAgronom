@@ -1,11 +1,30 @@
-import { plantsCulture, plantsProducer, plantsProtectCatalog } from "fakeAPI";
-import { useDispatch } from "react-redux";
-import { addCulture, addNumber, addProducer, deleteCulture, deleteNumber, deleteProducer } from "redux/products/filterSlice";
-import { FormNumber, FormProducer, LabalInput, ListCatalogName, StyledLink, TitleCulture, TitleFilter, TitleNumber, TitleProducer, WrapFilter, WrapTitleFilter } from "./FilterPlantsProtect.styled";
+import { plantsCulture, plantsProducer, plantsProtectCatalog } from 'fakeAPI';
+import { useDispatch } from 'react-redux';
+import {
+  addCulture,
+  addNumber,
+  addProducer,
+  deleteCulture,
+  deleteNumber,
+  deleteProducer,
+} from 'redux/products/filterSlice';
+import {
+  FormNumber,
+  FormProducer,
+  LabalInput,
+  ListCatalogName,
+  StyledLink,
+  TitleCulture,
+  TitleFilter,
+  TitleNumber,
+  TitleProducer,
+  WrapFilter,
+  WrapTitleFilter,
+} from './FilterPlantsProtect.styled';
 
 export const FilterPlantsProtect = () => {
-    const dispatch = useDispatch()
-      const handleChange = e => {
+  const dispatch = useDispatch();
+  const handleChange = e => {
     const normalizatorFilter = e.target.name
       .slice(8, e.target.name.length)
       .trim();
@@ -20,101 +39,71 @@ export const FilterPlantsProtect = () => {
       dispatch(actionNumber(e.target.name));
     }
   };
-    return (
-      <WrapTitleFilter>
-        <ListCatalogName>
-          {plantsProtectCatalog.map(({ id, name, routesName }) => (
-            <li key={id}>
-              <StyledLink to={`filter/${routesName}`}>{name}</StyledLink>
-            </li>
+  return (
+    <WrapTitleFilter>
+      <ListCatalogName>
+        {plantsProtectCatalog.map(({ id, name, routesName }) => (
+          <li key={id}>
+            <StyledLink to={`filter/${routesName}`}>{name}</StyledLink>
+          </li>
+        ))}
+      </ListCatalogName>
+      <WrapFilter>
+        <TitleFilter>Фільтр</TitleFilter>
+        <FormProducer>
+          <TitleProducer>Виробник</TitleProducer>
+          {plantsProducer.map(({ id, name }) => (
+            <LabalInput key={id}>
+              <input
+                type="checkbox"
+                name={`producer ${name}`}
+                onChange={handleChange}
+              />
+              {name}
+            </LabalInput>
           ))}
-        </ListCatalogName>
-        <WrapFilter>
-          <TitleFilter>Фільтр</TitleFilter>
-          <FormProducer>
-            <TitleProducer>Виробник</TitleProducer>
-            {plantsProducer.map(({ id, name }) => (
-              <LabalInput key={id}>
-                <input
-                  type="checkbox"
-                  name={`producer ${name}`}
-                  onChange={handleChange}
-                />
-                {name}
-              </LabalInput>
-            ))}
-          </FormProducer>
-          <FormProducer>
-            <TitleCulture>Культура</TitleCulture>
-            {plantsCulture.map(({ id, name }) => (
-              <LabalInput key={id}>
-                <input
-                  type="checkbox"
-                  name={`culture ${name}`}
-                  onChange={handleChange}
-                />
-                {name}
-              </LabalInput>
-            ))}
-          </FormProducer>
-          <FormNumber>
-            <TitleNumber>Кількість</TitleNumber>
-            <LabalInput>
+        </FormProducer>
+        <FormProducer>
+          <TitleCulture>Культура</TitleCulture>
+          {plantsCulture.map(({ id, name }) => (
+            <LabalInput key={id}>
               <input
                 type="checkbox"
-                name="1"
-                value="1"
+                name={`culture ${name}`}
                 onChange={handleChange}
               />
-              1
+              {name}
             </LabalInput>
-            <LabalInput>
-              <input
-                type="checkbox"
-                name="2"
-                value="2"
-                onChange={handleChange}
-              />
-              2
-            </LabalInput>
-            <LabalInput>
-              <input
-                type="checkbox"
-                name="3"
-                value="3"
-                onChange={handleChange}
-              />
-              3
-            </LabalInput>
-            <LabalInput>
-              <input
-                type="checkbox"
-                name="4"
-                value="4"
-                onChange={handleChange}
-              />
-              4
-            </LabalInput>
-            <LabalInput>
-              <input
-                type="checkbox"
-                name="5"
-                value="5"
-                onChange={handleChange}
-              />
-              5
-            </LabalInput>
-            <LabalInput>
-              <input
-                type="checkbox"
-                name="6"
-                value="6"
-                onChange={handleChange}
-              />
-              6
-            </LabalInput>
-          </FormNumber>
-        </WrapFilter>
-      </WrapTitleFilter>
-    );
-}
+          ))}
+        </FormProducer>
+        <FormNumber>
+          <TitleNumber>Кількість</TitleNumber>
+          <LabalInput>
+            <input type="checkbox" name="1" value="1" onChange={handleChange} />
+            1
+          </LabalInput>
+          <LabalInput>
+            <input type="checkbox" name="2" value="2" onChange={handleChange} />
+            2
+          </LabalInput>
+          <LabalInput>
+            <input type="checkbox" name="3" value="3" onChange={handleChange} />
+            3
+          </LabalInput>
+          <LabalInput>
+            <input type="checkbox" name="4" value="4" onChange={handleChange} />
+            4
+          </LabalInput>
+          <LabalInput>
+            <input type="checkbox" name="5" value="5" onChange={handleChange} />
+            5
+          </LabalInput>
+          <LabalInput>
+            <input type="checkbox" name="6" value="6" onChange={handleChange} />
+            6
+          </LabalInput>
+        </FormNumber>
+      </WrapFilter>
+    </WrapTitleFilter>
+  );
+};

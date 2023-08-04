@@ -66,7 +66,3 @@ export const PageNumber = styled.button`
     fill: #fff;
   }
 `;
-
-
-
-

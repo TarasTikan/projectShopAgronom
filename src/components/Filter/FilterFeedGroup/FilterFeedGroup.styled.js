@@ -5,10 +5,10 @@ export const WrapTitleFilter = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-margin-right: auto;
+  margin-right: auto;
 `;
 export const ListCatalogName = styled.ul`
-margin-bottom: 30px;
+  margin-bottom: 30px;
   border-radius: 20px;
   background: #fff;
   display: flex;
@@ -121,15 +121,16 @@ export const PriceInput = styled.input`
 `;
 
 export const PriceLabel = styled.label`
-display: flex;
-color: rgba(0, 0, 0, 0.50);
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-gap: 3px;
-line-height: normal;
-flex-direction: column;`
+  display: flex;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  gap: 3px;
+  line-height: normal;
+  flex-direction: column;
+`;
 
 export const WrapInput = styled.div`
   display: flex;

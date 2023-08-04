@@ -1,7 +1,7 @@
 import treeLeastLeft from '../../assets/images/treelist.png';
 import treeLeastRight from '../../assets/images/treelestright.png';
 import {
-    BtnConfirmOrder,
+  BtnConfirmOrder,
   ContactInput,
   ContactSelect,
   ContactsComment,
@@ -30,7 +30,7 @@ export const PlacingOrder = () => {
       <PlantsSection>
         <Container>
           <HeadInfo />
-          <UrlList/>
+          <UrlList />
           <WrapTitle>
             <img src={treeLeastLeft} alt="decorLeast" />
             <TitleOrder>Оформлення заказу</TitleOrder>
@@ -92,7 +92,7 @@ export const PlacingOrder = () => {
 
             <ContainerBasket>
               <TitleBasket>Товари у кошику</TitleBasket>
-             <ProductsBasketList/>
+              <ProductsBasketList />
               <BtnConfirmOrder type="submit">Підтвердити заказ</BtnConfirmOrder>
             </ContainerBasket>
           </WrapOrder>

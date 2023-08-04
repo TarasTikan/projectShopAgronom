@@ -32,12 +32,12 @@ import { Loader } from 'components/Loader/Loader';
 export const SwiperYouLike = () => {
   const dispatch = useDispatch();
   const productsNew = useSelector(selectProducts);
-       const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(selectIsLoading);
   useEffect(() => {
-        const response = {
-          page: 'plantsProtect',
-          router: 'herbicides',
-        };
+    const response = {
+      page: 'plantsProtect',
+      router: 'herbicides',
+    };
     dispatch(fetchProducts(response));
   }, [dispatch]);
   return (

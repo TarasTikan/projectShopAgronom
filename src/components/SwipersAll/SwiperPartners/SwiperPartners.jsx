@@ -17,7 +17,7 @@ import { selectIsLoading } from 'redux/products/selectors';
 import { useSelector } from 'react-redux';
 import { Loader } from 'components/Loader/Loader';
 export const SwiperPartners = () => {
-    const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(selectIsLoading);
   return (
     <PartnersSection>
       <Container>
@@ -26,38 +26,39 @@ export const SwiperPartners = () => {
           <TitlePartnersSwiper>Партнери</TitlePartnersSwiper>
           <img src={treeleastRight} alt="decorLeast" />
         </WrapTilte>
-        {isLoading ?  <Loader/> :
-        <StyledSwiper
-          id="swiper1"
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={30}
-          slidesPerView={4}
-          navigation={{
-            prevEl: '.swiper-button-prev1',
-            nextEl: '.swiper-button-next2',
-          }}
-          pagination={{ clickable: true }}
-        >
-          <CustomBtnPrev className="swiper-button-prev1">
-            <ArroLeftSwiper />
-          </CustomBtnPrev>
-          <SwiperSlide></SwiperSlide>
-          <SwiperSlide></SwiperSlide>
-          <SwiperSlide></SwiperSlide>
-          <SwiperSlide></SwiperSlide>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <StyledSwiper
+            id="swiper1"
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={30}
+            slidesPerView={4}
+            navigation={{
+              prevEl: '.swiper-button-prev1',
+              nextEl: '.swiper-button-next2',
+            }}
+            pagination={{ clickable: true }}
+          >
+            <CustomBtnPrev className="swiper-button-prev1">
+              <ArroLeftSwiper />
+            </CustomBtnPrev>
+            <SwiperSlide></SwiperSlide>
+            <SwiperSlide></SwiperSlide>
+            <SwiperSlide></SwiperSlide>
+            <SwiperSlide></SwiperSlide>
 
-          <SwiperSlide></SwiperSlide>
-          <SwiperSlide></SwiperSlide>
+            <SwiperSlide></SwiperSlide>
+            <SwiperSlide></SwiperSlide>
 
-          <SwiperSlide></SwiperSlide>
-          <SwiperSlide></SwiperSlide>
-          <SwiperSlide></SwiperSlide>
-          <CustomBtnNext className="swiper-button-next2">
-            <ArroRightSwiper />
-          </CustomBtnNext>
-        </StyledSwiper>
-        }
-
+            <SwiperSlide></SwiperSlide>
+            <SwiperSlide></SwiperSlide>
+            <SwiperSlide></SwiperSlide>
+            <CustomBtnNext className="swiper-button-next2">
+              <ArroRightSwiper />
+            </CustomBtnNext>
+          </StyledSwiper>
+        )}
       </Container>
     </PartnersSection>
   );

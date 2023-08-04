@@ -5,7 +5,7 @@ export const WrapTitleFilter = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-margin-right: auto;
+  margin-right: auto;
 `;
 export const ListCatalogName = styled.ul`
   border-radius: 20px;
@@ -34,7 +34,7 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 export const WrapFilter = styled.div`
-    align-items: center;
+  align-items: center;
   margin-top: 30px;
   border-radius: 20px 20px 0px 0px;
   width: 255px;

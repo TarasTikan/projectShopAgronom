@@ -24,16 +24,16 @@ import { UrlList } from 'components/UrlList/UrlList';
 
 export const FilterProducts = () => {
   const [page] = useState(localStorage.getItem('page'));
-  const products = useSelector(selectFilteredProducts)
-const changeTitle = page => {
+  const products = useSelector(selectFilteredProducts);
+  const changeTitle = page => {
     if (page === 'plantsProtect') {
-      return "Засоби захисту рослин"
+      return 'Засоби захисту рослин';
     } else if (page === 'feedGroup') {
-      return "Кормова група"
+      return 'Кормова група';
     } else {
-      return "Добрива"
+      return 'Добрива';
     }
-}
+  };
   const confirmPage = page => {
     if (page === 'plantsProtect') {
       return <FilterPlantsProtect />;
