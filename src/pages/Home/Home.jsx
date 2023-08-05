@@ -17,6 +17,7 @@ import { SwiperActions } from 'components/SwipersAll/SwiperActions/SwiperActions
 import { SwiperPartners } from 'components/SwipersAll/SwiperPartners/SwiperPartners';
 import { AboutSeeds } from 'components/AboutSeeds/AboutSeeds';
 import { Footer } from 'components/Footer/Footer';
+import { BackToTopBtn } from 'components/BackToTopBtn/BackToTopBtn';
 export const Home = () => {
   return (
     <>
@@ -46,8 +47,9 @@ export const Home = () => {
         <SwiperActions />
         <SwiperPartners />
         <AboutSeeds />
-        <Footer />
+        <BackToTopBtn/> 
       </main>
+        <Footer />
     </>
   );
 };
