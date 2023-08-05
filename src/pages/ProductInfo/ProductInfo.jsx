@@ -47,6 +47,7 @@ import { ProductDescription } from 'components/ProductDescription/ProductDescrip
 import { UrlList } from 'components/UrlList/UrlList';
 import { ShopBascetIcon } from 'assets/icons/shopBascetIcon';
 import { CallIcon } from 'assets/icons/callIcon';
+import { BackToTopBtn } from 'components/BackToTopBtn/BackToTopBtn';
 export const ProductInfo = () => {
   const { routesName, productId, category } = useParams();
   const productOne = useSelector(selectProductOne);
@@ -67,100 +68,103 @@ export const ProductInfo = () => {
   };
   return (
     <>
-      <ProductSection>
-        <Container>
-          <HeadInfo />
-          <UrlList productOne={productOne} />
-          {productOne === null || productOne === undefined ? (
-            <Loader />
-          ) : (
-            <>
-              <WrapInfoProduct>
-                <Wrapimg></Wrapimg>
-                <WrapContainerInfo>
-                  <WrapTitle>
-                    <TitleProduct>
-                      {productOne.name},<br /> {productOne.producer}
-                    </TitleProduct>
-                  </WrapTitle>
-                  <WrapIsStock>
-                    <TextProductStock>В наявності</TextProductStock>
-                    <TextProductPrice>
-                      {Math.round(Number(productOne.price) / 5)} грн./л
-                    </TextProductPrice>
-                  </WrapIsStock>
-                  <ContainerInfoProduct>
-                    <WrapCardsBank>
-                      <WrapProducer>
-                        <TitleProducer>Виробник</TitleProducer>
-                        <TextProducer>{productOne.producer}</TextProducer>
-                      </WrapProducer>
-                      <div>
-                        <TitleProducer>Оплата</TitleProducer>
-                      </div>
-                    </WrapCardsBank>
-                    <WrapDelivery>
-                      <TitleDelivery>Доставка</TitleDelivery>
-                      <TextDelivery>
-                        Завтра відповідно до тарифів перевізника
-                      </TextDelivery>
-                      <DeliverButton type="button">
-                        <CallIcon />
-                        Замовити дзвінок
-                      </DeliverButton>
-                    </WrapDelivery>
-                  </ContainerInfoProduct>
-                  <WrapPriceInfo>
-                    <WrapPrice>
-                      <TitlePrice>{productOne.price} грн</TitlePrice>
-                      <PriceText>Ціна за 5 л</PriceText>
-                    </WrapPrice>
-                    <BuyButton type="button" onClick={toggleModal}>
-                      <ShopBascetIcon />
-                      Купити
-                    </BuyButton>
-                    <ListIcon>
-                      <IconItem>
-                        <LoveIcon />
-                      </IconItem>
-                      <IconItem>
-                        <VesaIcon />
-                      </IconItem>
-                    </ListIcon>
-                  </WrapPriceInfo>
-                </WrapContainerInfo>
-              </WrapInfoProduct>
-              <WrapDescrip>
-                <div>
-                  <ProductBtnInfo
-                    type="button"
-                    onClick={() => setShowInfo(!showInfo)}
-                    $active={showInfo.toString()}
-                  >
-                    Опис
-                  </ProductBtnInfo>
-                  <ProductBtnInfo
-                    type="button"
-                    onClick={() => setShowInfo(!showInfo)}
-                    $active={(!showInfo).toString()}
-                  >
-                    Відгуки
-                  </ProductBtnInfo>
-                </div>
-                <WrapBtnInfo>
-                  <TitlteDescipProduct>{productOne.name}</TitlteDescipProduct>
-                  <TextDescripProduct>
-                    {productOne.description}
-                  </TextDescripProduct>
-                  <ProductDescription productOne={productOne} />
-                </WrapBtnInfo>
-              </WrapDescrip>
-            </>
-          )}
-          {isShowModal && <Modal onClose={toggleModal} />}
-        </Container>
-      </ProductSection>
-      <SwiperYouLike />
+      <main>
+        <ProductSection>
+          <Container>
+            <HeadInfo />
+            <UrlList productOne={productOne} />
+            {productOne === null || productOne === undefined ? (
+              <Loader />
+            ) : (
+              <>
+                <WrapInfoProduct>
+                  <Wrapimg></Wrapimg>
+                  <WrapContainerInfo>
+                    <WrapTitle>
+                      <TitleProduct>
+                        {productOne.name},<br /> {productOne.producer}
+                      </TitleProduct>
+                    </WrapTitle>
+                    <WrapIsStock>
+                      <TextProductStock>В наявності</TextProductStock>
+                      <TextProductPrice>
+                        {Math.round(Number(productOne.price) / 5)} грн./л
+                      </TextProductPrice>
+                    </WrapIsStock>
+                    <ContainerInfoProduct>
+                      <WrapCardsBank>
+                        <WrapProducer>
+                          <TitleProducer>Виробник</TitleProducer>
+                          <TextProducer>{productOne.producer}</TextProducer>
+                        </WrapProducer>
+                        <div>
+                          <TitleProducer>Оплата</TitleProducer>
+                        </div>
+                      </WrapCardsBank>
+                      <WrapDelivery>
+                        <TitleDelivery>Доставка</TitleDelivery>
+                        <TextDelivery>
+                          Завтра відповідно до тарифів перевізника
+                        </TextDelivery>
+                        <DeliverButton type="button">
+                          <CallIcon />
+                          Замовити дзвінок
+                        </DeliverButton>
+                      </WrapDelivery>
+                    </ContainerInfoProduct>
+                    <WrapPriceInfo>
+                      <WrapPrice>
+                        <TitlePrice>{productOne.price} грн</TitlePrice>
+                        <PriceText>Ціна за 5 л</PriceText>
+                      </WrapPrice>
+                      <BuyButton type="button" onClick={toggleModal}>
+                        <ShopBascetIcon />
+                        Купити
+                      </BuyButton>
+                      <ListIcon>
+                        <IconItem>
+                          <LoveIcon />
+                        </IconItem>
+                        <IconItem>
+                          <VesaIcon />
+                        </IconItem>
+                      </ListIcon>
+                    </WrapPriceInfo>
+                  </WrapContainerInfo>
+                </WrapInfoProduct>
+                <WrapDescrip>
+                  <div>
+                    <ProductBtnInfo
+                      type="button"
+                      onClick={() => setShowInfo(!showInfo)}
+                      $active={showInfo.toString()}
+                    >
+                      Опис
+                    </ProductBtnInfo>
+                    <ProductBtnInfo
+                      type="button"
+                      onClick={() => setShowInfo(!showInfo)}
+                      $active={(!showInfo).toString()}
+                    >
+                      Відгуки
+                    </ProductBtnInfo>
+                  </div>
+                  <WrapBtnInfo>
+                    <TitlteDescipProduct>{productOne.name}</TitlteDescipProduct>
+                    <TextDescripProduct>
+                      {productOne.description}
+                    </TextDescripProduct>
+                    <ProductDescription productOne={productOne} />
+                  </WrapBtnInfo>
+                </WrapDescrip>
+              </>
+            )}
+            {isShowModal && <Modal onClose={toggleModal} />}
+          </Container>
+        </ProductSection>
+        <SwiperYouLike />
+        <BackToTopBtn />
+      </main>
       <Footer />
     </>
   );

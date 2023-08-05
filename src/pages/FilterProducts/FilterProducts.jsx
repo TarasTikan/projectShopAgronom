@@ -21,6 +21,7 @@ import { FilterFertilizers } from 'components/Filter/FilterFertilizers/FilterFer
 import { useSelector } from 'react-redux';
 import { selectFilteredProducts } from 'redux/products/selectors';
 import { UrlList } from 'components/UrlList/UrlList';
+import { BackToTopBtn } from 'components/BackToTopBtn/BackToTopBtn';
 
 export const FilterProducts = () => {
   const [page] = useState(localStorage.getItem('page'));
@@ -45,28 +46,31 @@ export const FilterProducts = () => {
   };
   return (
     <>
-      <FilterSection>
-        <Container>
-          <HeadInfo />
-          <UrlList changeTitle={changeTitle} />
-          <WrapTitle>
-            <img src={treelist} alt="treelist" />
-            <TitleCatalog>{changeTitle(page)}</TitleCatalog>
-            <img src={treelistRight} alt="treelist" />
-          </WrapTitle>
-          <WrapNumberProducts>
-            <TitleNumberProducts>
-              Показано {products.length} товарів
-            </TitleNumberProducts>
-            <SortButton type="button">Сортувати за</SortButton>
-          </WrapNumberProducts>
-          <WrapFilterALL>
-            {confirmPage(page)}
-            <Outlet />
-          </WrapFilterALL>
-        </Container>
-      </FilterSection>
-      <InfoPlantsProtect />
+      <main>
+        <FilterSection>
+          <Container>
+            <HeadInfo />
+            <UrlList changeTitle={changeTitle} />
+            <WrapTitle>
+              <img src={treelist} alt="treelist" />
+              <TitleCatalog>{changeTitle(page)}</TitleCatalog>
+              <img src={treelistRight} alt="treelist" />
+            </WrapTitle>
+            <WrapNumberProducts>
+              <TitleNumberProducts>
+                Показано {products.length} товарів
+              </TitleNumberProducts>
+              <SortButton type="button">Сортувати за</SortButton>
+            </WrapNumberProducts>
+            <WrapFilterALL>
+              {confirmPage(page)}
+              <Outlet />
+            </WrapFilterALL>
+          </Container>
+        </FilterSection>
+        <InfoPlantsProtect />
+         <BackToTopBtn />
+      </main>
       <Footer />
     </>
   );

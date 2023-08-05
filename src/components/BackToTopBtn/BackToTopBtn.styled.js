@@ -8,6 +8,7 @@ export const BtnBackToTop = styled.div`
   width: 90px;
   display: grid;
   place-items: center;
+  z-index: 9999;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background-color: ${props =>

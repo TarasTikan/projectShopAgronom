@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ArrowIcon, ArrowWrapper, BtnBackToTop, ProgresSpan, ProgressCircle, WhiteBackground, WhiteCircle } from './BackToTopBtn.styled';
+import { ArrowIcon, BtnBackToTop, ProgressCircle, WhiteBackground} from './BackToTopBtn.styled';
 export const BackToTopBtn = () => {
   const [showButton, setShowButton] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
