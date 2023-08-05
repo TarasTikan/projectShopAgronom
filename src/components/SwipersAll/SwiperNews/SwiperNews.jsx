@@ -19,8 +19,8 @@ import {
   TitleNewsSwiper,
   WrapTilte,
 } from './SwiperNews.styled';
-import { ArroLeftSwiper } from 'assets/icon/arroLeftSwiper';
-import { ArroRightSwiper } from 'assets/icon/arroRightSwiper';
+import { ArroLeftSwiper } from 'assets/icons/arroLeftSwiper';
+import { ArroRightSwiper } from 'assets/icons/arroRightSwiper';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoading, selectProducts } from 'redux/products/selectors';
 import { useEffect } from 'react';

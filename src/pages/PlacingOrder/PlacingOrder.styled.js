@@ -210,17 +210,29 @@ export const BtnConfirmOrder = styled.button`
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
+  gap: 7px;
   font-weight: 700;
   border: 1px solid #e74e13;
   border-radius: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #e74e13;
   line-height: normal;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     color: #e74e13;
     border-color: #e74e13;
     background-color: #ffff;
+    svg {
+      fill: #e74e13;
+    }
+  }
+
+  svg {
+    fill: #fff;
   }
 `;

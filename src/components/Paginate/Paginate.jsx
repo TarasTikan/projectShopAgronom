@@ -9,8 +9,8 @@ import {
 } from 'redux/pagination/paginationSlice';
 import { selectItemOffset, selectPageCount } from 'redux/pagination/selectors';
 import { PageNumber, PaginationContainer } from './Pagination.styled';
-import { RightArrow } from 'assets/icon/right-arrow';
-import { LeftArrow } from 'assets/icon/left-arrow';
+import { RightArrow } from 'assets/icons/right-arrow';
+import { LeftArrow } from 'assets/icons/left-arrow';
 
 export const Paginate = () => {
   const filter = useSelector(selectFilteredProducts);

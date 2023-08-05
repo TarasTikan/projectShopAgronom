@@ -24,6 +24,7 @@ import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import { Footer } from 'components/Footer/Footer';
 import { ProductsBasketList } from 'components/ProductsBasketList/ProductsBasketList';
 import { UrlList } from 'components/UrlList/UrlList';
+import { ClipboardIcon } from 'assets/icons/clipboard';
 export const PlacingOrder = () => {
   return (
     <>
@@ -93,7 +94,9 @@ export const PlacingOrder = () => {
             <ContainerBasket>
               <TitleBasket>Товари у кошику</TitleBasket>
               <ProductsBasketList />
-              <BtnConfirmOrder type="submit">Підтвердити заказ</BtnConfirmOrder>
+              <BtnConfirmOrder type="submit">
+                <ClipboardIcon /> Підтвердити заказ
+              </BtnConfirmOrder>
             </ContainerBasket>
           </WrapOrder>
         </Container>

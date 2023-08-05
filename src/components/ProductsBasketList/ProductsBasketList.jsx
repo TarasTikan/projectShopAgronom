@@ -15,7 +15,7 @@ import {
 } from './ProductsBasketList.styled';
 import { selectItemsBasket } from 'redux/basket/selectors';
 import { useEffect, useState } from 'react';
-import { ExitIcon } from 'assets/icon/exitIcon';
+import { ExitIcon } from 'assets/icons/exitIcon';
 import {
   fetchBasketProducts,
   removeProductsBasket,
@@ -25,6 +25,7 @@ import { Loader } from 'components/Loader/Loader';
 
 export const ProductsBasketList = () => {
   const [totalPrice, setTotalPrice] = useState(0);
+  const [totalProducts, setTotalProducts] = useState(0)
   const productsBasket = useSelector(selectItemsBasket);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
@@ -34,6 +35,11 @@ export const ProductsBasketList = () => {
         return total + Number(price);
       }, 0)
     );
+setTotalProducts(
+  productsBasket.reduce((total, { number }) => {
+    return total + Number(number);
+  }, 0)
+);
   }, [productsBasket]);
   useEffect(() => {
     dispatch(fetchBasketProducts());
@@ -71,7 +77,7 @@ export const ProductsBasketList = () => {
       </ListBasketProducts>
       <ContainerInfoPrice>
         <PriceAllProduct>
-          Разом: <PriceSpan>{productsBasket.length} товари</PriceSpan>
+          Разом: <PriceSpan>{totalProducts} товари</PriceSpan>
         </PriceAllProduct>
         <PriceAllProduct>
           На суму:

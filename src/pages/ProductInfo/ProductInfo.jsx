@@ -1,5 +1,5 @@
-import { LoveIcon } from 'assets/icon/loveIcon';
-import { VesaIcon } from 'assets/icon/vesaIcon';
+import { LoveIcon } from 'assets/icons/loveIcon';
+import { VesaIcon } from 'assets/icons/vesaIcon';
 import { HeadInfo } from 'components/HeadInfo/HeadInfo';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -45,6 +45,8 @@ import { Modal } from 'components/Modal/Modal';
 import { Loader } from 'components/Loader/Loader';
 import { ProductDescription } from 'components/ProductDescription/ProductDescription';
 import { UrlList } from 'components/UrlList/UrlList';
+import { ShopBascetIcon } from 'assets/icons/shopBascetIcon';
+import { CallIcon } from 'assets/icons/callIcon';
 export const ProductInfo = () => {
   const { routesName, productId, category } = useParams();
   const productOne = useSelector(selectProductOne);
@@ -103,6 +105,7 @@ export const ProductInfo = () => {
                         Завтра відповідно до тарифів перевізника
                       </TextDelivery>
                       <DeliverButton type="button">
+                        <CallIcon />
                         Замовити дзвінок
                       </DeliverButton>
                     </WrapDelivery>
@@ -113,6 +116,7 @@ export const ProductInfo = () => {
                       <PriceText>Ціна за 5 л</PriceText>
                     </WrapPrice>
                     <BuyButton type="button" onClick={toggleModal}>
+                      <ShopBascetIcon />
                       Купити
                     </BuyButton>
                     <ListIcon>

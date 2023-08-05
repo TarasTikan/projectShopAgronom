@@ -33,6 +33,8 @@ import { selectProductOne } from 'redux/products/selectors';
 import { useNavigate, useParams } from 'react-router-dom';
 import { addProductBacket } from 'redux/basket/operations';
 import useTotalPrice from 'hooks/useTotalPrice';
+import { ClipboardIcon } from 'assets/icons/clipboard';
+import { ShopBascetIcon } from 'assets/icons/shopBascetIcon';
 const ModalRoot = document.querySelector('#ModalRoot');
 export function Modal({ onClose }) {
   const { routesName } = useParams();
@@ -145,9 +147,17 @@ export function Modal({ onClose }) {
               onClose();
             }}
           >
+            <ShopBascetIcon />
             Продовжити покупки
           </BtnDelivery>
-          <BtnOrder type="button" onClick={()=>{handleOrderProduct();navigate('/basketProducts');}}>
+          <BtnOrder
+            type="button"
+            onClick={() => {
+              handleOrderProduct();
+              navigate('/basketProducts');
+            }}
+          >
+            <ClipboardIcon />
             Оформити заказ
           </BtnOrder>
         </WrapBtnOrder>

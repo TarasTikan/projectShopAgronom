@@ -34,8 +34,9 @@ export const WrapInfoProduct = styled.div`
 export const Wrapimg = styled.div`
   width: 445px;
   height: 400px;
-  border: 1px solid black;
-  background-color: #ffff;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
 `;
 
 export const WrapTitle = styled.div`
@@ -170,12 +171,19 @@ export const DeliverButton = styled.button`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #e74e13;
+  gap: 9px;
   background-color: transparent;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     color: #ffff;
+    fill: #ffff;
     border-color: #ffff;
     background-color: #e74e13;
   }
@@ -225,13 +233,22 @@ export const BuyButton = styled.button`
   line-height: normal;
   border: none;
   margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  fill: #fff;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background-color: #fff;
     color: #e74e13;
     border: 1px solid #e74e13;
+    svg {
+      fill: #e74e13;
+    }
   }
 `;
 

@@ -1,4 +1,4 @@
-import { SearchIcon } from 'assets/icon/searchIcon';
+import { SearchIcon } from 'assets/icons/searchIcon';
 import {
   BtnEmotions,
   CallBtn,
@@ -17,23 +17,38 @@ import {
   WrapCall,
   WrapSideBar,
 } from './HeadInfo.styled';
-import { CallIcon } from 'assets/icon/callIcon';
-import { LoveIcon } from 'assets/icon/loveIcon';
-import { VesaIcon } from 'assets/icon/vesaIcon';
-import { ShopBascetIcon } from 'assets/icon/shopBascetIcon';
+import { CallIcon } from 'assets/icons/callIcon';
+import { LoveIcon } from 'assets/icons/loveIcon';
+import { VesaIcon } from 'assets/icons/vesaIcon';
+import { ShopBascetIcon } from 'assets/icons/shopBascetIcon';
 import logo from '../../assets/images/Logo.png';
-import { Sapling } from 'assets/icon/sapling';
-import { Fertilizer } from 'assets/icon/fertilizer';
-import { FeedGroupIcon } from 'assets/icon/feedGroup';
+import { Sapling } from 'assets/icons/sapling';
+import { Fertilizer } from 'assets/icons/fertilizer';
+import { FeedGroupIcon } from 'assets/icons/feedGroup';
 import { useSelector } from 'react-redux';
 import { selectItemsBasket } from 'redux/basket/selectors';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 export const HeadInfo = () => {
   const basketProduct = useSelector(selectItemsBasket);
   const navigate = useNavigate();
+    const [totalPrice, setTotalPrice] = useState(0);
+      const [totalProducts, setTotalProducts] = useState(0);
   const handleSaveRouter = e => {
     localStorage.setItem('page', `${e.currentTarget.name}`);
   };
+    useEffect(() => {
+      setTotalPrice(
+        basketProduct.reduce((total, { price }) => {
+          return total + Number(price);
+        }, 0)
+      );
+      setTotalProducts(
+        basketProduct.reduce((total, { number }) => {
+          return total + Number(number);
+        }, 0)
+      );
+    }, [basketProduct]);
   return (
     <Container>
       <WrapSideBar>
@@ -70,13 +85,13 @@ export const HeadInfo = () => {
               onClick={() => navigate('/basketProducts')}
             >
               {basketProduct.length !== 0 && (
-                <NumberBasket>{basketProduct.length}</NumberBasket>
+                <NumberBasket>{totalProducts}</NumberBasket>
               )}
               <ShopBascetIcon />
             </BtnEmotions>
           </li>
         </ListBtn>
-        <TextMoney>0,0 грн</TextMoney>
+        <TextMoney>{totalPrice.toLocaleString('en-US')} грн</TextMoney>
       </WrapSideBar>
       <ListKatalog>
         <KatalogItem>

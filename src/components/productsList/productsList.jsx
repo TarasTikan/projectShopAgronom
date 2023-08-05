@@ -16,7 +16,7 @@ import {
 } from './productsList.styled';
 import { Paginate } from 'components/Paginate/Paginate';
 import { selectCurrentItems } from 'redux/pagination/selectors';
-import { ShopBascetIcon } from 'assets/icon/shopBascetIcon';
+import { ShopBascetIcon } from 'assets/icons/shopBascetIcon';
 import { selectIsLoading } from 'redux/products/selectors';
 import { Loader } from 'components/Loader/Loader';
 import { Modal } from 'components/Modal/Modal';

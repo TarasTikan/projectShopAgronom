@@ -1,11 +1,13 @@
-import { AuthList, StyledLink } from './AuthNav.styled';
+import { LogoutIcon } from 'assets/icons/logoutIcon';
+import { AuthItem, AuthList, StyledLink } from './AuthNav.styled';
 
 export const AuthNav = () => {
   return (
     <AuthList>
-      <li>
+      <AuthItem>
+      <LogoutIcon/>
         <StyledLink to="/signIn">Вхід</StyledLink>
-      </li>
+      </AuthItem>
       <li>
         <StyledLink to="/signUp">Реестрація</StyledLink>
       </li>

@@ -56,7 +56,7 @@ export const WrapNumberText = styled.div`
   align-items: center;
 `;
 export const ErrorText = styled.p`
-    margin-top: 20px;
+  margin-top: 20px;
   color: red;
   font-family: Montserrat;
   font-size: 16px;
@@ -73,11 +73,11 @@ export const TitleModal = styled.h1`
   line-height: normal;
 `;
 export const WrapTitle = styled.div`
-display: flex;
-gap: 20px;
-align-items: center;
-justify-content: center;`
-
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const ImgDecor = styled.img`
   width: 32px;
@@ -94,11 +94,12 @@ export const WrapInfoProduct = styled.div`
   margin-top: 27px;
 `;
 export const WrapProductImg = styled.div`
-display: flex;
-align-items: center;
-gap: 30px;
-margin-top: 19px;
-justify-content: center;`;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 19px;
+  justify-content: center;
+`;
 
 export const ContImg = styled.div`
   width: 285px;
@@ -155,14 +156,12 @@ export const ProducerText = styled.p`
   line-height: normal;
 `;
 
-
 export const WrapProductBuy = styled.div`
   display: flex;
   align-items: center;
   gap: 192px;
   justify-content: center;
 `;
-
 
 export const BtnBuy = styled.button`
   width: 260px;
@@ -178,7 +177,6 @@ export const BtnBuy = styled.button`
   line-height: normal;
   background-color: transparent;
 `;
-
 
 export const WrapNumber = styled.div`
   display: flex;
@@ -243,6 +241,11 @@ export const BtnDelivery = styled.button`
   font-weight: 700;
   line-height: normal;
   background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  fill: #e74e13;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -250,10 +253,11 @@ export const BtnDelivery = styled.button`
     color: #ffff;
     border-color: #ffff;
     background-color: #e74e13;
+    svg {
+      fill: #ffff;
+    }
   }
 `;
-
-
 
 export const BtnOrder = styled.button`
   width: 260px;
@@ -268,13 +272,22 @@ export const BtnOrder = styled.button`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  fill: #fff;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background-color: #fff;
     color: #e74e13;
     border: 1px solid #e74e13;
+    svg {
+      fill: #e74e13;
+    }
   }
 `;
 
@@ -283,5 +296,5 @@ export const WrapBtnOrder = styled.div`
   align-items: center;
   gap: 395px;
   justify-content: center;
-  margin-top: 30px
+  margin-top: 30px;
 `;

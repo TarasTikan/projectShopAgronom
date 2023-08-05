@@ -14,9 +14,14 @@ export const ButtonLogout = styled.button`
   font-family: Montserrat;
   padding-top: 14px;
   padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
+  gap: 5px;
   border: none;
   &:hover {
     color: orange;
   }
+  
 `;

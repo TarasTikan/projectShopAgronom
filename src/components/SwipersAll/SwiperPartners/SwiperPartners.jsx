@@ -9,9 +9,9 @@ import {
   TitlePartnersSwiper,
   WrapTilte,
 } from './SwiperPartners.styled';
-import { ArroLeftSwiper } from 'assets/icon/arroLeftSwiper';
+import { ArroLeftSwiper } from 'assets/icons/arroLeftSwiper';
 import { SwiperSlide } from 'swiper/react';
-import { ArroRightSwiper } from 'assets/icon/arroRightSwiper';
+import { ArroRightSwiper } from 'assets/icons/arroRightSwiper';
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { selectIsLoading } from 'redux/products/selectors';
 import { useSelector } from 'react-redux';
