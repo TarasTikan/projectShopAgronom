@@ -54,15 +54,11 @@
 
 git clone https://github.com/TarasTikan/projectShopAgronom.git
 
-2. Встановіть залежності: 
+2. Встановіть залежності: npm install
 
-npm install
+3. Запустіть сервер: npm start
 
-3. Запустіть сервер:
-
-npm start
-
-4. Відкрийте браузер і перейдіть за адресою `http://localhost:3000` для перегляду магазину.
+1. Відкрийте браузер і перейдіть за адресою `http://localhost:3000` для перегляду магазину.
 
 ## Технічні вимоги
 
