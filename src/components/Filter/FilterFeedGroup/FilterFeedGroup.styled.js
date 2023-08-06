@@ -88,6 +88,7 @@ export const LabalInput = styled.label`
   font-family: Montserrat;
   font-size: 16px;
   font-weight: 400;
+  align-items: center;
 `;
 
 export const TitleCulture = styled.h1`

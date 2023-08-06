@@ -21,10 +21,16 @@ import {
   WrapFilter,
   WrapTitleFilter,
 } from './FilterPlantsProtect.styled';
+import { Checkbox } from 'components/Checkbox/Checkbox';
+import { useState } from 'react';
 
 export const FilterPlantsProtect = () => {
   const dispatch = useDispatch();
+  const [checkedItems, setCheckedItems] = useState({});
   const handleChange = e => {
+    const { name, checked } = e.target;
+    setCheckedItems(prev => ({ ...prev, [name]: checked }));
+
     const normalizatorFilter = e.target.name
       .slice(8, e.target.name.length)
       .trim();
@@ -54,10 +60,10 @@ export const FilterPlantsProtect = () => {
           <TitleProducer>Виробник</TitleProducer>
           {plantsProducer.map(({ id, name }) => (
             <LabalInput key={id}>
-              <input
-                type="checkbox"
-                name={`producer ${name}`}
+              <Checkbox
+                checked={checkedItems[`producer ${name}`] || false}
                 onChange={handleChange}
+                name={`producer ${name}`}
               />
               {name}
             </LabalInput>
@@ -67,10 +73,10 @@ export const FilterPlantsProtect = () => {
           <TitleCulture>Культура</TitleCulture>
           {plantsCulture.map(({ id, name }) => (
             <LabalInput key={id}>
-              <input
-                type="checkbox"
-                name={`culture ${name}`}
+              <Checkbox
+                checked={checkedItems[`culture ${name}`] || false}
                 onChange={handleChange}
+                name={`culture ${name}`}
               />
               {name}
             </LabalInput>
@@ -79,27 +85,51 @@ export const FilterPlantsProtect = () => {
         <FormNumber>
           <TitleNumber>Кількість</TitleNumber>
           <LabalInput>
-            <input type="checkbox" name="1" value="1" onChange={handleChange} />
+            <Checkbox
+              checked={checkedItems[`1`] || false}
+              onChange={handleChange}
+              name="1"
+            />
             1
           </LabalInput>
           <LabalInput>
-            <input type="checkbox" name="2" value="2" onChange={handleChange} />
+            <Checkbox
+              checked={checkedItems[`2`] || false}
+              onChange={handleChange}
+              name="2"
+            />
             2
           </LabalInput>
           <LabalInput>
-            <input type="checkbox" name="3" value="3" onChange={handleChange} />
+            <Checkbox
+              checked={checkedItems[`3`] || false}
+              onChange={handleChange}
+              name="3"
+            />
             3
           </LabalInput>
           <LabalInput>
-            <input type="checkbox" name="4" value="4" onChange={handleChange} />
+            <Checkbox
+              checked={checkedItems[`4`] || false}
+              onChange={handleChange}
+              name="4"
+            />
             4
           </LabalInput>
           <LabalInput>
-            <input type="checkbox" name="5" value="5" onChange={handleChange} />
+            <Checkbox
+              checked={checkedItems[`5`] || false}
+              onChange={handleChange}
+              name="5"
+            />
             5
           </LabalInput>
           <LabalInput>
-            <input type="checkbox" name="6" value="6" onChange={handleChange} />
+            <Checkbox
+              checked={checkedItems[`6`] || false}
+              onChange={handleChange}
+              name="6"
+            />
             6
           </LabalInput>
         </FormNumber>
@@ -107,3 +137,8 @@ export const FilterPlantsProtect = () => {
     </WrapTitleFilter>
   );
 };
+// <Checkbox
+//   checked={isChecked}
+//   onChange={handleChange}
+//   name={`culture ${name}`}
+// />;

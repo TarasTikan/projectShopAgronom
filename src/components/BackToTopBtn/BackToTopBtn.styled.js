@@ -12,7 +12,7 @@ export const BtnBackToTop = styled.div`
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background-color: ${props =>
-    props.scrollPercentage > 0 ? '#d7d7d7' : '#fff'};
+    props.scrollpercentage > 0 ? '#d7d7d7' : '#fff'};
   opacity: 0.8;
   cursor: pointer;
   transition: opacity 0.3s;
@@ -49,7 +49,7 @@ export const ProgressCircle = styled.span`
   height: 98px;
   border-radius: 50%;
   background: ${props =>
-    `conic-gradient(#e74e13 0%, #84be51 ${props.scrollPercentage}%, #d7d7d7 ${props.scrollPercentage}% 100%)`};
+    `conic-gradient(#e74e13 0%, #84be51 ${props.scrollpercentage}%, #d7d7d7 ${props.scrollpercentage}% 100%)`};
   clip-path: ${props =>
     `polygon(${
       360 * (props.scrollPercentage / 100)

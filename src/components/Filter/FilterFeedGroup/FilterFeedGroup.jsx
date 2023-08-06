@@ -24,11 +24,13 @@ import {
   addProducer,
   deleteProducer,
 } from 'redux/products/filterSlice';
+import { Checkbox } from 'components/Checkbox/Checkbox';
 
 export const FilterFeedGroup = () => {
   const { routesName } = useParams();
   const dispatch = useDispatch();
   const [category, setCategory] = useState([]);
+  const [checkedItems, setCheckedItems] = useState({});
   useEffect(() => {
     switch (routesName) {
       case 'pigs':
@@ -42,11 +44,11 @@ export const FilterFeedGroup = () => {
     }
   }, [routesName]);
   const handleChangeProducer = e => {
-    const normalizatorFilter = e.target.name
-      .slice(8, e.target.name.length)
-      .trim();
-    const actionProducer = e.target.checked ? addProducer : deleteProducer;
-    if (e.target.name.includes('producer')) {
+    const { name, checked } = e.target;
+    setCheckedItems(prev => ({ ...prev, [name]: checked }));
+    const normalizatorFilter = name.slice(8, name.length).trim();
+    const actionProducer = checked ? addProducer : deleteProducer;
+    if (name.includes('producer')) {
       dispatch(actionProducer(normalizatorFilter));
     }
   };
@@ -79,10 +81,10 @@ export const FilterFeedGroup = () => {
           <TitleProducer>Виробник</TitleProducer>
           {plantsProducer.map(({ id, name }) => (
             <LabalInput key={id}>
-              <input
-                type="checkbox"
-                name={`producer ${name}`}
+              <Checkbox
+                checked={checkedItems[`producer ${name}`] || false}
                 onChange={handleChangeProducer}
+                name={`producer ${name}`}
               />
               {name}
             </LabalInput>

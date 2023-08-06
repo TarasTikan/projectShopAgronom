@@ -40,6 +40,11 @@ export const StyledSwiper = styled(Swiper)`
 `;
 export const NewsSection = styled.section`
   padding-bottom: 120px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(132, 190, 81, 0.3) 0%,
+    rgba(210, 230, 189, 0) 100%
+  );
 `;
 
 export const Container = styled.div`

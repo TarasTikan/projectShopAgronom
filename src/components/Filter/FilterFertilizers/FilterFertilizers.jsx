@@ -30,17 +30,19 @@ import {
   deleteCulture,
   deleteProducer,
 } from 'redux/products/filterSlice';
+import { Checkbox } from 'components/Checkbox/Checkbox';
+import { useState } from 'react';
 
 export const FilterFertilizers = () => {
   const dispatch = useDispatch();
-
+  const [checkedItems, setCheckedItems] = useState({});
   const handleChange = e => {
-    const normalizatorFilter = e.target.name
-      .slice(8, e.target.name.length)
-      .trim();
-    const actionProducer = e.target.checked ? addProducer : deleteProducer;
-    const actionCulture = e.target.checked ? addCulture : deleteCulture;
-    if (e.target.name.includes('producer')) {
+    const { name, checked } = e.target;
+    setCheckedItems(prev => ({ ...prev, [name]: checked }));
+    const normalizatorFilter = name.slice(8, name.length).trim();
+    const actionProducer = checked ? addProducer : deleteProducer;
+    const actionCulture = checked ? addCulture : deleteCulture;
+    if (name.includes('producer')) {
       dispatch(actionProducer(normalizatorFilter));
     } else {
       dispatch(actionCulture(normalizatorFilter));
@@ -73,10 +75,10 @@ export const FilterFertilizers = () => {
           <TitleProducer>Виробник</TitleProducer>
           {fertilizersProducer.map(({ id, name }) => (
             <LabalInput key={id}>
-              <input
-                type="checkbox"
-                name={`producer ${name}`}
+              <Checkbox
+                checked={checkedItems[`producer ${name}`] || false}
                 onChange={handleChange}
+                name={`producer ${name}`}
               />
               {name}
             </LabalInput>
@@ -86,10 +88,10 @@ export const FilterFertilizers = () => {
           <TitleCulture>Культура</TitleCulture>
           {plantsCulture.map(({ id, name }) => (
             <LabalInput key={id}>
-              <input
-                type="checkbox"
-                name={`culture ${name}`}
+              <Checkbox
+                checked={checkedItems[`culture ${name}`] || false}
                 onChange={handleChange}
+                name={`culture ${name}`}
               />
               {name}
             </LabalInput>

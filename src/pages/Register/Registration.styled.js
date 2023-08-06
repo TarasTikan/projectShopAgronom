@@ -7,6 +7,11 @@ export const Container = styled.div`
 `;
 
 export const RegisterSection = styled.section`
-padding-top: 20px;
-padding-bottom: 100px;
-`
+  padding-top: 20px;
+  padding-bottom: 100px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(132, 190, 81, 0.3) 0%,
+    rgba(210, 230, 189, 0) 100%
+  );
+`;

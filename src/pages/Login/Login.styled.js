@@ -8,6 +8,8 @@ export const Container = styled.div`
 export const LoginSection = styled.section`
   padding-top: 20px;
   padding-bottom: 100px;
+  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(132, 190, 81, 0.30) 0%, rgba(210, 230, 189, 0.00) 100%);
+
 `;
 
 export const UrlDecor = styled.div`

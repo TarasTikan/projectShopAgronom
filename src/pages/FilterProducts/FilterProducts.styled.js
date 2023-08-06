@@ -10,6 +10,11 @@ export const WrapTitle = styled.div`
 export const FilterSection = styled.section`
   padding-bottom: 120px;
   padding-top: 20px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(132, 190, 81, 0.3) 0%,
+    rgba(210, 230, 189, 0) 100%
+  );
 `;
 export const TitleCatalog = styled.h1`
   font-family: Montserrat;

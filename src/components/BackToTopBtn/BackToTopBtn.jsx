@@ -9,9 +9,9 @@ export const BackToTopBtn = () => {
     const clientHeight = document.documentElement.clientHeight;
     const scrollTop = document.documentElement.scrollTop;
     const totalScroll = scrollHeight - clientHeight;
-    const scrollPercentage = Math.round((scrollTop * 100) / totalScroll);
+    const scrollpercentage = Math.round((scrollTop * 100) / totalScroll);
 
-    setScrollProgress(scrollPercentage);
+    setScrollProgress(scrollpercentage);
     setShowButton(scrollTop > 100);
   };
 
@@ -33,8 +33,8 @@ export const BackToTopBtn = () => {
   return (
     <>
       {showButton && (
-        <BtnBackToTop onClick={scrollUp} scrollPercentage={scrollProgress}>
-          <ProgressCircle scrollPercentage={scrollProgress} />
+        <BtnBackToTop onClick={scrollUp} scrollpercentage={scrollProgress}>
+          <ProgressCircle scrollpercentage={scrollProgress} />
           <WhiteBackground />
           <ArrowIcon>&#x1F815;</ArrowIcon>
         </BtnBackToTop>
