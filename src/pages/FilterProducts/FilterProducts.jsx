@@ -69,7 +69,7 @@ export const FilterProducts = () => {
           </Container>
         </FilterSection>
         <InfoPlantsProtect />
-         <BackToTopBtn />
+        <BackToTopBtn />
       </main>
       <Footer />
     </>
