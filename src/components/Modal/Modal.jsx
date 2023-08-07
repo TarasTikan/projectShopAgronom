@@ -35,6 +35,7 @@ import { addProductBacket } from 'redux/basket/operations';
 import useTotalPrice from 'hooks/useTotalPrice';
 import { ClipboardIcon } from 'assets/icons/clipboard';
 import { ShopBascetIcon } from 'assets/icons/shopBascetIcon';
+import { selectItemsBasket } from 'redux/basket/selectors';
 const ModalRoot = document.querySelector('#ModalRoot');
 export function Modal({ onClose }) {
   const { routesName } = useParams();
@@ -43,6 +44,7 @@ export function Modal({ onClose }) {
   const navigate = useNavigate();
   const productOne = useSelector(selectProductOne);
   const dispatch = useDispatch();
+  const itemsBasket = useSelector(selectItemsBasket);
   const totalPrice = useTotalPrice(productOne, number);
   useEffect(() => {
     window.addEventListener('keydown', keyDown);
@@ -77,12 +79,17 @@ export function Modal({ onClose }) {
   };
 
   const handleOrderProduct = () => {
+    const findProductBasket = itemsBasket.find(
+      ({ name }) => name === productOne.name
+    );
+    if (findProductBasket) {
+      return alert('Цей продукт вже є у корзині');
+    }
     const { _id, updatedAt, createdAt, ...productInBasket } = {
       ...productOne,
       price: String(totalPrice),
       number: String(number),
     };
-    console.log(productInBasket);
     dispatch(addProductBacket(productInBasket));
     localStorage.setItem('page', 'basketProducts');
   };
@@ -133,7 +140,7 @@ export function Modal({ onClose }) {
                 </WrapNumber>
               </div>
               {errorNumber && (
-                <ErrorText>Максимальне колічество продуктів</ErrorText>
+                <ErrorText>Це максимальна кількість продуктів</ErrorText>
               )}
             </WrapNumberText>
           </WrapProductBuy>
