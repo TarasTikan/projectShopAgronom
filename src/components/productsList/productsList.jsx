@@ -66,7 +66,6 @@ export const ProductsList = () => {
         ) : (
           currentItems.map(({ name, number, price, _id }) => (
             <ProductItem key={_id}>
-              {/* <img width={255} /> */}
               <ItemInfo>
                 <div>
                   <ItemTitleLink to={`/productDetails/${routesName}/${_id}`}>
